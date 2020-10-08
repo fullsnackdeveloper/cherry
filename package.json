@@ -1,6 +1,6 @@
 {
-  "name": "antler-velvet",
-  "version": "1.0.0",
+  "name": "@maraschino/cherry",
+  "version": "0.0.1-beta0.0.1",
   "main": "build/index.js",
   "module": "build/index.esm.js",
   "files": [
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/fullsnackdeveloper/cherry.git"
   },
   "keywords": [],
   "author": "Nicholas Olsen",
