@@ -1,4 +1,5 @@
 import Button from "./Button/Button";
 import TestComponent from "./TestComponent/TestComponent";
 
-export { TestComponent, Button };
+export { TestComponent };
+export { Button };
