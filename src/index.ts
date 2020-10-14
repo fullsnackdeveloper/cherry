@@ -1,4 +1,7 @@
+import ActionCard from "./ActionCard/ActionCard";
 import Button from "./Button/Button";
-import TestComponent from "./TestComponent/TestComponent";
+import Card from "./Card/Card";
+import Header from "./Header/Header";
+import Icon from "./Icon/Icon";
 
-export { TestComponent, Button };
+export { Button, Card, ActionCard, Header, Icon };

@@ -1,0 +1,58 @@
+@import "../styles/stylesIndex.scss";
+
+.ActionCard {
+  border-radius: $border_radius;
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    opacity: 0.8;
+    a .Icon {
+      margin-left: 20px;
+    }
+  }
+  &-content {
+    flex-grow: 0;
+    padding: $space_xl;
+    h3 {
+      @include paragraphHeading;
+      color: $color_white;
+      margin-bottom: $space_m;
+    }
+    .Icon span {
+      justify-content: flex-start;
+      & path {
+        stroke: $color_white;
+      }
+    }
+    & > .Icon {
+      margin-bottom: $space_xl;
+    }
+    a {
+      @include link;
+      color: $color_white;
+      display: flex;
+      align-items: center;
+      .Icon {
+        transition: all 0.3s ease;
+        margin-left: $space_s;
+        font-weight: 900;
+      }
+    }
+  }
+  &-image {
+    justify-self: flex-end;
+    max-width: 100%;
+    flex-grow: 2;
+    display: flex;
+    flex-flow: column;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 200px 0 0 200px;
+    @include sm {
+      max-width: 0px;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+@import "../styles/stylesIndex.scss";
+
+.Header {
+  height: 0;
+  padding-top: 420px;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+  border-radius: $border_radius;
+  background-color: $color_black;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  @include lg {
+    padding-top: 40%;
+  }
+  @include sm {
+    padding-top: 202px;
+  }
+  &-content {
+    position: absolute;
+    top: 0;
+    padding: 30px 100px;
+    width: 70%;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    @include md {
+      padding: 30px 60px;
+    }
+    h1 {
+      @include pageHeading;
+      margin-bottom: $space_s;
+      color: $color_white;
+    }
+    p {
+      @include pageSubHeading;
+      margin-bottom: $space_xl;
+      color: $color_white;
+    }
+    &.fullwidth {
+      height: calc(100% - 60px);
+      width: 30%;
+      max-width: 420px;
+      @include lg {
+        width: 50%;
+      }
+      @include md {
+        padding: 30px;
+        width: calc(100% - 60px);
+      }
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  &-image {
+    height: 396px;
+    background-size: cover;
+    background-position: center center;
+    width: 704px;
+    flex-shrink: 0;
+    @include lg {
+      margin-top: -40%;
+      right: 0;
+      position: absolute;
+      height: 100%;
+      width: 64%;
+    }
+  }
+  &.ratio16-9 {
+    padding: 0;
+    height: 396px;
+    width: 100%;
+    @include lg {
+      padding-top: 40%;
+      height: 0;
+    }
+    .Header-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: calc(100% - 60px);
+      @include lg {
+        margin-top: -40%;
+        position: aboslute;
+        width: calc(26% - 120px);
+      }
+    }
+  }
+}

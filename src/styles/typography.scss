@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");
+@import "./variables.scss";
+
+$font_sans: "Poppins", sans-serif;
+$font_serif: "PT Serif", serif;
+
+* {
+  font-family: $font_sans;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin font-defaults {
+  font-family: $font_sans;
+}
+
+@mixin pageHeading {
+  @include font-defaults;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  @include md {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+@mixin pageSubHeading {
+  @include font-defaults;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  @include md {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+@mixin paragraphHeading {
+  @include font-defaults;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  @include md {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@mixin cardTitle {
+  @include font-defaults;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  @include md {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+@mixin link {
+  @include font-defaults;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+@mixin meta {
+  @include font-defaults;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 18px;
+  @include md {
+    font-size: 6px;
+    line-height: 14px;
+  }
+}

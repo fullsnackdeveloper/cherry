@@ -4,12 +4,11 @@ import React from "react";
 import ${componentName} from "./${componentName}";
 
 export default {
-    title: "${componentName}"
+    title: "${componentName}",
+    component: ${componentName}
 };
 
-export const WithBar = () => <${componentName} foo="bar" />;
-
-export const WithBaz = () => <${componentName} foo="baz" />;
+export const Default = () => <${componentName} foo="bar" />;
 `,
   extension: `.stories.tsx`
 });

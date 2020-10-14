@@ -1,4 +1,4 @@
-// Variables
+// THEME
 $color_primary: #ffa245;
 $color_white: #fcfcfc;
 $color_offWhite: #e7eced;
@@ -17,3 +17,10 @@ $color_primary_button: #ffa245;
 
 // GENERAL
 $border_radius: 8px;
+
+// BREAKPOINTS
+$screen-xs-max: 320px;
+$screen-sm-max: 540px;
+$screen-md-max: 768px;
+$screen-lg-max: 1080px;
+$screen-xl-max: 1440px;

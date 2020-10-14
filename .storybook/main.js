@@ -6,6 +6,7 @@ module.exports = {
   addons: [
     "@storybook/addon-docs/preset",
     "@storybook/addon-controls",
+    "@storybook/addon-viewport",
   ],
   webpackFinal: async (config) => {
     config.module.rules.push({
@@ -22,6 +23,19 @@ module.exports = {
       }
     });
     config.resolve.extensions.push(".ts", ".tsx");
+
+    config.module.rules.push({
+      test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+      use: [
+        {
+          loader: 'file-loader',
+          query: {
+            name: '[name].[ext]'
+          }
+        }
+      ],
+      include: path.resolve(__dirname, '../')
+    });
 
     return config;
   }
