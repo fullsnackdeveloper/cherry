@@ -6,58 +6,116 @@
   cursor: pointer;
   position: relative;
   color: $color_white;
-  padding: $space_s $space_m;
+  padding: $space_m $space_l - 4px;
   border-radius: $space_xxl;
   background: $color_primary_button;
+  border: none;
+  outline: none;
+  transition: all 0.2s linear;
+  font-size: 14px;
 
-  // &.withIcon .Icon {
-  //   margin-right: $space_xs;
-  //   margin-left: -$space_xxs;
-  //   &:before {
-  //     color: $color_white;
-  //   }
-  // }
+  &.shadow {
+    @include shadow;
+  }
 
-  // &.iconButton {
-  //   width: 20px;
-  //   height: 20px;
-  //   padding: 8px;
-  //   border-radius: 50%;
-  //   .Icon {
-  //     position: absolute;
-  //     top: 50%;
-  //     left: 50%;
-  //     transform: translate(-50%, -50%);
-  //     margin: 0;
-  //   }
-  // }
+  &:hover {
+    background: tint($color_primary_button, 30%);
+  }
+
+  &:focus {
+    background: $color_primary_button;
+    box-shadow: 0 0 0 2px tint($color_primary_button, 30%);
+  }
+
+  &.withIcon .Icon .Streamline_Icon {
+    margin-right: $space_s;
+    margin-left: -$space_xxs;
+    svg path {
+      stroke: $color_white;
+    }
+  }
+
+  &.iconButton {
+    width: 34px;
+    height: 34px;
+    padding: 8px;
+    border-radius: 50%;
+    .Icon .Streamline_Icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+    }
+  }
 
   &.large {
     font-size: 16px;
     letter-spacing: 1px;
-    padding: 16px 24px;
+    padding: $space_m + 4px $space_l;
     &.withIcon .Icon {
-      margin-right: $space_xs + 4;
+      margin-right: $space_xs;
       margin-left: -$space_xs;
-      &:before {
-        font-size: 14px;
+      & .Streamline_Icon svg {
+        width: 16px !important;
+        height: 16px !important;
       }
     }
   }
+
+  &.small {
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: $space_s $space_m;
+    &.withIcon .Icon {
+      margin-right: 0;
+      margin-left: 0;
+      & .Streamline_Icon svg {
+        width: 12px !important;
+        height: 12px !important;
+      }
+    }
+  }
+
+  &.tiny {
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: $space_xs $space_s + 2px;
+    &.withIcon .Icon {
+      margin-right: -$space_xs;
+      margin-left: 0;
+      & .Streamline_Icon svg {
+        width: 10px !important;
+        height: 10px !important;
+      }
+    }
+  }
+
   &.secondary {
     position: relative;
     background: transparent;
     color: $color_primary;
     border: 1px solid $color_primary;
-    &.withIcon .Icon {
-      &:before {
-        color: $color_primary;
-      }
+    &.withIcon .Icon .Streamline_Icon path {
+      stroke: $color_primary;
     }
     &.ripple .rippleContainer span {
       background-color: $color_primary !important;
     }
   }
+
+  &.white {
+    position: relative;
+    background: $color_white;
+    color: $color_primary;
+    &.withIcon .Icon .Streamline_Icon path {
+      stroke: $color_primary;
+    }
+    &.ripple .rippleContainer span {
+      background-color: $color_primary !important;
+    }
+  }
+
   &.link {
     position: relative;
     background: $color_white;
@@ -70,6 +128,17 @@
     }
     &.ripple .rippleContainer span {
       background-color: $color_primary !important;
+    }
+  }
+
+  &:disabled {
+    background: $color_lightGrey;
+    color: $color_white;
+    cursor: not-allowed;
+    box-shadow: none;
+    border-color: $color_lightGrey;
+    &.ripple .rippleContainer span {
+      background: transparent !important;
     }
   }
 }
@@ -95,7 +164,7 @@
   position: absolute;
   width: 100px;
   height: 100px;
-  opacity: 0.65;
+  opacity: 0.4;
   background-color: #ffffff;
   animation: ripple 850ms;
 }

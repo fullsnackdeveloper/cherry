@@ -3,9 +3,62 @@ import React from "react";
 
 export default {
     title: "Button",
-    component: Button
+    component: Button,
+    argTypes: {
+        children: {
+            control: {
+                type: 'text',
+                defaultValue: 'click'
+            }
+        },
+        size: {
+            control: {
+                type: 'select',
+                options: ['tiny', 'small', 'regular', 'large']
+            }
+        },
+        type: {
+            control: {
+                type: 'select',
+                options: ['primary', 'secondary', 'white', 'link']
+            }
+        },
+        icon: {
+            control: {
+                type: 'select',
+                options: [null, 'drill', 'chevron-left', 'close']
+            }
+        }
+    }
 };
 
-export const Primary = () => <Button>Click here</Button>;
+const Template = (args) => <Button {...args} />
+
+export const Primary = Template.bind({})
+Primary.args = {
+    type: 'primary',
+    children: 'Button text',
+}
 
 export const Secondary = () => <Button type="secondary">Click here</Button>;
+
+export const white = () => <Button type="white">Click here</Button>;
+
+export const sizes = () => <div className="storybook-horizontal">
+    <div className="storybook-spacer">
+        <Button size="large">Click here</Button>
+    </div>
+    <div className="storybook-spacer">
+        <Button size="regular">Click here</Button>
+    </div>
+    <div className="storybook-spacer">
+        <Button size="small">Click here</Button>
+    </div>
+    <div className="storybook-spacer">
+        <Button size="tiny">Click here</Button>
+    </div>
+</div>
+
+export const withIcon = () => <Button type="primary" icon="chevron-left">Click here</Button>;
+
+export const onlyIcon = () => <Button type="primary" icon="chevron-left"></Button>;

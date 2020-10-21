@@ -2,17 +2,17 @@
 
 .Row {
   &-container {
-    @include md {
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
-      .Col {
-        grid-column: span 1 / auto !important;
-      }
-    }
-    @include sm {
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
-    }
-    @include xs {
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
-    }
+    // @include md {
+    //   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
+    //   .Col {
+    //     grid-column: span 1 / auto !important;
+    //   }
+    // }
+    // @include sm {
+    //   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+    // }
+    // @include xs {
+    //   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+    // }
   }
 }

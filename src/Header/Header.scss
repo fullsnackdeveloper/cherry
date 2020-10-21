@@ -28,12 +28,12 @@
     }
     h1 {
       @include pageHeading;
-      margin-bottom: $space_s;
+      margin-bottom: $space_m;
       color: $color_white;
     }
     p {
       @include pageSubHeading;
-      margin-bottom: $space_xl;
+      margin-bottom: $space_m;
       color: $color_white;
     }
     height: calc(100% - 60px);

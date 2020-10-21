@@ -12,7 +12,7 @@
     "build": "rollup -c",
     "test": "jest",
     "test:watch": "jest --watch",
-    "storybook": "start-storybook -s ./public -p 9001",
+    "storybook": "start-storybook -s ./public,./static -p 9001",
     "storybook:export": "build-storybook",
     "generate": "node ./util/create-component",
     "prepublishOnly": "npm run build"
@@ -32,6 +32,7 @@
     "@babel/core": "^7.10.3",
     "@rollup/plugin-commonjs": "^11.1.0",
     "@rollup/plugin-node-resolve": "^7.1.3",
+    "@storybook/addon-controls": "^6.0.26",
     "@storybook/react": "^6.0.26",
     "@testing-library/jest-dom": "^5.5.0",
     "@testing-library/react": "^10.0.2",
@@ -51,15 +52,17 @@
     "rollup-plugin-postcss": "^3.1.2",
     "rollup-plugin-typescript2": "^0.27.0",
     "sass-loader": "^8.0.0",
+    "storybook-dark-mode": "^1.0.3",
     "ts-jest": "^24.2.0",
     "typescript": "^3.7.2"
   },
   "dependencies": {
-    "@storybook/addon-controls": "^6.0.26",
+    "@storybook/addon-backgrounds": "^6.0.26",
     "@storybook/addon-docs": "^6.0.26",
     "@storybook/addon-viewport": "^6.0.26",
     "@streamlinehq/streamline-icons-react": "^0.6.1",
     "@streamlinehq/streamline-regular": "^0.6.1",
-    "clsx": "^1.1.1"
+    "clsx": "^1.1.1",
+    "pure-react-carousel": "^1.27.5"
   }
 }

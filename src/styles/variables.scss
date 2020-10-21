@@ -2,6 +2,7 @@
 $color_primary: #ffa245;
 $color_white: #fcfcfc;
 $color_offWhite: #e7eced;
+$color_lightGrey: #d8d8d8;
 $color_black: #2d3143;
 
 $space_xxs: 2px;
@@ -14,9 +15,13 @@ $space_xl: 32px;
 $space_xxl: 64px;
 
 $color_primary_button: #ffa245;
+$grid_gap: $space_l;
 
 // GENERAL
 $border_radius: 8px;
+@mixin shadow {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
 
 // BREAKPOINTS
 $screen-xs-max: 320px;
@@ -24,3 +29,11 @@ $screen-sm-max: 540px;
 $screen-md-max: 768px;
 $screen-lg-max: 1080px;
 $screen-xl-max: 1440px;
+
+:export {
+  xsMax: $screen-xs-max;
+  smMax: $screen-sm-max;
+  mdMax: $screen-md-max;
+  lgMax: $screen-lg-max;
+  xlMax: $screen-xl-max;
+}

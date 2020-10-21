@@ -3,6 +3,7 @@ import "./Button.scss";
 import React, { FC } from "react";
 
 import { ButtonProps } from "./Button.types";
+import Icon from "../Icon/Icon";
 import clsx from 'clsx';
 
 const handleMouseDown = (e: any) => {
@@ -19,14 +20,24 @@ const handleMouseDown = (e: any) => {
     }, 10000)
 }
 
-const Button: FC<ButtonProps> = ({ size, type, icon, children, onClick, className }: ButtonProps) => (
-    <div className={clsx("Button", className, type, "ripple", size, { withIcon: icon, iconButton: icon && !children })} onClick={onClick}>
+const Button: FC<ButtonProps> = ({ size, type, icon, children, onClick, className, shadow, disabled, ...props }: ButtonProps) => (
+    <button className={clsx("Button", className, type, "ripple", size, { withIcon: icon, iconButton: icon && !children, shadow })} disabled={disabled} onClick={onClick} {...props}>
         <div className="rippleContainer" onMouseDown={handleMouseDown}></div>
+        {icon &&
+            <Icon size={12} icon={icon}></Icon>
+        }
         {children &&
             <div>{children}</div>
         }
-    </div>
+    </button>
 );
+
+Button.defaultProps = {
+    type: 'primary',
+    size: 'regular',
+    disabled: false,
+    shadow: false
+}
 
 export default Button;
 
