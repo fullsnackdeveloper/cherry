@@ -6,13 +6,26 @@
   cursor: pointer;
   position: relative;
   color: $color_white;
-  padding: $space_m $space_l - 4px;
   border-radius: $space_xxl;
   background: $color_primary_button;
   border: none;
   outline: none;
   transition: all 0.2s linear;
-  font-size: 14px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: $space_s $space_m;
+  &.withIcon .Icon {
+    margin-right: $space_s;
+    margin-left: -$space_xxs;
+    & .Streamline_Icon svg {
+      width: 10px !important;
+      height: 10px !important;
+      path {
+        stroke: $color_white;
+        stroke-width: 3px;
+      }
+    }
+  }
 
   &.shadow {
     @include shadow;
@@ -25,14 +38,6 @@
   &:focus {
     background: $color_primary_button;
     box-shadow: 0 0 0 2px tint($color_primary_button, 30%);
-  }
-
-  &.withIcon .Icon .Streamline_Icon {
-    margin-right: $space_s;
-    margin-left: -$space_xxs;
-    svg path {
-      stroke: $color_white;
-    }
   }
 
   &.iconButton {
@@ -50,43 +55,28 @@
   }
 
   &.large {
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: 1px;
-    padding: $space_m + 4px $space_l;
-    &.withIcon .Icon {
+    padding: $space_m $space_l - 4px;
+    &.withIcon .Icon .Streamline_Icon {
       margin-right: $space_xs;
-      margin-left: -$space_xs;
-      & .Streamline_Icon svg {
-        width: 16px !important;
-        height: 16px !important;
+      margin-left: 0;
+      svg path {
+        stroke: $color_white;
       }
     }
   }
 
   &.small {
-    font-size: 14px;
-    letter-spacing: 1px;
-    padding: $space_s $space_m;
-    &.withIcon .Icon {
-      margin-right: 0;
-      margin-left: 0;
-      & .Streamline_Icon svg {
-        width: 12px !important;
-        height: 12px !important;
-      }
-    }
-  }
-
-  &.tiny {
     font-size: 10px;
     letter-spacing: 1px;
     padding: $space_xs $space_s + 2px;
     &.withIcon .Icon {
-      margin-right: -$space_xs;
+      margin-right: $space_s;
       margin-left: 0;
       & .Streamline_Icon svg {
-        width: 10px !important;
-        height: 10px !important;
+        width: 8px !important;
+        height: 8px !important;
       }
     }
   }

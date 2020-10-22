@@ -14,7 +14,7 @@ export default {
         size: {
             control: {
                 type: 'select',
-                options: ['tiny', 'small', 'regular', 'large']
+                options: ['small', 'regular', 'large']
             }
         },
         type: {
@@ -53,9 +53,6 @@ export const sizes = () => <div className="storybook-horizontal">
     </div>
     <div className="storybook-spacer">
         <Button size="small">Click here</Button>
-    </div>
-    <div className="storybook-spacer">
-        <Button size="tiny">Click here</Button>
     </div>
 </div>
 

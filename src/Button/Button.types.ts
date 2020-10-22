@@ -6,7 +6,7 @@ export interface ButtonProps {
     */
     children?: ReactNode | string;
     onClick?: () => void;
-    size?: 'tiny' | 'small' | 'regular' | 'large';
+    size?: 'small' | 'regular' | 'large';
     type?: 'primary' | 'secondary' | 'white' | 'link';
     icon?: string,
     className?: string,

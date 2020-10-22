@@ -39,7 +39,7 @@ export const Default = () => <Row>
     </Col>
 </Row>;
 
-export const Set5Columns = () => <Row columns={[1, 2, 5]}>
+export const Set5Columns = () => <Row columns={[1, 1, 2, 3, 5]}>
     <Col span={1}>
         <Card
             title="How To Install A Kitchen Backsplash"
