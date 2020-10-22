@@ -42,7 +42,9 @@ Primary.args = {
 
 export const Secondary = () => <Button type="secondary">Click here</Button>;
 
-export const white = () => <Button type="white">Click here</Button>;
+export const White = () => <Button type="white">Click here</Button>;
+
+export const Link = () => <Button type="link">Click here</Button>;
 
 export const sizes = () => <div className="storybook-horizontal">
     <div className="storybook-spacer">

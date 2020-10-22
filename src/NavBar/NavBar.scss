@@ -1,3 +1,27 @@
-
 @import "../styles/stylesIndex.scss";
 
+.NavBar {
+  width: 220px;
+  padding: $space_xl;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+  height: 400px;
+  // position: fixed;
+  &-logo {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid $color_offWhite;
+    padding: $space_xl 0 $space_xxl;
+    img {
+      width: 64px;
+    }
+  }
+  &-navigation {
+    padding: $space_xl 0;
+    .Link {
+      padding: $space_m 0;
+    }
+  }
+}

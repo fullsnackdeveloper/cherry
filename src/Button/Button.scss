@@ -23,6 +23,7 @@
       path {
         stroke: $color_white;
         stroke-width: 3px;
+        transition: all 0.2s linear;
       }
     }
   }
@@ -84,13 +85,22 @@
   &.secondary {
     position: relative;
     background: transparent;
-    color: $color_primary;
-    border: 1px solid $color_primary;
+    color: $color_black;
+    border: 1px solid $color_lightGrey;
     &.withIcon .Icon .Streamline_Icon path {
       stroke: $color_primary;
     }
     &.ripple .rippleContainer span {
       background-color: $color_primary !important;
+    }
+    &:hover {
+      color: $color_blueBlack;
+      .Icon .Streamline_Icon path {
+        stroke: tint($color_primary, 30%);
+      }
+    }
+    &:focus {
+      border: 1px solid $color_primary;
     }
   }
 
@@ -108,16 +118,27 @@
 
   &.link {
     position: relative;
-    background: $color_white;
-    color: $color_primary;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
-    &.withIcon .Icon {
-      &:before {
-        color: $color_primary;
-      }
+    background: transparent;
+    color: $color_black;
+    border-radius: 4px;
+    &.withIcon .Icon .Streamline_Icon path {
+      stroke: $color_primary;
     }
     &.ripple .rippleContainer span {
-      background-color: $color_primary !important;
+      background-color: transparent !important;
+    }
+    &:hover {
+      color: $color_blueBlack;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+    &.darkMode {
+      color: $color_white;
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 

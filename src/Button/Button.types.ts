@@ -11,5 +11,9 @@ export interface ButtonProps {
     icon?: string,
     className?: string,
     shadow?: boolean,
-    disabled?: boolean
+    disabled?: boolean,
+    /**
+    * only avaliable for link currently
+    */
+    darkMode?: boolean
 }
