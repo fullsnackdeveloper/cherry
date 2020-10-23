@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
-  height: 400px;
+  height: 100vh;
   // position: fixed;
   &-logo {
     width: 100%;
@@ -19,9 +19,6 @@
     }
   }
   &-navigation {
-    padding: $space_xl 0;
-    .Link {
-      padding: $space_m 0;
-    }
+    padding: 46px 0;
   }
 }

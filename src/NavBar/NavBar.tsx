@@ -8,7 +8,9 @@ const NavBar: React.FC<NavBarProps> = ({ logo, children }) => (
         <div className="NavBar-logo">
             <img src={logo} alt="logo" />
         </div>
-        {children}
+        <div className="NavBar-navigation">
+            {children}
+        </div>
     </div>
 );
 

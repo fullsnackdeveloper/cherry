@@ -62,9 +62,6 @@
     &.withIcon .Icon .Streamline_Icon {
       margin-right: $space_xs;
       margin-left: 0;
-      svg path {
-        stroke: $color_white;
-      }
     }
   }
 
@@ -113,32 +110,6 @@
     }
     &.ripple .rippleContainer span {
       background-color: $color_primary !important;
-    }
-  }
-
-  &.link {
-    position: relative;
-    background: transparent;
-    color: $color_black;
-    border-radius: 4px;
-    &.withIcon .Icon .Streamline_Icon path {
-      stroke: $color_primary;
-    }
-    &.ripple .rippleContainer span {
-      background-color: transparent !important;
-    }
-    &:hover {
-      color: $color_blueBlack;
-    }
-    &:focus {
-      box-shadow: none;
-    }
-    &.darkMode {
-      color: $color_white;
-      opacity: 0.8;
-      &:hover {
-        opacity: 1;
-      }
     }
   }
 

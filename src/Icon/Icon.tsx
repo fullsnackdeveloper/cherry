@@ -1,5 +1,7 @@
 import "./Icon.scss";
 
+import { Menu, View } from "@streamlinehq/streamline-regular/lib/interface-essential";
+
 import { Apps } from "@streamlinehq/streamline-regular/lib/programing-apps-websites";
 import { Arrows } from "@streamlinehq/streamline-regular/lib/arrows-diagrams";
 import { Books } from "@streamlinehq/streamline-regular/lib/content";
@@ -16,7 +18,6 @@ import { Select } from "@streamlinehq/streamline-regular/lib/interface-essential
 import { Smileys } from "@streamlinehq/streamline-regular/lib/messages-chat-smileys";
 import { SocialMedias } from "@streamlinehq/streamline-regular/lib/logos";
 import StreamlineIcon from "@streamlinehq/streamline-icons-react";
-import { View } from "@streamlinehq/streamline-regular/lib/interface-essential";
 
 const Icon: React.FC<IconProps> = ({ icon, size }) => {
     return <div className="Icon">
@@ -41,6 +42,7 @@ const Icon: React.FC<IconProps> = ({ icon, size }) => {
         {(icon === "facebook") && <StreamlineIcon icon={SocialMedias.SocialMediaFacebook} size={size} />}
         {(icon === "happy") && <StreamlineIcon icon={Smileys.SmileyThrilled} size={size} />}
         {(icon === "hide") && <StreamlineIcon icon={View.ViewOff} size={size} />}
+        {(icon === "more") && <StreamlineIcon icon={Menu.NavigationMenuHorizontal} size={size} />}
     </div>
 }
 

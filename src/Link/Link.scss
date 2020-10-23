@@ -1,0 +1,48 @@
+@import "../styles/stylesIndex.scss";
+
+.Link {
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+  color: $color_black;
+  border-radius: 4px;
+  transition: all 0.2s linear;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  &.withIcon .Icon {
+    margin-right: $space_m;
+    & .Streamline_Icon svg {
+      path {
+        stroke: $color_black;
+        transition: all 0.2s linear;
+      }
+    }
+  }
+  &.ripple .rippleContainer span {
+    background-color: transparent !important;
+  }
+  &:hover {
+    color: $color_blueBlack;
+    .Icon .Streamline_Icon svg path {
+      stroke: $color_blueBlack;
+    }
+  }
+  &:active {
+    box-shadow: none;
+    .Icon .Streamline_Icon svg path {
+      stroke: $color_primary;
+    }
+  }
+  &.darkMode {
+    color: $color_white;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
