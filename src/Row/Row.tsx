@@ -5,7 +5,7 @@ import React, { FC, useCallback, useEffect, useRef, useState } from "react";
 import { RowProps } from "./Row.types";
 import _ from 'lodash';
 import clsx from "clsx";
-import { useResize } from "../hooks";
+import { useResize } from "./useResize";
 
 const Row: FC<RowProps> = ({ gutter, columns, children, title, subTitle }: RowProps) => {
     const rowRef = useRef(null);
@@ -18,6 +18,7 @@ const Row: FC<RowProps> = ({ gutter, columns, children, title, subTitle }: RowPr
         !columns[sizeIndex] ?
             updateColumnsRef(_.last(columns)) :
             updateColumnsRef(columns[sizeIndex]);
+        console.log(size)
     }, [size, sizeIndex]);
 
     const renderStyles = useCallback(() => {
@@ -35,6 +36,7 @@ const Row: FC<RowProps> = ({ gutter, columns, children, title, subTitle }: RowPr
                 <h5>{subTitle}</h5>
             </div>
         }
+        {size}
         <div className="Row-container" style={renderStyles()}>
             {children}
         </div>

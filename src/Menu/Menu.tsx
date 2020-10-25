@@ -13,8 +13,8 @@ const Item: React.FC<MenuItemProps> = ({ icon, children }) => (
     </div>
 )
 
-const Menu: React.FC<MenuProps> & { Item: typeof Item } = ({ children }) => (
-    <div data-testid="Menu" className="Menu">{children}</div>
+const Menu: React.FC<MenuProps> & { Item: typeof Item } = (props) => (
+    <div data-testid="Menu" className="Menu">{props.children}{console.log(props)}</div>
 );
 
 Menu.Item = Item;

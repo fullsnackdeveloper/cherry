@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 
-import styles from './styles/variables.scss';
+import styles from '../styles/variables.scss';
 
 export const useResize = (ref) => {
-  const [size, updateSize] = useState({});
+  const [size, updateSize] = useState(null);
   const [sizeIndex, updatesizeIndex] = useState(null);
+  console.log(ref.current)
 
   const xsMax = parseInt(styles.xsMax)
   const smMax = parseInt(styles.smMax)
@@ -46,15 +47,13 @@ export const useResize = (ref) => {
   }
 
   useEffect(() => {
-    const handleResize = () => {
-      setSize();
-    }
     if (ref.current) {
       setSize();
     }
-    window.addEventListener('resize', handleResize)
+    console.log(size, sizeIndex)
+    window.addEventListener('resize', setSize)
     return () => {
-      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('resize', setSize)
     }
   }, [ref])
 

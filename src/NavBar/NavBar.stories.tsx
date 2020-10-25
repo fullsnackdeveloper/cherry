@@ -10,7 +10,7 @@ export default {
     component: NavBar
 };
 
-export const Default = () => <NavBar logo={logo}>
+export const Default = () => <NavBar logo={logo} collapsed={true}>
     <Menu>
         <Menu.Item icon="home">home</Menu.Item>
         <Menu.Item icon="discover">discover</Menu.Item>
