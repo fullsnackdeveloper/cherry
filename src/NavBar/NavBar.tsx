@@ -41,6 +41,7 @@ const NavBar: React.FC<NavBarProps> = ({ logo, mobileLogo, collapsedAt, children
         <div className={clsx("NavBar-navigation", { open: mobileMenu })}>
             {childrenWithProps(children, { collapsed, mobile: mobileMenu })}
         </div>
+        <div className={clsx("NavBar-overlay", { open: mobileMenu })}></div>
     </div>
 };
 
