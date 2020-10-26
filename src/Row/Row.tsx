@@ -1,16 +1,15 @@
 import "./Row.scss";
 
-import React, { FC, useCallback, useEffect, useRef, useState } from "react";
+import React, { FC, useCallback, useEffect, useState } from "react";
 
 import { RowProps } from "./Row.types";
 import _ from 'lodash';
 import clsx from "clsx";
-import { useResize } from "./useResize";
+import { useResize } from "../useResize";
 
 const Row: FC<RowProps> = ({ gutter, columns, children, title, subTitle }: RowProps) => {
-    const rowRef = useRef(null);
     const [columnsRef, updateColumnsRef] = useState(columns);
-    const { size, sizeIndex } = useResize(rowRef);
+    const { size, sizeIndex } = useResize();
 
     useEffect(() => {
         if (_.isNumber(columns))
@@ -18,7 +17,6 @@ const Row: FC<RowProps> = ({ gutter, columns, children, title, subTitle }: RowPr
         !columns[sizeIndex] ?
             updateColumnsRef(_.last(columns)) :
             updateColumnsRef(columns[sizeIndex]);
-        console.log(size)
     }, [size, sizeIndex]);
 
     const renderStyles = useCallback(() => {
@@ -29,14 +27,13 @@ const Row: FC<RowProps> = ({ gutter, columns, children, title, subTitle }: RowPr
         }
     }, [columnsRef])
 
-    return <div className={clsx("Row")} ref={rowRef}>
+    return <div className={clsx("Row")}>
         {title &&
             <div className="Row-heading">
                 <h4>{title}</h4>
                 <h5>{subTitle}</h5>
             </div>
         }
-        {size}
         <div className="Row-container" style={renderStyles()}>
             {children}
         </div>

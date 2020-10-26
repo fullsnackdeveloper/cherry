@@ -2,20 +2,25 @@ import { useEffect, useState } from 'react';
 
 import styles from '../styles/variables.scss';
 
-export const useResize = (ref) => {
+export const useResize = () => {
   const [size, updateSize] = useState(null);
   const [sizeIndex, updatesizeIndex] = useState(null);
-  console.log(ref.current)
 
-  const xsMax = parseInt(styles.xsMax)
-  const smMax = parseInt(styles.smMax)
-  const mdMax = parseInt(styles.mdMax)
-  const lgMax = parseInt(styles.lgMax)
-  const xlMax = parseInt(styles.xlMax)
+  // const xsMax = parseInt(styles.xsMax)
+  // const smMax = parseInt(styles.smMax)
+  // const mdMax = parseInt(styles.mdMax)
+  // const lgMax = parseInt(styles.lgMax)
+  // const xlMax = parseInt(styles.xlMax)
+
+  const xsMax = 320;
+  const smMax = 540;
+  const mdMax = 768;
+  const lgMax = 1080;
+  const xlMax = 1440;
 
   const getDimensions = () => ({
-    width: ref.current.offsetWidth,
-    height: ref.current.offsetHeight
+    width: document.body.clientWidth,
+    height: document.body.clientHeight
   });
 
   const setSize = () => {
@@ -47,15 +52,12 @@ export const useResize = (ref) => {
   }
 
   useEffect(() => {
-    if (ref.current) {
-      setSize();
-    }
-    console.log(size, sizeIndex)
+    setSize();
     window.addEventListener('resize', setSize)
     return () => {
       window.removeEventListener('resize', setSize)
     }
-  }, [ref])
+  }, [])
 
   return { size, sizeIndex }
 }

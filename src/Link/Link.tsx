@@ -10,7 +10,7 @@ const Link: React.FC<LinkProps> = ({ children, icon, iconSize, darkMode, link })
         {icon &&
             <Icon size={iconSize} icon={icon}></Icon>
         }
-        {children}
+        <span>{children}</span>
     </a>
 );
 

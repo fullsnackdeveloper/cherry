@@ -1,5 +1,35 @@
 @import "../styles/stylesIndex.scss";
 
-.MenuItem {
-  padding: 24px 24px;
+.Menu {
+  width: auto;
+  .MenuItem {
+    display: flex;
+    padding: $space_l $space_m;
+    transition: all 0.2s linear;
+    align-items: center;
+    justify-content: space-between;
+    span {
+      transition: all 0.2s linear;
+    }
+    &-chevron {
+      .Streamline_Icon path {
+        stroke: $color_lightGrey;
+      }
+    }
+  }
+  &.tablet {
+    width: 100%;
+    .MenuItem {
+      .Link > span {
+        opacity: 0;
+      }
+    }
+  }
+  &.mobile {
+    width: 100%;
+    .MenuItem {
+      padding: $space_l;
+      border-bottom: 1px solid $color_offWhite;
+    }
+  }
 }

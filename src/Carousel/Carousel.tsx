@@ -3,8 +3,8 @@ import "./Carousel.scss";
 
 import { ButtonBack, ButtonNext, CarouselProvider, Slide, Slider } from 'pure-react-carousel';
 
-import Button from '../Button/Button';
 import { CarouselProps } from "./Carousel.types";
+import Icon from '../Icon/Icon';
 import React from 'react';
 
 const Carousel: React.FC<CarouselProps> = ({ children }) => (
@@ -25,8 +25,8 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => (
                     </Slide>
                 })}
             </Slider>
-            <ButtonBack key="back" className="Carousel-button Carousel-back"><Button type="white" shadow icon="chevron-left" /></ButtonBack>
-            <ButtonNext key="next" className="Carousel-button Carousel-next"><Button type="white" shadow icon="chevron-right" /></ButtonNext>
+            <ButtonBack key="back" className="Carousel-button Carousel-back Button iconButton white shadow"><Icon icon="chevron-left" size={12} /></ButtonBack>
+            <ButtonNext key="next" className="Carousel-button Carousel-next Button iconButton white shadow"><Icon icon="chevron-right" size={12} /></ButtonNext>
         </CarouselProvider>
     </div>
 );

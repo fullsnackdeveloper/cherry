@@ -43,6 +43,7 @@ const Icon: React.FC<IconProps> = ({ icon, size }) => {
         {(icon === "happy") && <StreamlineIcon icon={Smileys.SmileyThrilled} size={size} />}
         {(icon === "hide") && <StreamlineIcon icon={View.ViewOff} size={size} />}
         {(icon === "more") && <StreamlineIcon icon={Menu.NavigationMenuHorizontal} size={size} />}
+        {(icon === "menu") && <StreamlineIcon icon={Menu.NavigationMenu} size={size} />}
     </div>
 }
 

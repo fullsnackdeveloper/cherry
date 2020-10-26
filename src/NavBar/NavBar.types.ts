@@ -1,5 +1,6 @@
 
 export interface NavBarProps {
     logo: string;
-    collapsed?: boolean;
+    collapsedAt?: number[];
+    mobileLogo?: string;
 }
