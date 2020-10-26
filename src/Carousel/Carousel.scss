@@ -2,6 +2,7 @@
 
 .Carousel {
   position: relative;
+  margin: 0 - (#{$grid_gap/2});
   &-button {
     background: transparent;
     border: none;
