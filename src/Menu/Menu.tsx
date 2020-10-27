@@ -1,19 +1,20 @@
 import "./Menu.scss";
 
 import { MenuItemProps, MenuProps } from "./Menu.types";
+import React, { useEffect, useState } from "react";
+import { childrenWithProps, responsiveState } from "../utils";
 
 import Icon from "../Icon/Icon";
 import Link from "../Link/Link";
-import React from "react";
-import { childrenWithProps } from "../utils";
 import clsx from "clsx";
+import { useResize } from "../useResize";
 
-const Item: React.FC<MenuItemProps> = ({ icon, mobile, children }) => (
+const Item: React.FC<MenuItemProps> = ({ icon, navState, children }) => (
     <div className={clsx("MenuItem")}>
         <Link icon={icon}>
             {children}
         </Link>
-        {mobile &&
+        {navState === 'mobile' &&
             <div className="MenuItem-chevron">
                 <Icon icon="chevron-right" size={10} />
             </div>
@@ -21,15 +22,17 @@ const Item: React.FC<MenuItemProps> = ({ icon, mobile, children }) => (
     </div>
 )
 
-const Menu: React.FC<MenuProps> & { Item: typeof Item } = ({ children, collapsed, mobile }) => (
-    <div data-testid="Menu" className={clsx("Menu", collapsed)}>{childrenWithProps(children, { mobile })}</div>
-);
+const Menu: React.FC<MenuProps> & { Item: typeof Item } = ({ children, collapsedAt }) => {
+    const { sizeIndex } = useResize();
+    const [navState, updateNavState] = useState(null);
+    useEffect(() => {
+        updateNavState(responsiveState(sizeIndex, collapsedAt));
+    }, [sizeIndex, collapsedAt])
+
+    return <div data-testid="Menu" className={clsx("Menu", navState)}>{childrenWithProps(children, { navState })}</div>
+};
 
 Menu.Item = Item;
-
-Menu.defaultProps = {
-    collapsed: false
-}
 
 export default Menu;
 

@@ -11,8 +11,8 @@ export default {
     component: NavBar
 };
 
-export const Default = (args) => <NavBar {...args} logo={logo} mobileLogo={mobileLogo}>
-    <Menu collapsed={args.collapsed}>
+export const Default = (args) => <NavBar {...args} logo={logo} mobileLogo={mobileLogo} collapsedAt={[2, 3]}>
+    <Menu>
         <Menu.Item icon="home">home</Menu.Item>
         <Menu.Item icon="discover">discover</Menu.Item>
         <Menu.Item icon="categories">categories</Menu.Item>

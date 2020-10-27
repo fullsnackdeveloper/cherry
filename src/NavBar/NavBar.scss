@@ -11,6 +11,8 @@
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   background: $color_white;
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 1000;
   &-head {
     width: 100%;

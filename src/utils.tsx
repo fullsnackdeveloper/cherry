@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export const childrenWithProps = (children, props) => {
   return React.Children.map(children, child => {
@@ -7,4 +7,15 @@ export const childrenWithProps = (children, props) => {
     }
     return child;
   });
+}
+
+export const responsiveState = (sizeIndex, collapsedAt) => {
+  let navState = 'desktop';
+  if (!collapsedAt)
+    return navState;
+  if (sizeIndex <= collapsedAt[1])
+    navState = 'tablet'
+  if (sizeIndex <= collapsedAt[0])
+    navState = 'mobile'
+  return navState;
 }

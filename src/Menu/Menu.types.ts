@@ -1,13 +1,12 @@
 import { ReactNode } from 'react';
 
 export interface MenuProps {
-    collapsed?: boolean;
+    collapsedAt?: number[];
     children: ReactNode;
-    mobile?: boolean;
 }
 
 export interface MenuItemProps {
     children: ReactNode,
     icon: string,
-    mobile?: boolean
+    navState?: string
 }
