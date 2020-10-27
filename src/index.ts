@@ -9,6 +9,7 @@ import Image from "./Image/Image";
 import Link from "./Link/Link";
 import Menu from "./Menu/Menu";
 import NavBar from "./NavBar/NavBar";
+import PageContainer from "./PageContainer/PageContainer";
 import Row from "./Row/Row";
 
-export { Button, Card, ActionCard, Header, Icon, Row, Col, Carousel, Link, Menu, NavBar, Image };
+export { Button, Card, ActionCard, Header, Icon, Row, Col, Carousel, Link, Menu, NavBar, Image, PageContainer };
