@@ -38,8 +38,8 @@ const Image: React.FC<ImageProps> = ({ image, hotspots }) => {
         </div>
         <picture>
             <img src={image.url} alt={image.alt} loading="lazy" />
-            <caption>{image.source}</caption>
         </picture>
+        <caption>{image.source}</caption>
     </div>
 };
 
