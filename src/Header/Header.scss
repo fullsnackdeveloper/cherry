@@ -18,7 +18,8 @@
   @include sm {
     padding-top: 202px;
     border-radius: 0;
-    margin: 0 -$grid-gap;
+    margin-left: -$grid-gap;
+    margin-right: -$grid-gap;
   }
   &-categories {
     display: flex;

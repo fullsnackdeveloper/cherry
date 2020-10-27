@@ -13,12 +13,12 @@ const Col: FC<ColProps> = ({ span, children }: ColProps) => {
     useEffect(() => {
         if (_.isNumber(span))
             return;
-        !span[sizeIndex] ?
+        (span[sizeIndex] ?? false) ?
             updateColumnsRef(_.last(span)) :
             updateColumnsRef(span[sizeIndex]);
     }, [size, sizeIndex]);
 
-    return <div className="Col" style={{ gridColumn: `span ${colRef}` }}>
+    return <div className="Col" style={{ gridColumn: `span ${colRef}`, display: colRef !== 0 ? 'block' : 'none' }}>
         {children}
     </div>
 };
