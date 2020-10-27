@@ -2,19 +2,25 @@
 
 .Image {
   position: relative;
-  overflow: hidden;
+  display: inline-flex;
+  flex-direction: column;
+  margin-bottom: $grid-gap;
   picture {
     width: 100%;
     position: relative;
     img {
+      max-height: 600px;
       border-radius: $border-radius;
-      width: 100%;
+      max-width: 100%;
     }
   }
-  caption {
+  &-container {
+    position: relative;
+  }
+  &-source {
     @include source;
-    display: table;
-    float: right;
+    width: 100%;
+    text-align: right;
   }
   .Hotspot {
     position: absolute;

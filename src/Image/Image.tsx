@@ -33,13 +33,15 @@ const Image: React.FC<ImageProps> = ({ image, hotspots }) => {
     }
 
     return <div data-testid="Image" className="Image">
-        <div className="Image-Hotspots">
-            {hotspots && renderHotspots()}
+        <div className="Image-container">
+            <div className="Image-Hotspots">
+                {hotspots && renderHotspots()}
+            </div>
+            <picture>
+                <img src={image.url} alt={image.alt} loading="lazy" />
+            </picture>
         </div>
-        <picture>
-            <img src={image.url} alt={image.alt} loading="lazy" />
-        </picture>
-        <caption>{image.source}</caption>
+        <div className="Image-source">{image.source}</div>
     </div>
 };
 

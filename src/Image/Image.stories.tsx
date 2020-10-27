@@ -7,7 +7,7 @@ export default {
 };
 
 const image = {
-    url: 'https://images.unsplash.com/photo-1506806732259-39c2d0268443?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80',
+    url: 'https://images.unsplash.com/photo-1474128670149-7082a8d370ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
     alt: 'chute',
     source: 'Paterson Mongumry',
     sourceUrl: 'https://someone.com',
