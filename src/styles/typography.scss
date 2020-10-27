@@ -50,6 +50,17 @@ $font_serif: "PT Serif", serif;
   }
 }
 
+@mixin paragraph {
+  font-family: $font_serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  @include md {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
 @mixin cardTitle {
   @include font-defaults;
   font-size: 16px;
@@ -70,6 +81,9 @@ $font_serif: "PT Serif", serif;
   line-height: 18px;
   letter-spacing: 1px;
   text-decoration: none;
+  @include sm {
+    font-size: 12px;
+  }
 }
 
 @mixin meta {
@@ -77,8 +91,13 @@ $font_serif: "PT Serif", serif;
   font-size: 10px;
   font-weight: 500;
   line-height: 18px;
-  @include md {
-    font-size: 6px;
-    line-height: 14px;
-  }
+}
+
+@mixin source {
+  font-family: $font_serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  font-style: italic;
+  color: $color_grey;
 }

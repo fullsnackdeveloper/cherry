@@ -3,6 +3,7 @@ $color_primary: #e18c5b;
 $color_white: #fcfcfc;
 $color_offWhite: #e7eced;
 $color_lightGrey: #c2c5d6;
+$color_grey: #a9aec7;
 $color_black: #2d3143;
 $color_blueBlack: #9498b3;
 
@@ -20,6 +21,7 @@ $grid_gap: $space_l;
 
 // GENERAL
 $border_radius: 8px;
+$transparent_background: rgba(39, 38, 44, 0.8);
 @mixin shadow {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }

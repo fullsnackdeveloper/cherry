@@ -27,7 +27,7 @@ const Row: FC<RowProps> = ({ gutter, columns, children, title, subTitle }: RowPr
         }
     }, [columnsRef])
 
-    return <div className={clsx("Row")}>
+    return <section className={clsx("Row")}>
         {title &&
             <div className="Row-heading">
                 <h4>{title}</h4>
@@ -37,7 +37,7 @@ const Row: FC<RowProps> = ({ gutter, columns, children, title, subTitle }: RowPr
         <div className="Row-container" style={renderStyles()}>
             {children}
         </div>
-    </div>
+    </section>
 };
 
 Row.defaultProps = {

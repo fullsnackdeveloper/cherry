@@ -1,7 +1,7 @@
 module.exports = (componentName) => ({
   content: `
 export interface ${componentName}Props {
-    foo: string;
+    children: string;
 }
 `,
   extension: `.types.ts`
