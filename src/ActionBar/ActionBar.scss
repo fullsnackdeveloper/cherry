@@ -1,0 +1,13 @@
+@import "../styles/stylesIndex.scss";
+
+.ActionBar {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  & > * {
+    margin-bottom: $space_m;
+  }
+  .Avatar {
+    margin-bottom: 8px;
+  }
+}

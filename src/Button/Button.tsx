@@ -20,13 +20,13 @@ const handleMouseDown = (e: any) => {
     }, 10000)
 }
 
-const Button: FC<ButtonProps> = ({ size, type, icon, children, onClick, className, shadow, disabled, darkMode, ...props }: ButtonProps) => (
-    <button className={clsx("Button", className, type, "ripple", size, { withIcon: icon, iconButton: icon && !children, shadow, darkMode })} disabled={disabled} onClick={onClick} {...props}>
+const Button: FC<ButtonProps> = ({ size, type, icon, children, onClick, className, shadow, disabled, iconSize, ...props }: ButtonProps) => (
+    <button className={clsx("Button", className, type, "ripple", size, { withIcon: icon, iconButton: icon && !children, shadow })} disabled={disabled} onClick={onClick} {...props}>
         <div className="rippleContainer" onMouseDown={handleMouseDown}></div>
         {icon &&
-            <Icon size={12} icon={icon}></Icon>
+            <Icon size={iconSize || (size === 'large' && 14) || (size === 'small' && 8) || 12} icon={icon}></Icon>
         }
-        {children &&
+        {children && (type !== 'icon') &&
             <div>{children}</div>
         }
     </button>
@@ -36,8 +36,7 @@ Button.defaultProps = {
     type: 'primary',
     size: 'regular',
     disabled: false,
-    shadow: false,
-    darkMode: false
+    shadow: false
 }
 
 export default Button;

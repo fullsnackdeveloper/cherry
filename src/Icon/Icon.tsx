@@ -15,9 +15,11 @@ import { LoveIt } from "@streamlinehq/streamline-regular/lib/social-medias-rewar
 import { PowerTools } from "@streamlinehq/streamline-regular/lib/tools-constructions";
 import React from "react";
 import { Select } from "@streamlinehq/streamline-regular/lib/interface-essential";
+import { SendEmail } from "@streamlinehq/streamline-regular/lib/emails";
 import { Smileys } from "@streamlinehq/streamline-regular/lib/messages-chat-smileys";
 import { SocialMedias } from "@streamlinehq/streamline-regular/lib/logos";
 import StreamlineIcon from "@streamlinehq/streamline-icons-react";
+import { TagsBookmarks } from "@streamlinehq/streamline-regular/lib/interface-essential";
 
 const Icon: React.FC<IconProps> = ({ icon, size }) => {
     return <div className="Icon">
@@ -45,6 +47,8 @@ const Icon: React.FC<IconProps> = ({ icon, size }) => {
         {(icon === "more") && <StreamlineIcon icon={Menu.NavigationMenuHorizontal} size={size} />}
         {(icon === "menu") && <StreamlineIcon icon={Menu.NavigationMenu} size={size} />}
         {(icon === "spot") && <StreamlineIcon icon={Select.CursorDoubleClick2} size={size} />}
+        {(icon === "tags") && <StreamlineIcon icon={TagsBookmarks.TagsDouble1} size={size} />}
+        {(icon === "send") && <StreamlineIcon icon={SendEmail.SendEmail} size={size} />}
     </div>
 }
 

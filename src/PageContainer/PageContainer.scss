@@ -11,8 +11,8 @@
   &.mobile {
     margin-top: 69px;
     margin-left: 0;
-  }
-  @include sm {
-    margin-top: calc(69px - #{$grid-gap});
+    @include sm {
+      margin-top: calc(69px - #{$grid-gap});
+    }
   }
 }

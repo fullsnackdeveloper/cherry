@@ -30,6 +30,7 @@ export const icons = [
   'pottery',
   'plus',
   'refresh',
+  'send',
   'scared',
   'scream',
   'settings',

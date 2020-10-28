@@ -1,7 +1,13 @@
 import Block from "./Block";
 import Image from '../Image/Image';
 import React from "react";
-import { image as imageData } from "../Image/Image.stories";
+
+const image = {
+    url: 'https://images.unsplash.com/photo-1474128670149-7082a8d370ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+    alt: 'chute',
+    source: 'Paterson Mongumry',
+    sourceUrl: 'https://someone.com',
+}
 
 export default {
     title: "Block",
@@ -12,7 +18,7 @@ export const Paragraph = () => <Block html="<p>This is some paragraph text</p>" 
 export const Heading2 = () => <Block html="<h2>This is some heading text</h2>" />;
 export const Heading3 = () => <Block html="<h3>This is some heading 3 text</h3>" />;
 export const ImageBlock = () => <Block>
-    <Image image={imageData} />
+    <Image image={image} />
 </Block>;
 
 export const MultipleBlocks = () => <div>

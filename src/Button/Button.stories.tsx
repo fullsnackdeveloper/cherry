@@ -28,6 +28,11 @@ export default {
                 type: 'select',
                 options: [null, 'drill', 'chevron-left', 'close']
             }
+        },
+        iconSize: {
+            control: {
+                type: 'number'
+            }
         }
     }
 };
@@ -44,7 +49,7 @@ export const Secondary = () => <Button type="secondary">Click here</Button>;
 
 export const White = () => <Button type="white">Click here</Button>;
 
-export const Link = () => <Button type="link">Click here</Button>;
+export const Icon = () => <Button type="icon" icon="tags" iconSize={24}></Button>;
 
 export const sizes = () => <div className="storybook-horizontal">
     <div className="storybook-spacer">

@@ -5,5 +5,6 @@ export interface CardProps {
     image?: string,
     type?: 'post' | 'category',
     size?: 'small' | 'large' | 'list',
-    icon?: string
+    icon?: string,
+    author?: string
 }

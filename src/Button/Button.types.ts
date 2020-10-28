@@ -7,13 +7,10 @@ export interface ButtonProps {
     children?: ReactNode | string;
     onClick?: () => void;
     size?: 'small' | 'regular' | 'large';
-    type?: 'primary' | 'secondary' | 'white' | 'link';
+    type?: 'primary' | 'secondary' | 'white' | 'icon';
     icon?: string,
     className?: string,
     shadow?: boolean,
     disabled?: boolean,
-    /**
-    * only avaliable for link currently
-    */
-    darkMode?: boolean
+    iconSize?: number,
 }
