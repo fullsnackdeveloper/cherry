@@ -1,4 +1,5 @@
 import ActionCard from "./ActionCard/ActionCard";
+import Block from "./Block/Block";
 import Button from "./Button/Button";
 import Card from "./Card/Card";
 import Carousel from "./Carousel/Carousel";
@@ -12,4 +13,4 @@ import NavBar from "./NavBar/NavBar";
 import PageContainer from "./PageContainer/PageContainer";
 import Row from "./Row/Row";
 
-export { Button, Card, ActionCard, Header, Icon, Row, Col, Carousel, Link, Menu, NavBar, Image, PageContainer };
+export { Button, Card, ActionCard, Header, Icon, Row, Col, Carousel, Link, Menu, NavBar, Image, PageContainer, Block };

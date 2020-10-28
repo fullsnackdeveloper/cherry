@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/14.7.0/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js add Image
+  /usr/local/Cellar/node/14.7.0/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js add Block
 
 PATH: 
   /Users/nicholasolsen/Downloads/google-cloud-sdk/bin:/Users/nicholasolsen/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/nicholasolsen/Downloads/google-cloud-sdk/bin:/Users/nicholasolsen/bin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/Image: Not found
+  Error: https://registry.yarnpkg.com/Block: Not found
       at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:66987:18)
       at Request.self.callback (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:140748:22)
       at Request.emit (events.js:314:20)
@@ -29,7 +29,7 @@ Trace:
 npm manifest: 
   {
     "name": "@maraschino/cherry",
-    "version": "0.0.1-beta0.0.39",
+    "version": "0.0.1-beta0.0.47",
     "main": "build/index.js",
     "module": "build/index.esm.js",
     "files": [

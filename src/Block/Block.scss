@@ -1,0 +1,30 @@
+@import "../styles/stylesIndex.scss";
+
+.Block {
+  margin-bottom: $grid-gap / 2;
+  h2 {
+    @include bodyHeading;
+  }
+  h3 {
+    @include paragraphHeading;
+  }
+  h2,
+  h3,
+  h4 {
+    padding-top: $grid-gap / 2;
+    color: tint($color_black, 3%);
+  }
+  p {
+    @include paragraph;
+    color: tint($color_black, 8%);
+  }
+  a {
+    @include paragraph;
+    color: $color_primary;
+  }
+  i {
+    @include paragraph;
+    font-style: italic;
+    color: tint($color_black, 20%);
+  }
+}
