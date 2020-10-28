@@ -1,4 +1,6 @@
+import ActionBar from "./ActionBar/ActionBar";
 import ActionCard from "./ActionCard/ActionCard";
+import Avatar from "./Avatar/Avatar";
 import Block from "./Block/Block";
 import Button from "./Button/Button";
 import Card from "./Card/Card";
@@ -12,5 +14,6 @@ import Menu from "./Menu/Menu";
 import NavBar from "./NavBar/NavBar";
 import PageContainer from "./PageContainer/PageContainer";
 import Row from "./Row/Row";
+import ToolTip from "./ToolTip/ToolTip";
 
-export { Button, Card, ActionCard, Header, Icon, Row, Col, Carousel, Link, Menu, NavBar, Image, PageContainer, Block };
+export { Button, Card, ActionCard, Header, Icon, Row, Col, Carousel, Link, Menu, NavBar, Image, PageContainer, Block, ToolTip, ActionBar, Avatar };
