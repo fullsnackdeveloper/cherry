@@ -1,6 +1,6 @@
 {
   "name": "@maraschino/cherry",
-  "version": "0.0.1-beta0.0.52",
+  "version": "0.0.1-beta0.0.53",
   "main": "build/index.js",
   "module": "build/index.esm.js",
   "files": [
