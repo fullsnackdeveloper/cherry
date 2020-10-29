@@ -1,4 +1,6 @@
+import { ReactNode } from 'react';
 
 export interface ActionBarProps {
-    children: string;
+    authorContent: ReactNode | ReactNode[];
+    collapsedAt?: number[];
 }

@@ -13,7 +13,8 @@ import Link from "./Link/Link";
 import Menu from "./Menu/Menu";
 import NavBar from "./NavBar/NavBar";
 import PageContainer from "./PageContainer/PageContainer";
+import Popup from "./Popup/Popup";
 import Row from "./Row/Row";
 import ToolTip from "./ToolTip/ToolTip";
 
-export { Button, Card, ActionCard, Header, Icon, Row, Col, Carousel, Link, Menu, NavBar, Image, PageContainer, Block, ToolTip, ActionBar, Avatar };
+export { Button, Card, ActionCard, Header, Icon, Row, Col, Carousel, Link, Menu, NavBar, Image, PageContainer, Block, ToolTip, ActionBar, Avatar, Popup };

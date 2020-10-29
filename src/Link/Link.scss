@@ -10,6 +10,7 @@
   background: transparent;
   color: $color_black;
   border-radius: 4px;
+  border: none;
   transition: all 0.2s linear;
   display: inline-flex;
   align-items: center;
@@ -32,8 +33,10 @@
       stroke: $color_blueBlack;
     }
   }
+  &:focus,
   &:active {
     box-shadow: none;
+    outline: none;
     .Icon .Streamline_Icon svg path {
       stroke: $color_primary;
     }

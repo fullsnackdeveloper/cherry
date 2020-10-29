@@ -22,6 +22,7 @@ export const icons = [
   'learn',
   'like',
   'linkedin',
+  'link',
   'list',
   'menu',
   'more',

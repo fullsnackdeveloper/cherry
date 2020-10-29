@@ -12,6 +12,6 @@ export const Default = () => <ToolTip message="Author">
     <Avatar initials="NO" />
 </ToolTip>;
 
-export const Icon = () => <ToolTip message="This is a drill">
+export const ToolTipAnything = () => <ToolTip message="This is a drill">
     <Button type="icon" icon="drill" iconSize={30} />
 </ToolTip>;

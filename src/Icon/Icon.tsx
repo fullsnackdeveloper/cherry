@@ -11,7 +11,9 @@ import { Glasses } from "@streamlinehq/streamline-regular/lib/clothes-footwear-a
 import { Home } from "@streamlinehq/streamline-regular/lib/interface-essential";
 import { IconProps } from "./Icon.types";
 import { Layouts } from "@streamlinehq/streamline-regular/lib/interface-essential";
+import { LinkUnlink } from "@streamlinehq/streamline-regular/lib/interface-essential";
 import { LoveIt } from "@streamlinehq/streamline-regular/lib/social-medias-rewards-rating";
+import { PhotosImages } from "@streamlinehq/streamline-regular/lib/logos";
 import { PowerTools } from "@streamlinehq/streamline-regular/lib/tools-constructions";
 import React from "react";
 import { Select } from "@streamlinehq/streamline-regular/lib/interface-essential";
@@ -42,13 +44,16 @@ const Icon: React.FC<IconProps> = ({ icon, size }) => {
         {(icon === "pointer") && <StreamlineIcon icon={Select.CursorHand1} size={size} />}
         {(icon === "email") && <StreamlineIcon icon={Envelopes.Envelope} size={size} />}
         {(icon === "facebook") && <StreamlineIcon icon={SocialMedias.SocialMediaFacebook} size={size} />}
+        {(icon === "twitter") && <StreamlineIcon icon={SocialMedias.SocialMediaTwitter} size={size} />}
+        {(icon === "pinterest") && <StreamlineIcon icon={PhotosImages.SocialPinterest} size={size} />}
         {(icon === "happy") && <StreamlineIcon icon={Smileys.SmileyThrilled} size={size} />}
         {(icon === "hide") && <StreamlineIcon icon={View.ViewOff} size={size} />}
         {(icon === "more") && <StreamlineIcon icon={Menu.NavigationMenuHorizontal} size={size} />}
         {(icon === "menu") && <StreamlineIcon icon={Menu.NavigationMenu} size={size} />}
         {(icon === "spot") && <StreamlineIcon icon={Select.CursorDoubleClick2} size={size} />}
-        {(icon === "tags") && <StreamlineIcon icon={TagsBookmarks.TagsDouble1} size={size} />}
+        {(icon === "tags") && <div className="flip"><StreamlineIcon icon={TagsBookmarks.TagsDouble1} size={size} /></div>}
         {(icon === "send") && <StreamlineIcon icon={SendEmail.SendEmail} size={size} />}
+        {(icon === "link") && <StreamlineIcon icon={LinkUnlink.Hyperlink2} size={size} />}
     </div>
 }
 

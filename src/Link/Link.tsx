@@ -6,12 +6,12 @@ import React from "react";
 import clsx from "clsx";
 
 const Link: React.FC<LinkProps> = ({ children, icon, iconSize, darkMode, link }) => (
-    <a data-testid="Link" className={clsx("Link", { darkMode, withIcon: icon })} href={link}>
+    <button data-testid="Link" className={clsx("Link", { darkMode, withIcon: icon })}>
         {icon &&
             <Icon size={iconSize} icon={icon}></Icon>
         }
         <span>{children}</span>
-    </a>
+    </button>
 );
 
 Link.defaultProps = {
