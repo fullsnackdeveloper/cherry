@@ -8,7 +8,7 @@ import { NavBarProps } from "./NavBar.types";
 import clsx from "clsx";
 import { useResize } from '../useResize';
 
-const NavBar: React.FC<NavBarProps> = ({ logo, mobileLogo, collapsedAt, children }) => {
+const NavBar: React.FC<NavBarProps> = ({ hide, logo, mobileLogo, collapsedAt, children }) => {
     const { sizeIndex } = useResize();
     const [mobileMenu, updateMobileMenu] = useState(false);
     const [navState, updateNavState] = useState(null);
@@ -21,7 +21,7 @@ const NavBar: React.FC<NavBarProps> = ({ logo, mobileLogo, collapsedAt, children
         updateMobileMenu(!mobileMenu)
     }
 
-    return <div data-testid="NavBar" className={clsx("NavBar", navState)}>
+    return <div data-testid="NavBar" className={clsx("NavBar", navState, { hide })}>
         <div className="NavBar-head">
             <div className="NavBar-logo">
                 <img src={navState === 'mobile' ? mobileLogo : logo} alt="logo" />
