@@ -10,6 +10,7 @@
   "description": "Building blocks for greater things to come",
   "scripts": {
     "build": "rollup -c",
+    "dev": "rollup -c -w",
     "test": "jest",
     "test:watch": "jest --watch",
     "storybook": "start-storybook -s ./public -p 9001",
@@ -52,13 +53,13 @@
     "sass-loader": "^8.0.0",
     "storybook-dark-mode": "^1.0.3",
     "ts-jest": "^24.2.0",
-    "typescript": "^3.7.2"
-  },
-  "dependencies": {
+    "typescript": "^3.7.2",
     "@rollup/plugin-babel": "^5.2.1",
     "@storybook/addon-backgrounds": "^6.0.27",
     "@storybook/addon-docs": "^6.0.27",
-    "@storybook/addon-viewport": "^6.0.27",
+    "@storybook/addon-viewport": "^6.0.27"
+  },
+  "dependencies": {
     "@streamlinehq/streamline-icons-react": "^0.6.1",
     "@streamlinehq/streamline-regular": "^0.6.1",
     "clsx": "^1.1.1",

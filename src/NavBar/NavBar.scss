@@ -65,28 +65,6 @@
     &.hide {
       top: -100%;
     }
-    .NavBar-head {
-      width: calc(100% - #{$space_s * 2});
-      top: 0;
-      padding: $space_s;
-      flex-direction: row;
-      z-index: 200;
-      position: absolute;
-      background: $color_white;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
-    }
-    .NavBar-menuIcon {
-      padding: $space_m;
-      cursor: pointer;
-    }
-    .NavBar-logo {
-      padding: $space_s $space_s $space_xs $space_s;
-      border-bottom: none;
-      text-align: left;
-      img {
-        width: 100px;
-      }
-    }
     .NavBar-navigation {
       position: absolute;
       z-index: 100;
@@ -105,5 +83,28 @@
 
   &-overlay {
     @include overlay;
+  }
+}
+
+.NavBar-head.mobile {
+  width: calc(100% - #{$space_s * 2});
+  top: 0;
+  padding: $space_s;
+  flex-direction: row;
+  z-index: 10000;
+  position: absolute;
+  background: $color_white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+}
+.NavBar-menuIcon {
+  padding: $space_m;
+  cursor: pointer;
+}
+.NavBar-logo {
+  padding: $space_s $space_s $space_xs $space_s;
+  border-bottom: none;
+  text-align: left;
+  img {
+    width: 100px;
   }
 }
