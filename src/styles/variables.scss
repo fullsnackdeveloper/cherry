@@ -1,3 +1,5 @@
+@import "./mixins.scss";
+
 // THEME
 $color_primary: #e18c5b;
 $color_white: #fcfcfc;
@@ -29,10 +31,27 @@ $grid_gap: $space_l;
 // }
 
 // GENERAL
+@include fadesAnimations;
 $border_radius: 8px;
 $transparent_background: rgba(39, 38, 44, 0.8);
 @mixin shadow {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+@mixin overlay {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  animation: fadeOut 0.2s forwards;
+  &.open {
+    animation: fadeIn 0.2s forwards;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.overlay {
+  @include overlay;
 }
 
 // BREAKPOINTS

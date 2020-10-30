@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 
 import styles from '../styles/variables.scss';
 
-export const useResize = () => {
+export const useResize = (ref?: any) => {
   const [size, updateSize] = useState(null);
   const [sizeIndex, updatesizeIndex] = useState(null);
+  const [refDimensions, updateRefDimensions] = useState(null);
 
   // const xsMax = parseInt(styles.xsMax)
   // const smMax = parseInt(styles.smMax)
@@ -18,13 +19,20 @@ export const useResize = () => {
   const lgMax = 1080;
   const xlMax = 1440;
 
-  const getDimensions = () => ({
-    width: document.body.clientWidth,
-    height: document.body.clientHeight
-  });
+  const getDimensions = (ref?: any) => {
+    if (ref) {
+      return { ...ref.current.getBoundingClientRect().toJSON() }
+    }
+    return {
+      width: document.body.clientWidth,
+      height: document.body.clientHeight
+    }
+  };
 
   const setSize = () => {
     let dimensions = getDimensions();
+    let refDimensions = getDimensions(ref);
+    updateRefDimensions(refDimensions);
     if (dimensions.width > xlMax) {
       updateSize('xxl');
       updatesizeIndex(5);
@@ -59,5 +67,5 @@ export const useResize = () => {
     }
   }, [])
 
-  return { size, sizeIndex }
+  return { size, sizeIndex, refDimensions }
 }

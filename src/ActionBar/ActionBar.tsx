@@ -5,8 +5,10 @@ import React, { useEffect, useState } from "react";
 import { ActionBarProps } from "./ActionBar.types";
 import Avatar from "../Avatar/Avatar";
 import Button from "../Button/Button";
+import ConditionalWrapper from "../ConditionalWrapper";
 import Link from "../Link/Link";
 import Popup from "../Popup/Popup";
+import ToAppLevel from "../ToAppLevel";
 import ToolTip from "../ToolTip/ToolTip";
 import clsx from "clsx";
 import { responsiveState } from "../utils";
@@ -22,38 +24,42 @@ const ActionBar: React.FC<ActionBarProps> = ({ collapsedAt, authorContent }) => 
         updateSizeState(sizing);
     }, [sizeIndex, collapsedAt])
 
-    return <div data-testid="ActionBar" className={clsx("ActionBar", sizeState)}>
-        <Popup content={authorContent}>
-            <ToolTip message="Author" disabled={sizeState}>
-                <Avatar initials="NO" size={sizeState ? sizeState === 'mobile' ? 'tiny' : 'small' : 'regular'} />
-                {sizeState && <Link>Author</Link>}
-            </ToolTip>
-        </Popup>
-        <Popup content={authorContent}>
-            <ToolTip message="Products" disabled={sizeState}>
-                {sizeState ?
-                    sizeState === 'mobile' ? <Link icon="tags" iconSize={18}>Products</Link> : <Link icon="tags" iconSize={24}>Products</Link> :
-                    <Button icon="tags" type="icon" iconSize={26} />
-                }
-            </ToolTip>
-        </Popup>
-        <Popup
-            content={<div className="ActionBar-share">
-                <Button type="icon" icon="twitter" iconSize={18} />
-                <Button type="icon" icon="facebook" iconSize={18} />
-                <Button type="icon" icon="pinterest" iconSize={18} />
-                <Button type="icon" icon="email" iconSize={18} />
-                <Button type="icon" icon="link" iconSize={18} />
-            </div>}
-            width={160}
-        >
-            <ToolTip message="Share" disabled={sizeState}>
-                {sizeState ?
-                    sizeState === 'mobile' ? <Link icon="send" iconSize={18}>Share</Link> : <Link icon="send" iconSize={24}>Share</Link> :
-                    <Button icon="send" type="icon" iconSize={24} />}
-            </ToolTip>
-        </Popup>
-    </div>
+    return <ConditionalWrapper conditional={sizeState === 'mobile'} wrapper={children => <ToAppLevel>{children}</ToAppLevel>}>
+        <div data-testid="ActionBar" className={clsx("ActionBar", sizeState)}>
+            <Popup content={authorContent} position={sizeState ? 'b' : 'lt'} className={`${sizeState} ActionBar-Popup`}>
+                <ToolTip message="Author" disabled={sizeState}>
+                    <Avatar initials="NO" size={sizeState ? sizeState === 'mobile' ? 'tiny' : 'small' : 'regular'} />
+                    {sizeState && <Link>Author</Link>}
+                </ToolTip>
+            </Popup>
+            <Popup content={authorContent} position={sizeState ? 'b' : 'lt'} className={`${sizeState} ActionBar-Popup`}>
+                <ToolTip message="Products" disabled={sizeState}>
+                    {sizeState ?
+                        sizeState === 'mobile' ? <Link icon="tags" iconSize={18}>Products</Link> : <Link icon="tags" iconSize={24}>Products</Link> :
+                        <Button icon="tags" type="icon" iconSize={26} />
+                    }
+                </ToolTip>
+            </Popup>
+            <Popup
+                className={`${sizeState} ActionBar-Popup`}
+                position={sizeState ? 'b' : 'lt'}
+                content={<div className="ActionBar-share">
+                    <Button type="icon" icon="twitter" iconSize={18} />
+                    <Button type="icon" icon="facebook" iconSize={18} />
+                    <Button type="icon" icon="pinterest" iconSize={18} />
+                    <Button type="icon" icon="email" iconSize={18} />
+                    <Button type="icon" icon="link" iconSize={18} />
+                </div>}
+                width={160}
+            >
+                <ToolTip message="Share" disabled={sizeState}>
+                    {sizeState ?
+                        sizeState === 'mobile' ? <Link icon="send" iconSize={18}>Share</Link> : <Link icon="send" iconSize={24}>Share</Link> :
+                        <Button icon="send" type="icon" iconSize={24} />}
+                </ToolTip>
+            </Popup>
+        </div>
+    </ConditionalWrapper>
 };
 
 ActionBar.defaultProps = {

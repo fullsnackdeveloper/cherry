@@ -6,6 +6,7 @@ import Button from "./Button/Button";
 import Card from "./Card/Card";
 import Carousel from "./Carousel/Carousel";
 import Col from "./Col/Col";
+import Drawer from "./Drawer/Drawer";
 import Header from "./Header/Header";
 import Icon from "./Icon/Icon";
 import Image from "./Image/Image";
@@ -17,4 +18,4 @@ import Popup from "./Popup/Popup";
 import Row from "./Row/Row";
 import ToolTip from "./ToolTip/ToolTip";
 
-export { Button, Card, ActionCard, Header, Icon, Row, Col, Carousel, Link, Menu, NavBar, Image, PageContainer, Block, ToolTip, ActionBar, Avatar, Popup };
+export { Button, Card, ActionCard, Header, Icon, Row, Col, Carousel, Link, Menu, NavBar, Image, PageContainer, Block, ToolTip, ActionBar, Avatar, Popup, Drawer };

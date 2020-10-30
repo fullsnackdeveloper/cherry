@@ -104,15 +104,6 @@
   }
 
   &-overlay {
-    transition: all 0.2s linear;
-    &.open {
-      width: 100vw;
-      height: 100vh;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: rgba(0, 0, 0, 0.3);
-      z-index: -1;
-    }
+    @include overlay;
   }
 }
