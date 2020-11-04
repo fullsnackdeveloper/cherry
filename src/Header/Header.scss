@@ -11,14 +11,20 @@
   background-size: cover;
   background-position: center center;
   position: relative;
-  margin-bottom: $grid-gap;
+  margin-bottom: calc(#{$grid-gap}* 2);
   @include lg {
     padding-top: 40%;
+    min-height: 120px;
+    margin-bottom: 0;
   }
   @include md {
     padding-top: 55%;
+    min-height: 150px;
+    margin-bottom: $grid-gap;
   }
   @include sm {
+    min-height: 650px;
+    align-items: flex-end;
     padding-top: 0;
     height: auto;
     border-radius: 0;
@@ -67,6 +73,7 @@
     @include md {
       padding: 30px;
       width: calc(100% - 60px);
+      justify-content: flex-end;
     }
     @include sm {
       position: relative;

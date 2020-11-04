@@ -17,6 +17,7 @@ import { useResize } from "../useResize";
 const ActionBar: React.FC<ActionBarProps> = ({ collapsedAt, authorContent }) => {
     const { sizeIndex } = useResize();
     const [sizeState, updateSizeState] = useState(null);
+    const [opened, updateOpened] = useState(false);
     useEffect(() => {
         const sizing = responsiveState(sizeIndex, collapsedAt);
         if (sizing === 'desktop')
@@ -25,14 +26,15 @@ const ActionBar: React.FC<ActionBarProps> = ({ collapsedAt, authorContent }) => 
     }, [sizeIndex, collapsedAt])
 
     return <ConditionalWrapper conditional={sizeState === 'mobile'} wrapper={children => <ToAppLevel>{children}</ToAppLevel>}>
+        <div className={clsx("overlay", { open: opened })}></div>
         <div data-testid="ActionBar" className={clsx("ActionBar", sizeState)}>
-            <Popup content={authorContent} position={sizeState ? 'b' : 'lt'} className={`${sizeState} ActionBar-Popup`}>
+            <Popup content={authorContent} position={sizeState ? 'b' : 'lt'} className={`${sizeState} ActionBar-Popup`} opened={updateOpened}>
                 <ToolTip message="Author" disabled={sizeState}>
                     <Avatar initials="NO" size={sizeState ? sizeState === 'mobile' ? 'tiny' : 'small' : 'regular'} />
                     {sizeState && <Link>Author</Link>}
                 </ToolTip>
             </Popup>
-            <Popup content={authorContent} position={sizeState ? 'b' : 'lt'} className={`${sizeState} ActionBar-Popup`}>
+            <Popup content={authorContent} position={sizeState ? 'b' : 'lt'} className={`${sizeState} ActionBar-Popup`} opened={updateOpened}>
                 <ToolTip message="Products" disabled={sizeState}>
                     {sizeState ?
                         sizeState === 'mobile' ? <Link icon="tags" iconSize={18}>Products</Link> : <Link icon="tags" iconSize={24}>Products</Link> :
@@ -41,8 +43,9 @@ const ActionBar: React.FC<ActionBarProps> = ({ collapsedAt, authorContent }) => 
                 </ToolTip>
             </Popup>
             <Popup
+                opened={updateOpened}
                 className={`${sizeState} ActionBar-Popup`}
-                position={sizeState ? 'b' : 'lt'}
+                position={sizeState ? 'b' : 'l'}
                 content={<div className="ActionBar-share">
                     <Button type="icon" icon="twitter" iconSize={18} />
                     <Button type="icon" icon="facebook" iconSize={18} />

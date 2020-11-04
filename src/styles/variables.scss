@@ -40,9 +40,10 @@ $transparent_background: rgba(39, 38, 44, 0.8);
 @mixin overlay {
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   animation: fadeOut 0.2s forwards;
   &.open {
+    z-index: -1;
     animation: fadeIn 0.2s forwards;
     top: 0;
     left: 0;

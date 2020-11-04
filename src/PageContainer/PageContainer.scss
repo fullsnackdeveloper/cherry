@@ -5,7 +5,9 @@
   padding: $grid-gap;
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
+  background: $color_white;
   &.tablet {
+    margin-top: 46px;
     margin-left: 98px;
   }
   &.mobile {

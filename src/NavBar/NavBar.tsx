@@ -17,7 +17,13 @@ const NavBar: React.FC<NavBarProps> = ({ hide, logo, mobileLogo, collapsedAt, ch
 
     useEffect(() => {
         updateNavState(responsiveState(sizeIndex, collapsedAt));
-    }, [sizeIndex, collapsedAt])
+    }, [sizeIndex, collapsedAt]);
+
+    useEffect(() => {
+        mobileMenu ?
+            document.body.style.overflow = 'hidden' :
+            document.body.style.overflow = 'visible';
+    }, [mobileMenu])
 
     const handleOpenMobileMenu = () => {
         updateMobileMenu(!mobileMenu)

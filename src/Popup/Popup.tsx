@@ -1,41 +1,46 @@
 import "./Popup.scss";
 
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 
 import { PopupProps } from "./Popup.types";
 import ToAppLevel from "../ToAppLevel";
+import _ from 'lodash';
 import clsx from "clsx";
-import { useResize } from '../useResize';
+import useDimensions from '../useDimension';
 
 const Popup: React.FC<PopupProps> = ({ position, title, content, children, opened, width, className }) => {
     const [open, updateOpen] = useState<boolean>(false);
-    const popupTrigger = useRef();
-    const { refDimensions } = useResize(popupTrigger);
-    const styled = useCallback(() => {
+    const popupRef = useRef();
+    const dimensions = useDimensions(popupRef);
+    console.log(dimensions)
+
+    const styled = useMemo(() => {
+        if (_.isEmpty(dimensions))
+            return { width };
         if (position === 'r')
             return {
                 width,
-                top: (refDimensions?.top + (refDimensions?.height / 2)),
-                right: (refDimensions?.right + 10),
+                top: (dimensions.top + (dimensions.height / 2)),
+                right: (dimensions.right + 10),
             }
         if (position === 'lt')
             return {
                 width,
-                top: (refDimensions?.top),
-                left: (refDimensions?.left + (refDimensions?.width + 10)),
+                top: (dimensions?.top),
+                left: (dimensions?.left + (dimensions?.width + 10)),
             }
         if (position === 'b')
             return {
                 width,
-                top: (refDimensions?.top + (refDimensions?.height + 20)),
-                left: (refDimensions?.left + (refDimensions?.width / 2)),
+                top: (dimensions?.top + (dimensions?.height + 20)),
+                left: (dimensions?.left + (dimensions?.width / 2)),
             }
         return {
             width,
-            top: (refDimensions?.top + (refDimensions?.height / 2)),
-            left: (refDimensions?.left + (refDimensions?.width + 10)),
+            top: (dimensions?.top + (dimensions?.height / 2)),
+            left: (dimensions?.left + (dimensions?.width + 10)),
         }
-    }, [position, refDimensions])
+    }, [position, dimensions])
 
     const handleClick = () => {
         updateOpen(true);
@@ -48,13 +53,13 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, opene
     }
 
     return <div data-testid="Popup" className="Popup">
-        <div ref={popupTrigger} className="Popup-trigger" onClick={handleClick} onBlur={handleBlur} >
+        <div ref={popupRef} className="Popup-trigger" onClick={handleClick} onBlur={handleBlur} >
             {children}
         </div>
         <ToAppLevel>
             <div
                 className={clsx("Popup-content", position, className, { open })}
-                style={styled()}
+                style={styled}
             >
                 {title && <div className="Popup-content-title">{title}</div>}
                 {content}

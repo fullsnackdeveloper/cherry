@@ -64,7 +64,7 @@
       top: 50%;
       transform: translateY(-50%);
       &.open {
-        left: calc(100% + 15px);
+        transform: translate(10px, -50%);
       }
       &:before {
         top: 0;
@@ -85,7 +85,7 @@
       top: 50%;
       transform: translateY(-50%);
       &.open {
-        right: calc(100% + 15px);
+        transform: translate(-10px, -50%);
       }
       &:before {
         top: 0;
@@ -111,10 +111,11 @@
       }
       &:before {
         top: 0;
-        left: 0;
+        left: 10px;
         right: 0;
-        width: 100%;
+        width: calc(100% - 20px);
         height: 8px;
+        border-radius: $border-radius;
       }
       &:after {
         top: 0;

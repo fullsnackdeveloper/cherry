@@ -67,7 +67,7 @@
     }
     .NavBar-navigation {
       position: absolute;
-      z-index: 100;
+      z-index: 2100;
       padding: 0;
       top: 69px;
       width: 250px;
@@ -95,16 +95,16 @@
   position: absolute;
   background: $color_white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
-}
-.NavBar-menuIcon {
-  padding: $space_m;
-  cursor: pointer;
-}
-.NavBar-logo {
-  padding: $space_s $space_s $space_xs $space_s;
-  border-bottom: none;
-  text-align: left;
-  img {
-    width: 100px;
+  .NavBar-menuIcon {
+    padding: $space_m;
+    cursor: pointer;
+  }
+  .NavBar-logo {
+    padding: $space_s $space_s $space_xs $space_s;
+    border-bottom: none;
+    text-align: left;
+    img {
+      width: 100px;
+    }
   }
 }
