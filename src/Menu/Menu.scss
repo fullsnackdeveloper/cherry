@@ -61,7 +61,7 @@
   }
   &.desktop,
   &.tablet {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 44px;
     height: 100vh !important;

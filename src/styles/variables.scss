@@ -42,12 +42,14 @@ $transparent_background: rgba(39, 38, 44, 0.8);
   height: 100vh;
   position: fixed;
   animation: fadeOut 0.2s forwards;
+  pointer-events: none;
   &.open {
     z-index: -1;
     animation: fadeIn 0.2s forwards;
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.3);
+    pointer-events: initial;
   }
 }
 

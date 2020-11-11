@@ -12,7 +12,6 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, opene
     const [open, updateOpen] = useState<boolean>(false);
     const popupRef = useRef();
     const dimensions = useDimensions(popupRef);
-    console.log(dimensions)
 
     const styled = useMemo(() => {
         if (_.isEmpty(dimensions))

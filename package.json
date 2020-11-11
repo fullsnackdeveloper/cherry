@@ -64,6 +64,7 @@
     "@streamlinehq/streamline-regular": "^0.6.1",
     "clsx": "^1.1.1",
     "pure-react-carousel": "^1.27.5",
+    "react-intersection-observer": "^8.30.2",
     "svg-inline-loader": "^0.8.2"
   }
 }
