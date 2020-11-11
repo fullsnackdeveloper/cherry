@@ -12,7 +12,7 @@ import { useResize } from '../useResize';
 
 const NavBar: React.FC<NavBarProps> = ({ hide, logo, mobileLogo, collapsedAt, children }) => {
     const { sizeIndex } = useResize();
-    const [mobileMenu, updateMobileMenu] = useState(false);
+    const [mobileMenuOpen, updateMobileMenuOpen] = useState(false);
     const [navState, updateNavState] = useState(null);
 
     useEffect(() => {
@@ -20,13 +20,13 @@ const NavBar: React.FC<NavBarProps> = ({ hide, logo, mobileLogo, collapsedAt, ch
     }, [sizeIndex, collapsedAt]);
 
     useEffect(() => {
-        mobileMenu ?
+        mobileMenuOpen ?
             document.body.style.overflow = 'hidden' :
             document.body.style.overflow = 'visible';
-    }, [mobileMenu])
+    }, [mobileMenuOpen])
 
-    const handleOpenMobileMenu = () => {
-        updateMobileMenu(!mobileMenu)
+    const handleOpenMobileMenuOpen = () => {
+        updateMobileMenuOpen(!mobileMenuOpen)
     }
 
     return <div data-testid="NavBar" className={clsx("NavBar", navState, { hide })}>
@@ -36,16 +36,16 @@ const NavBar: React.FC<NavBarProps> = ({ hide, logo, mobileLogo, collapsedAt, ch
                     <img src={navState === 'mobile' ? mobileLogo : logo} alt="logo" />
                 </div>
                 {navState === 'mobile' &&
-                    <div className="NavBar-menuIcon" onClick={handleOpenMobileMenu}>
-                        <Icon icon={mobileMenu ? "close" : "menu"} size={mobileMenu ? 18 : 24} />
+                    <div className="NavBar-menuIcon" onClick={handleOpenMobileMenuOpen}>
+                        <Icon icon={mobileMenuOpen ? "close" : "menu"} size={mobileMenuOpen ? 18 : 24} />
                     </div>
                 }
             </div>
         </ConditionalWrapper>
-        <div className={clsx("NavBar-navigation", { open: mobileMenu })}>
-            {childrenWithProps(children, { collapsedAt })}
+        <div className={clsx("NavBar-navigation", { open: mobileMenuOpen })}>
+            {childrenWithProps(children, { collapsedAt, mobileMenuOpen })}
         </div>
-        <div className={clsx("NavBar-overlay", { open: mobileMenu })}></div>
+        <div className={clsx("NavBar-overlay", { open: mobileMenuOpen })} onClick={handleOpenMobileMenuOpen}></div>
     </div>
 };
 

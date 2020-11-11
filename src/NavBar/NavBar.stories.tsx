@@ -16,6 +16,9 @@ export const Default = (args) => <NavBar {...args} logo={logo} mobileLogo={mobil
         <Menu.Item icon="home">home</Menu.Item>
         <Menu.Item icon="discover">discover</Menu.Item>
         <Menu.Item icon="categories">categories</Menu.Item>
-        <Menu.Item icon="more">more</Menu.Item>
+        <Menu.SubMenu title="more" icon="more">
+            <Menu.Item>about</Menu.Item>
+            <Menu.Item>contact</Menu.Item>
+        </Menu.SubMenu>
     </Menu>
 </NavBar>;

@@ -16,7 +16,11 @@ const PageContainer: React.FC<PageContainerProps> = ({ collapsedAt, children }) 
         updateNavState(collapsed);
     }, [sizeIndex, collapsedAt]);
 
-    return <div data-testid="PageContainer" className={clsx("PageContainer", navState && navState)}>{childrenWithProps(children, { collapsedAt })}</div>
+    return <div data-testid="PageContainer" className={clsx("PageContainer", navState && navState)}>
+        <div style={{ margin: '0 auto', maxWidth: 1488 }}>
+            {childrenWithProps(children, { collapsedAt })}
+        </div>
+    </div>
 };
 
 export default PageContainer;
