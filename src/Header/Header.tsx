@@ -1,14 +1,21 @@
 import "./Header.scss";
 
-import React, { FC } from "react";
+import React, { FC, Fragment, useEffect, useState } from "react";
 
 import { HeaderProps } from "./Header.types";
 import Icon from "../Icon/Icon";
 import Link from "../Link/Link";
 import Stats from "../Stats/Stats";
 import clsx from "clsx";
+import { responsiveState } from "../utils";
+import { useResize } from "../useResize";
 
 const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categories, stats }: HeaderProps) => {
+    const { sizeIndex } = useResize();
+    const [size, updateSize] = useState(null);
+    useEffect(() => {
+        updateSize(sizeIndex);
+    }, [sizeIndex])
 
     const renderCategories = () => {
         return categories.map((c, index) => {
@@ -21,20 +28,29 @@ const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categori
         })
     }
 
-    return <div className={clsx("Header")} style={{ backgroundImage: `linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 60%), url(${image})` }}>
-        <div className={clsx("Header-content")}>
-            {categories &&
-                <div className="Header-categories">
-                    {renderCategories()}
-                </div>
-            }
-            <h1>{title}</h1>
-            <p className={clsx({ subTitle, description })}>{subTitle || description}</p>
-            {stats &&
-                <Stats stats={stats} />
-            }
+    return <Fragment>
+        <div className={clsx("Header")}>
+            <div className="Header-backgroundImage">
+                <img src={image.src} alt={image.alt} />
+                <div className="Header-backgroundImage-overlay" />
+            </div>
+            <div className={clsx("Header-content")}>
+                {categories &&
+                    <div className="Header-categories">
+                        {renderCategories()}
+                    </div>
+                }
+                <h1>{title}</h1>
+                <p className={clsx({ subTitle, description })}>{subTitle || description}</p>
+                {stats && (size > 1) &&
+                    < Stats stats={stats} />
+                }
+            </div>
         </div>
-    </div>
+        {stats && (size <= 1) &&
+            < Stats stats={stats} />
+        }
+    </Fragment>
 };
 
 
