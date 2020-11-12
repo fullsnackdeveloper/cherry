@@ -1,0 +1,22 @@
+@import "../styles/stylesIndex.scss";
+
+.Tag {
+  background: $color_white;
+  padding: 12px 18px;
+  border: 1px solid $color_offWhite;
+  border-radius: $border-radius;
+  outline: none;
+  cursor: pointer;
+  display: inline-flex;
+  transition: all 0.2s linear;
+  @include cardTitle;
+  font-weight: 400;
+  &:hover {
+    border: 1px solid $color_black;
+  }
+  &:active,
+  &.active {
+    background: $color_black;
+    color: $color_white;
+  }
+}
