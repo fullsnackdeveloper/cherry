@@ -1,0 +1,30 @@
+@import "../styles/stylesIndex.scss";
+
+.Stats {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  &-stat {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px;
+    position: relative;
+    color: $color_white;
+    &-seperator {
+      height: 40px;
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    &-amount {
+      font-size: 14px;
+    }
+    &-measurement {
+      font-size: 12px;
+      opacity: 0.5;
+    }
+  }
+}

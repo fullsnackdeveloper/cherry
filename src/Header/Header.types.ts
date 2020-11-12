@@ -4,5 +4,6 @@ export interface HeaderProps {
     subTitle?: string,
     description?: string,
     image?: string,
-    categories?: { name: string, link: string }[]
+    categories?: { name: string, link: string }[],
+    stats?: { measurement: string, amount: string }[]
 }

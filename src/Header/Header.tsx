@@ -5,9 +5,10 @@ import React, { FC } from "react";
 import { HeaderProps } from "./Header.types";
 import Icon from "../Icon/Icon";
 import Link from "../Link/Link";
+import Stats from "../Stats/Stats";
 import clsx from "clsx";
 
-const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categories }: HeaderProps) => {
+const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categories, stats }: HeaderProps) => {
 
     const renderCategories = () => {
         return categories.map((c, index) => {
@@ -29,6 +30,9 @@ const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categori
             }
             <h1>{title}</h1>
             <p className={clsx({ subTitle, description })}>{subTitle || description}</p>
+            {stats &&
+                <Stats stats={stats} />
+            }
         </div>
     </div>
 };
