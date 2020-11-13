@@ -1,0 +1,38 @@
+@import "../styles/stylesIndex.scss";
+
+.Step {
+  margin: $grid-gap 0 #{$grid-gap/2};
+  position: relative;
+  h2 {
+    @include bodyHeading;
+  }
+  &-num {
+    position: absolute;
+    left: -50px;
+    top: -4px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    span:first-child {
+      font-family: $font_serif;
+      font-size: 30px;
+      color: #e18c5b;
+    }
+    span:last-child {
+      font-size: 12px;
+      opacity: 0.4;
+    }
+    @include md {
+      position: relative;
+      left: initial;
+      top: initial;
+      align-items: flex-start;
+      flex-direction: row;
+      align-items: flex-end;
+      span:last-child {
+        margin-bottom: 4px;
+        margin-left: 4px;
+      }
+    }
+  }
+}

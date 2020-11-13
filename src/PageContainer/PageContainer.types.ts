@@ -4,4 +4,5 @@ export interface PageContainerProps {
     children: ReactNode;
     collapsedAt?: number[];
     hasActionBar?: boolean;
+    hasSteps?: boolean;
 }

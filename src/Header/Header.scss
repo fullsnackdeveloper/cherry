@@ -28,6 +28,9 @@
       background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.6));
     }
   }
+  @include lg {
+    margin-bottom: $grid-gap/2;
+  }
   @include md {
     margin-bottom: $grid-gap;
     align-items: flex-end;

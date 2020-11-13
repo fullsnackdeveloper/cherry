@@ -1,17 +1,17 @@
-import Drawer from "./Drawer";
-import { DrawerProps } from "./Drawer.types";
 import React from "react";
+import Step from "./Step";
+import { StepProps } from "./Step.types";
 import { render } from "@testing-library/react";
 
 describe("Test Component", () => {
-  let props: DrawerProps;
+  let props: StepProps;
 
-  const renderComponent = () => render(<Drawer {...props} />);
+  const renderComponent = () => render(<Step {...props} />);
 
   it("should render foo text correctly", () => {
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId("Drawer");
+    const component = getByTestId("Step");
 
     expect(component).toHaveTextContent("velvet was here");
   });
