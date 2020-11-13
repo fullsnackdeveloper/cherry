@@ -12,6 +12,7 @@ import Image from "./Image/Image";
 import Link from "./Link/Link";
 import Menu from "./Menu/Menu";
 import NavBar from "./NavBar/NavBar";
+import Note from "./Note/Note";
 import PageContainer from "./PageContainer/PageContainer";
 import Popup from "./Popup/Popup";
 import Row from "./Row/Row";
@@ -20,4 +21,4 @@ import Step from './Step/Step';
 import Tag from './Tag/Tag';
 import ToolTip from "./ToolTip/ToolTip";
 
-export { Button, Card, ActionCard, Header, Icon, Row, Col, Carousel, Link, Menu, NavBar, Image, PageContainer, Block, ToolTip, ActionBar, Avatar, Popup, Stats, Step, Tag };
+export { Button, Card, ActionCard, Header, Icon, Row, Col, Carousel, Link, Menu, NavBar, Image, PageContainer, Block, ToolTip, ActionBar, Avatar, Popup, Stats, Step, Tag, Note };
