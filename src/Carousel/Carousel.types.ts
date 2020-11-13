@@ -4,5 +4,6 @@ export interface CarouselProps {
     /**
     * children prop
     */
-    children: React.ReactNode[]
+    children: React.ReactNode[],
+    columns: number[],
 }

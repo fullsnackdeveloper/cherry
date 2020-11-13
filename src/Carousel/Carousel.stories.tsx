@@ -20,6 +20,6 @@ const renderCards = num => {
     return cards;
 }
 
-export const Default = () => <Carousel>
+export const Default = () => <Carousel columns={[2, 2, 3, 3, 5]}>
     {renderCards(12)}
 </Carousel>;
