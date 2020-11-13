@@ -103,6 +103,13 @@ $font_serif: "PT Serif", serif;
   }
 }
 
+@mixin note {
+  @include font-defaults;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
 @mixin meta {
   @include font-defaults;
   font-size: 10px;

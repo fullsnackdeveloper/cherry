@@ -2,6 +2,7 @@ import "./Icon.scss";
 
 import { Menu, View } from "@streamlinehq/streamline-regular/lib/interface-essential";
 
+import { Alerts } from "@streamlinehq/streamline-regular/lib/interface-essential";
 import { Apps } from "@streamlinehq/streamline-regular/lib/programing-apps-websites";
 import { Arrows } from "@streamlinehq/streamline-regular/lib/arrows-diagrams";
 import { Books } from "@streamlinehq/streamline-regular/lib/content";
@@ -23,6 +24,7 @@ import { SocialMedias } from "@streamlinehq/streamline-regular/lib/logos";
 import StreamlineIcon from "@streamlinehq/streamline-icons-react";
 import { StudyingLearning } from "@streamlinehq/streamline-regular/lib/school-learning";
 import { TagsBookmarks } from "@streamlinehq/streamline-regular/lib/interface-essential";
+import { Tasks } from "@streamlinehq/streamline-regular/lib/work-office-companies";
 
 const Icon: React.FC<IconProps> = ({ icon, size }) => {
     return <div className="Icon">
@@ -56,6 +58,9 @@ const Icon: React.FC<IconProps> = ({ icon, size }) => {
         {(icon === "send") && <StreamlineIcon icon={SendEmail.SendEmail} size={size} />}
         {(icon === "link") && <StreamlineIcon icon={LinkUnlink.Hyperlink2} size={size} />}
         {(icon === "learn") && <StreamlineIcon icon={StudyingLearning.StudyOwl} size={size} />}
+        {(icon === "remember") && <StreamlineIcon icon={Tasks.TaskFingerBandage} size={size} />}
+        {(icon === "info") && <StreamlineIcon icon={Alerts.InformationCircle} size={size} />}
+        {(icon === "warning") && <StreamlineIcon icon={Alerts.AlertTriangle} size={size} />}
     </div>
 }
 

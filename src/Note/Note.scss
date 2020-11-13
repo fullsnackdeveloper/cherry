@@ -1,0 +1,21 @@
+@import "../styles/stylesIndex.scss";
+
+.Note {
+  display: flex;
+  background: $color_offWhite;
+  padding: $grid-gap;
+  border-radius: $border-radius;
+  p {
+    @include note;
+    color: tint($color_black, 10%);
+    b {
+      font-weight: 600;
+    }
+  }
+  &-icon {
+    margin-right: $space_m;
+    path {
+      stroke: tint($color_black, 60%);
+    }
+  }
+}
