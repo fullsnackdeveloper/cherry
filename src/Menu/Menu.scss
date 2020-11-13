@@ -53,6 +53,7 @@
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 1;
   position: relative;
+  z-index: 900;
   &-close {
     position: absolute;
     top: $space_l;

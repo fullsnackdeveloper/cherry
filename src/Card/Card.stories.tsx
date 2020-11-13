@@ -11,6 +11,8 @@ export const Default = () => <div style={{ maxWidth: 250 }}>
         title="How To Install A Kitchen Backsplash"
         category="Home Improvement"
         image="https://images.unsplash.com/photo-1523413363574-c30aa1c2a516?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+        icon="learn"
+        iconMessage="This piece of content is a lesson"
     />
 </div>;
 

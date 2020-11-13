@@ -5,5 +5,6 @@ export interface RowProps {
     columns?: number | number[],
     children?: ReactNode,
     title?: string,
-    subTitle?: string
+    subTitle?: string,
+    backgroundColor?: string
 }

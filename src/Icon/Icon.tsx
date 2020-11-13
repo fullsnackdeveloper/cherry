@@ -21,6 +21,7 @@ import { SendEmail } from "@streamlinehq/streamline-regular/lib/emails";
 import { Smileys } from "@streamlinehq/streamline-regular/lib/messages-chat-smileys";
 import { SocialMedias } from "@streamlinehq/streamline-regular/lib/logos";
 import StreamlineIcon from "@streamlinehq/streamline-icons-react";
+import { StudyingLearning } from "@streamlinehq/streamline-regular/lib/school-learning";
 import { TagsBookmarks } from "@streamlinehq/streamline-regular/lib/interface-essential";
 
 const Icon: React.FC<IconProps> = ({ icon, size }) => {
@@ -54,6 +55,7 @@ const Icon: React.FC<IconProps> = ({ icon, size }) => {
         {(icon === "tags") && <div className="flip"><StreamlineIcon icon={TagsBookmarks.TagsDouble1} size={size} /></div>}
         {(icon === "send") && <StreamlineIcon icon={SendEmail.SendEmail} size={size} />}
         {(icon === "link") && <StreamlineIcon icon={LinkUnlink.Hyperlink2} size={size} />}
+        {(icon === "learn") && <StreamlineIcon icon={StudyingLearning.StudyOwl} size={size} />}
     </div>
 }
 

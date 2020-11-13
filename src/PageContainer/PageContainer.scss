@@ -7,7 +7,6 @@
   overflow: hidden;
   background: $color_white;
   &.tablet {
-    margin-top: 46px;
     margin-left: 98px;
   }
   &.mobile {
@@ -16,5 +15,8 @@
     @include sm {
       margin-top: calc(69px - #{$grid-gap});
     }
+  }
+  &.tablet.hasActionBar {
+    margin-top: 46px;
   }
 }

@@ -1,7 +1,7 @@
 @import "../styles/stylesIndex.scss";
 
 .Header {
-  min-height: 420px;
+  min-height: 450px;
   align-items: center;
   display: flex;
   overflow: hidden;
@@ -28,16 +28,11 @@
       background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.6));
     }
   }
-  @include lg {
-    min-height: 140px;
-    margin-bottom: 0;
-  }
   @include md {
-    min-height: 150px;
     margin-bottom: $grid-gap;
+    align-items: flex-end;
   }
   @include sm {
-    min-height: 450px;
     align-items: flex-end;
     padding-top: 0;
     height: auto;

@@ -7,7 +7,7 @@ import _ from 'lodash';
 import clsx from "clsx";
 import { useResize } from "../useResize";
 
-const Row: FC<RowProps> = ({ gutter, columns, children, title, subTitle }: RowProps) => {
+const Row: FC<RowProps> = ({ gutter, columns, children, title, subTitle, backgroundColor }: RowProps) => {
     const [columnsRef, updateColumnsRef] = useState(columns);
     const { size, sizeIndex } = useResize();
 
@@ -27,11 +27,14 @@ const Row: FC<RowProps> = ({ gutter, columns, children, title, subTitle }: RowPr
         }
     }, [columnsRef])
 
-    return <section className={clsx("Row")}>
+    return <section className={clsx("Row", { hasBackground: backgroundColor, hasTitle: title || subTitle })}>
+        {backgroundColor &&
+            <div className="Row-background" style={{ backgroundColor }} />
+        }
         {title &&
             <div className="Row-heading">
-                <h4>{title}</h4>
-                <h5>{subTitle}</h5>
+                <h2>{title}</h2>
+                <h3>{subTitle}</h3>
             </div>
         }
         <div className="Row-container" style={renderStyles()}>

@@ -31,7 +31,7 @@ const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categori
     return <Fragment>
         <div className={clsx("Header")}>
             <div className="Header-backgroundImage">
-                <img src={image.src} alt={image.alt} />
+                <img src={image.src} alt={image.alt} loading="lazy" />
                 <div className="Header-backgroundImage-overlay" />
             </div>
             <div className={clsx("Header-content")}>
