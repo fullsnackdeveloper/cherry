@@ -7,7 +7,7 @@ export interface HeaderProps {
         src: string,
         alt: string
     },
-    categories?: { name: string, link: string }[],
+    categories?: { title: string, uri: string }[],
     stats?: { measurement: string, amount: string }[],
     collapsedAt?: []
 }

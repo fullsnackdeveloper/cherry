@@ -16,16 +16,16 @@ export const Default = () => <Header
     }}
     categories={[
         {
-            name: 'Garden',
-            link: '/category/garden'
+            title: 'Garden',
+            uri: '/category/garden'
         },
         {
-            name: 'Pottery',
-            link: '/category/garden/pottery'
+            title: 'Pottery',
+            uri: '/category/garden/pottery'
         },
         {
-            name: 'Planters',
-            link: '/category/garden/pottery/planters'
+            title: 'Planters',
+            uri: '/category/garden/pottery/planters'
         },
     ]}
 ></Header>;
@@ -39,16 +39,16 @@ export const WithStats = () => <Header
     }}
     categories={[
         {
-            name: 'Garden',
-            link: '/category/garden'
+            title: 'Garden',
+            uri: '/category/garden'
         },
         {
-            name: 'Pottery',
-            link: '/category/garden/pottery'
+            title: 'Pottery',
+            uri: '/category/garden/pottery'
         },
         {
-            name: 'Planters',
-            link: '/category/garden/pottery/planters'
+            title: 'Planters',
+            uri: '/category/garden/pottery/planters'
         },
     ]}
     stats={[
