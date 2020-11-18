@@ -8,4 +8,5 @@ export interface CardProps {
     icon?: string,
     iconMessage?: string,
     author?: string,
+    onClick?: () => void
 }

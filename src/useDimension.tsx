@@ -4,7 +4,7 @@ const useDimension = (ref) => {
   const [dimensions, setDimensions] = useState(null);
 
   const updateDimensions = () => {
-    setDimensions(ref.current.getBoundingClientRect().toJSON());
+    setDimensions(ref.current?.getBoundingClientRect().toJSON());
   }
 
   useEffect(() => {

@@ -8,8 +8,8 @@ import Icon from "../Icon/Icon";
 import ToolTip from "../ToolTip/ToolTip";
 import clsx from "clsx";
 
-const Card: FC<CardProps> = ({ title, category, image, type, size, author, icon, iconMessage }: CardProps) => (
-    <div className={clsx('Card', type, size)}>
+const Card: FC<CardProps> = ({ title, category, image, type, size, author, icon, iconMessage, onClick }: CardProps) => (
+    <div className={clsx('Card', type, size)} onClick={onClick}>
         {icon &&
             <div className="Card-image-icon">
                 <ConditionalWrapper conditional={iconMessage} wrapper={children => <ToolTip message={iconMessage}>{children}</ToolTip>}>

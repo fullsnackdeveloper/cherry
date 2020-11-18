@@ -13,6 +13,7 @@ export const Default = () => <div style={{ maxWidth: 250 }}>
         image="https://images.unsplash.com/photo-1523413363574-c30aa1c2a516?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
         icon="learn"
         iconMessage="This piece of content is a lesson"
+        onClick={() => alert('clicked')}
     />
 </div>;
 
