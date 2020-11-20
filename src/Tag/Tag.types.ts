@@ -1,5 +1,6 @@
+import { ReactNode } from 'react';
 
 export interface TagProps {
     activate?: boolean;
-    children: string;
+    children: string | ReactNode;
 }
