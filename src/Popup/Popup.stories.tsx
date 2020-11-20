@@ -12,6 +12,7 @@ export default {
 export const Default = (args) => <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 100 }}>
     <Popup position={args.position} content={
         [<Card
+            key={1}
             title="7 Quick and Easy Ways to Refresh Your Home on a Budget"
             type="post"
             size="list"
@@ -19,6 +20,7 @@ export const Default = (args) => <div style={{ display: 'flex', justifyContent: 
             author="Bill Winkle"
         />,
         <Card
+            key={2}
             title="7 Quick and Easy Ways to Refresh Your Home on a Budget"
             type="post"
             size="list"
@@ -26,6 +28,7 @@ export const Default = (args) => <div style={{ display: 'flex', justifyContent: 
             author="Bill Winkle"
         />,
         <Card
+            key={3}
             title="This is the article with no title to display but tells you how to make a lavender candle"
             type="post"
             size="list"

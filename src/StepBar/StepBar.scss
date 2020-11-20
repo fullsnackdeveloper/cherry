@@ -1,0 +1,13 @@
+@import "../styles/stylesIndex.scss";
+
+.StepBar {
+  display: flex;
+  &-setup {
+    padding-right: 8px;
+    margin-right: 8px;
+    border-right: 1px solid $color_offWhite;
+  }
+  &-step {
+    margin-right: 8px;
+  }
+}

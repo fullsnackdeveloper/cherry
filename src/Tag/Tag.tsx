@@ -1,15 +1,20 @@
 import "./Tag.scss";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { TagProps } from "./Tag.types";
 import clsx from "clsx";
 
-const Tag: React.FC<TagProps> = ({ children }) => {
-    const [active, updateActive] = useState(false);
+const Tag: React.FC<TagProps> = ({ children, activate }) => {
+    const [active, updateActive] = useState(activate);
+
+    useEffect(() => {
+        updateActive(activate)
+    }, [activate])
 
     const handleClick = () => {
-        updateActive(!active);
+        if (!activate)
+            updateActive(!active);
     }
 
     return <div data-testid="Tag" className={clsx("Tag", { active })} onClick={handleClick}>{children}</div>
