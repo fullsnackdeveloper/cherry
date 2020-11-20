@@ -67,6 +67,9 @@
     display: flex;
     position: relative;
     margin-bottom: $grid-gap / 2;
+    &:last-child {
+      margin-bottom: 0;
+    }
     .Card-image {
       height: 70px;
       flex: 0 0 70px;
@@ -107,6 +110,20 @@
       line-height: 28px;
       letter-spacing: 0;
       text-transform: capitalize;
+    }
+  }
+
+  &.list.category {
+    .Card-image {
+      flex: initial;
+      display: flex;
+      width: 100%;
+      align-items: flex-end;
+      padding: $space_s $space_m;
+      span {
+        @include cardTitle;
+        color: $color_white;
+      }
     }
   }
 }
