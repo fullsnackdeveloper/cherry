@@ -1,6 +1,5 @@
 import React from "react";
 import StepBar from "./StepBar";
-import Tag from '../Tag/Tag';
 import _ from 'lodash';
 
 export default {

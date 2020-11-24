@@ -1,0 +1,29 @@
+@import "../styles/stylesIndex.scss";
+
+.Footer {
+  padding: $space_xxl 0;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1800px;
+    height: 100%;
+    background: $color_primary;
+  }
+  & * {
+    color: $color_white;
+  }
+  h3 {
+    @include cardTitle;
+    margin-bottom: $grid-gap/2;
+  }
+  &-links {
+    & > * {
+      margin-right: $grid-gap;
+      margin-bottom: $grid-gap/2;
+    }
+  }
+}
