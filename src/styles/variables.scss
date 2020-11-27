@@ -35,6 +35,9 @@ $transparent_background: rgba(39, 38, 44, 0.8);
 @mixin shadow {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
+@mixin hoverShadow {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
 @mixin overlay {
   width: 100vw;
   height: 100vh;
