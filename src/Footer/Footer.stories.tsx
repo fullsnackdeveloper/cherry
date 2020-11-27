@@ -9,7 +9,7 @@ export default {
     component: Footer
 };
 
-export const Default = () => <Footer>
+export const Default = () => <Footer copyright="Makey© 2020 | version 4883212093">
     <Row>
         <Col span={[12, 6, 4]}>
             <h3>Discover The How-To Home Base</h3>

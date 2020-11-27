@@ -1,7 +1,7 @@
 @import "../styles/stylesIndex.scss";
 
 .Footer {
-  padding: $space_xxl 0;
+  padding: 100px 0 $space_xl;
   position: relative;
   &::after {
     content: "";
@@ -10,8 +10,9 @@
     left: 50%;
     transform: translateX(-50%);
     width: 1800px;
-    height: 100%;
-    background: $color_primary;
+    height: calc(100% + #{$grid-gap});
+    background-image: url("../images/footer-bg.png");
+    background-size: cover;
   }
   & * {
     color: $color_white;
@@ -25,5 +26,12 @@
       margin-right: $grid-gap;
       margin-bottom: $grid-gap/2;
     }
+  }
+  &-copyright {
+    position: relative;
+    z-index: 10;
+    @include meta;
+    opacity: 0.4;
+    text-align: right;
   }
 }

@@ -36,6 +36,11 @@ export default {
           rename: "variables.scss"
         },
         {
+          src: "src/styles/mixins.scss",
+          dest: "build",
+          rename: "mixins.scss"
+        },
+        {
           src: "src/styles/typography.scss",
           dest: "build",
           rename: "typography.scss"

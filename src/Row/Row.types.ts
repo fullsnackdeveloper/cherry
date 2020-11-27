@@ -6,5 +6,6 @@ export interface RowProps {
     children?: ReactNode,
     title?: string,
     subTitle?: string,
-    backgroundColor?: string
+    backgroundColor?: string,
+    lastRow?: boolean
 }

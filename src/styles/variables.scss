@@ -27,9 +27,6 @@ $space_xxl: 64px;
 
 $color_primary_button: $color_primary;
 $grid_gap: $space_l;
-// @include sm {
-//   $grid_gap: $space_m;
-// }
 
 // GENERAL
 @include fadesAnimations;

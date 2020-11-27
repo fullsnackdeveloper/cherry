@@ -119,7 +119,7 @@ export const Set5Columns = () => <Row columns={[1, 1, 2, 3, 5]}>
     </Col>
 </Row>;
 
-export const withBackground = () => <Row backgroundColor="#F8F1E7">
+export const withBackground = () => <Row backgroundColor="#F8F1E7" lastRow>
     <Col span={3}>
         <Card
             title="How To Install A Kitchen Backsplash"
