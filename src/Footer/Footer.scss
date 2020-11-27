@@ -33,5 +33,8 @@
     @include meta;
     opacity: 0.4;
     text-align: right;
+    @include sm {
+      text-align: left;
+    }
   }
 }
