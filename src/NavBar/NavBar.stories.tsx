@@ -13,7 +13,7 @@ export default {
 
 export const Default = (args) => <NavBar {...args} logo={logo} mobileLogo={mobileLogo} collapsedAt={[2, 3]}>
     <Menu>
-        <Menu.Item icon="home">home</Menu.Item>
+        <Menu.Item icon="home" active>home</Menu.Item>
         <Menu.Item icon="discover">discover</Menu.Item>
         <Menu.Item icon="categories">categories</Menu.Item>
         <Menu.SubMenu title="more" icon="more">

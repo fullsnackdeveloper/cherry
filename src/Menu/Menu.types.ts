@@ -17,5 +17,6 @@ export interface SubMenuProps {
 export interface MenuItemProps {
     children: ReactNode,
     icon?: string,
-    navState?: string
+    navState?: string,
+    active?: boolean
 }

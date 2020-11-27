@@ -3,7 +3,6 @@ import Footer from "./Footer";
 import Link from '../Link/Link';
 import React from "react";
 import Row from '../Row/Row';
-import footerBG from '../images/footer-bg.png';
 
 export default {
     title: "Footer",

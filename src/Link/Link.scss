@@ -34,7 +34,8 @@
     }
   }
   &:focus,
-  &:active {
+  &:active,
+  &.active {
     box-shadow: none;
     outline: none;
     .Icon .Streamline_Icon svg path {

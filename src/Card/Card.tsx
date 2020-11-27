@@ -17,11 +17,9 @@ const Card: FC<CardProps> = ({ title, category, image, type, size, author, icon,
                 </ConditionalWrapper>
             </div>
         }
-        <div className="Card-image" style={{
-            // backgroundImage: (size === 'list' && type === 'category') ? `linear-gradient(rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.6)), url(${image})` : `url(${image})`
-        }}>
+        <div className="Card-image">
             <div className="Card-image-img">
-                <img src={image} alt="alt here" />
+                <img src={image} alt="alt here" loading="lazy" />
             </div>
             {size !== 'list' &&
                 <div className="Card-image-content">

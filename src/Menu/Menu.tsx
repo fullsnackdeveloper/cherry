@@ -12,9 +12,9 @@ import clsx from "clsx";
 import useDimension from "../useDimension";
 import { useResize } from "../useResize";
 
-const Item: React.FC<MenuItemProps> = ({ icon, navState, children }) => (
+const Item: React.FC<MenuItemProps> = ({ active, icon, navState, children }) => (
     <div className={clsx("MenuItem")}>
-        <Link icon={icon}>
+        <Link icon={icon} active={active}>
             {children}
         </Link>
         {navState === 'mobile' &&
