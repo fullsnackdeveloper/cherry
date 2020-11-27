@@ -10,7 +10,7 @@ export const Default = () => <div style={{ maxWidth: 250 }}>
     <Card
         title="How To Install A Kitchen Backsplash"
         category="Home Improvement"
-        image="https://images.unsplash.com/photo-1523413363574-c30aa1c2a516?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+        image="https://firebasestorage.googleapis.com/v0/b/skull-3d276.appspot.com/o/media%2F11-20%2Fbest-green-paint-colours-2020-720?alt=media&token=a231e60a-e002-44fb-aef7-9630b244e049"
         icon="learn"
         iconMessage="This piece of content is a lesson"
         onClick={() => alert('clicked')}
