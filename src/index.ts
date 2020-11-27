@@ -1,5 +1,3 @@
-import { SSRContext, SSRProvider } from './SSRContext';
-
 import ActionBar from "./ActionBar/ActionBar";
 import ActionCard from "./ActionCard/ActionCard";
 import Avatar from "./Avatar/Avatar";
@@ -26,4 +24,4 @@ import Tag from './Tag/Tag';
 import ToolTip from "./ToolTip/ToolTip";
 import Widget from "./Widget/Widget";
 
-export { Button, Card, ActionCard, Header, Icon, Row, Col, Carousel, Link, Menu, NavBar, Image, PageContainer, Block, ToolTip, ActionBar, Avatar, Popup, Stats, Step, Tag, Note, Footer, SSRContext, SSRProvider, Widget, StepBar };
+export { Button, Card, ActionCard, Header, Icon, Row, Col, Carousel, Link, Menu, NavBar, Image, PageContainer, Block, ToolTip, ActionBar, Avatar, Popup, Stats, Step, Tag, Note, Footer, Widget, StepBar };
