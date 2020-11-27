@@ -29,4 +29,7 @@
   &-slide-container {
     margin: 0 ($grid_gap/2);
   }
+  .carousel__slider {
+    overflow: visible;
+  }
 }

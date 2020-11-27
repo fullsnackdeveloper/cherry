@@ -28,6 +28,7 @@
     background-position: center center;
     position: relative;
     transition: all 0.4s ease;
+    border-radius: $border_radius;
     &-img {
       position: absolute;
       top: 0;
