@@ -43,7 +43,7 @@
   background: $color_primary_button;
   border: none;
   outline: none;
-  transition: all 0.2s linear;
+  transition: all 0.4s linear;
   font-size: 12px;
   letter-spacing: 1px;
   padding: $space_s $space_m;
@@ -63,7 +63,7 @@
   }
 
   &:hover {
-    background: tint($color_primary_button, 30%);
+    @include hoverShadow;
   }
 
   &:focus {
