@@ -29,7 +29,10 @@ const Card: FC<CardProps> = ({ title, category, image, type, size, author, icon,
                 </div>
             }
             {(size === 'list' && type === 'category') &&
-                <span>{title}</span>
+                <>
+                    <span>{title}</span>
+                    <div className="Card-image-overlay" />
+                </>
             }
         </div>
         {type === 'post' &&

@@ -11,10 +11,10 @@ export interface ToAppLevelProps {
 const ToAppLevel: React.FC<ToAppLevelProps> = ({ children }) => {
 
   return (
-    ReactDOM.createPortal(children, document.body)
-    // <UniversalPortal selector="#portal">
-    //   {children}
-    // </UniversalPortal>
+    // ReactDOM.createPortal(children, document.body);
+    <UniversalPortal selector="#portal">
+      {children}
+    </UniversalPortal>
   )
 };
 
