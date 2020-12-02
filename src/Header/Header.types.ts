@@ -9,5 +9,7 @@ export interface HeaderProps {
     },
     categories?: { title: string, uri: string }[],
     stats?: { measurement: string, amount: string }[],
-    collapsedAt?: []
+    collapsedAt?: [],
+    squiggle?: boolean,
+    maxWidth?: number
 }

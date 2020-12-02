@@ -8,4 +8,5 @@ export interface PopupProps {
     width?: number;
     position?: 'tl' | 't' | 'tr' | 'lt' | 'l' | 'lb' | 'bl' | 'b' | 'br' | 'rt' | 'r' | 'rb';
     className?: string;
+    addedPadding?: boolean;
 }

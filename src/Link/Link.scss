@@ -49,4 +49,11 @@
       opacity: 1;
     }
   }
+
+  &.invert {
+    color: $color_grey;
+    &:hover {
+      color: $color_black;
+    }
+  }
 }

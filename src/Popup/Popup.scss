@@ -17,6 +17,25 @@
     animation: fadeOut 0.3s forwards;
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     @include shadow;
+    &.addedPadding {
+      padding: $space_l;
+    }
+
+    h3 {
+      @include cardTitle;
+      margin-bottom: 4px;
+    }
+    p {
+      @include note;
+      color: tint($color_black, 20%);
+      margin-bottom: 12px;
+    }
+    hr {
+      background: tint($color_black, 85%);
+      height: 1px;
+      border: none;
+      margin: $grid-gap/2 0;
+    }
 
     &-title {
       @include paragraph;

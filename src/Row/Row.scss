@@ -14,20 +14,32 @@
     z-index: 10;
     h2 {
       @include rowHeading;
+      text-transform: capitalize;
       margin-bottom: $space_s;
     }
     h3 {
       @include paragraphHeading;
       font-family: $font_serif;
     }
+    &.fullwidth {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 4px;
+      h2 {
+        @include bodyHeading;
+        text-transform: capitalize;
+        margin-bottom: $space_s;
+      }
+    }
   }
   &-background {
     width: 100vw;
     height: 100%;
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0);
     z-index: 1;
   }
   &.hasTitle {
@@ -38,5 +50,8 @@
   }
   &.hasBackground {
     padding: 50px 0;
+  }
+  &.hasBackground.lastRow .Row-background {
+    height: calc(100% + 50px);
   }
 }

@@ -7,4 +7,5 @@ export interface LinkProps {
     iconSize?: number,
     darkMode?: boolean,
     active?: boolean,
+    invert?: boolean
 }

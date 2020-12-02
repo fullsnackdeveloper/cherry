@@ -1,7 +1,17 @@
 @import "../styles/stylesIndex.scss";
 
 .StepBar {
+  width: 100%;
+  overflow: hidden;
   display: flex;
+  &-scroll {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
   &-setup {
     padding-right: 8px;
     margin-right: 8px;

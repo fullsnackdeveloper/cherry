@@ -8,7 +8,7 @@ import _ from 'lodash';
 import clsx from "clsx";
 import useDimensions from '../useDimension';
 
-const Popup: React.FC<PopupProps> = ({ position, title, content, children, opened, width, className }) => {
+const Popup: React.FC<PopupProps> = ({ position, title, content, children, opened, width, className, addedPadding }) => {
     const [open, updateOpen] = useState<boolean>(false);
     const popupRef = useRef();
     const dimensions = useDimensions(popupRef);
@@ -57,14 +57,14 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, opene
         </div>
         <ToAppLevel>
             <div
-                className={clsx("Popup-content", position, className, { open })}
+                className={clsx("Popup-content", position, className, { open, addedPadding })}
                 style={styled}
             >
                 {title && <div className="Popup-content-title">{title}</div>}
                 {content}
             </div>
         </ToAppLevel>
-    </div>
+    </div >
 };
 
 Popup.defaultProps = {

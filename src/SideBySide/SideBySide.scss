@@ -1,0 +1,39 @@
+@import "../styles/stylesIndex.scss";
+
+.SideBySide {
+  width: 100%;
+  &-top {
+    margin-bottom: $grid-gap;
+  }
+  &-lowerContainer {
+    display: flex;
+  }
+
+  h2 {
+    @include bodyHeading;
+  }
+
+  h3 {
+    @include paragraphHeading;
+    margin-bottom: $grid-gap/2;
+  }
+
+  ul {
+    margin-left: 20px;
+    list-style: none;
+    li {
+      @include paragraph;
+      color: tint($color_black, 20%);
+      a {
+        @include paragraph;
+      }
+      &:before {
+        content: "\2022";
+        color: $color_lightGrey;
+        display: inline-block;
+        width: $grid-gap;
+        margin-left: -18px;
+      }
+    }
+  }
+}

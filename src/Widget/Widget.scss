@@ -3,6 +3,14 @@
 .Widget {
   @include shadow;
   border-radius: $border-radius;
+  &.fullHeight {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .Widget-footer {
+      margin-top: auto;
+    }
+  }
   &-head {
     padding: $grid-gap;
     border-radius: $border-radius $border-radius 0 0;

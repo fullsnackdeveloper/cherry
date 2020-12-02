@@ -14,7 +14,7 @@ import clsx from "clsx";
 import { responsiveState } from "../utils";
 import { useResize } from "../useResize";
 
-const ActionBar: React.FC<ActionBarProps> = ({ collapsedAt, authorContent }) => {
+const ActionBar: React.FC<ActionBarProps> = ({ collapsedAt, authorContent, productContent, authorAvatar }) => {
     const { sizeIndex } = useResize();
     const [sizeState, updateSizeState] = useState(null);
     const [opened, updateOpened] = useState(false);
@@ -28,13 +28,13 @@ const ActionBar: React.FC<ActionBarProps> = ({ collapsedAt, authorContent }) => 
     return <ConditionalWrapper conditional={sizeState === 'mobile'} wrapper={children => <ToAppLevel>{children}</ToAppLevel>}>
         <div className={clsx("overlay", { open: opened })}></div>
         <div data-testid="ActionBar" className={clsx("ActionBar", sizeState)}>
-            <Popup content={authorContent} position={sizeState ? 'b' : 'lt'} className={`${sizeState} ActionBar-Popup`} opened={updateOpened}>
+            <Popup content={authorContent} position={sizeState ? 'b' : 'lt'} className={`${sizeState} ActionBar-Popup`} opened={updateOpened} addedPadding>
                 <ToolTip message="Author" disabled={sizeState}>
-                    <Avatar initials="NO" size={sizeState ? sizeState === 'mobile' ? 'tiny' : 'small' : 'regular'} />
+                    <Avatar image={authorAvatar} initials="NO" size={sizeState ? sizeState === 'mobile' ? 'tiny' : 'small' : 'regular'} />
                     {sizeState && <Link>Author</Link>}
                 </ToolTip>
             </Popup>
-            <Popup content={authorContent} position={sizeState ? 'b' : 'lt'} className={`${sizeState} ActionBar-Popup`} opened={updateOpened}>
+            <Popup content={productContent} position={sizeState ? 'b' : 'lt'} className={`${sizeState} ActionBar-Popup`} opened={updateOpened} addedPadding>
                 <ToolTip message="Products" disabled={sizeState}>
                     {sizeState ?
                         sizeState === 'mobile' ? <Link icon="tags" iconSize={18}>Products</Link> : <Link icon="tags" iconSize={24}>Products</Link> :

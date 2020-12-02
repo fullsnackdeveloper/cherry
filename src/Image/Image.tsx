@@ -32,16 +32,32 @@ const Image: React.FC<ImageProps> = ({ image, hotspots }) => {
         })
     }
 
-    return <div data-testid="Image" className="Image">
-        <div className="Image-container">
-            <div className="Image-Hotspots">
-                {hotspots && renderHotspots()}
+    return <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+        <div data-testid="Image" className="Image">
+            <div className="Image-container">
+                <div className="Image-Hotspots">
+                    {hotspots && renderHotspots()}
+                </div>
+                <picture>
+                    <img src={image.src} alt={image.alt} loading="lazy" />
+                </picture>
             </div>
-            <picture>
-                <img src={image.url} alt={image.alt} loading="lazy" />
-            </picture>
+            <div className="Image-source">
+                {image.source?.author?.name && image.source?.author?.link &&
+                    <div className="Image-source-author">
+                        <a href={image.source?.author.link} target="_blank">{image.source?.author.name}</a>
+                    </div>
+                }
+                {image.source?.site && image.source?.author &&
+                    <span>|</span>
+                }
+                {image.source?.site?.name && image.source?.site?.link &&
+                    <div className="Image-source-site">
+                        <a href={image.source?.site.link} target="_blank">{image.source?.site.name}</a>
+                    </div>
+                }
+            </div>
         </div>
-        <div className="Image-source">{image.source}</div>
     </div>
 };
 

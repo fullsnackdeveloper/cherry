@@ -7,10 +7,9 @@ import Icon from "../Icon/Icon";
 import Link from "../Link/Link";
 import Stats from "../Stats/Stats";
 import clsx from "clsx";
-import { responsiveState } from "../utils";
 import { useResize } from "../useResize";
 
-const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categories, stats }: HeaderProps) => {
+const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categories, stats, squiggle, maxWidth }: HeaderProps) => {
     const { sizeIndex } = useResize();
     const [size, updateSize] = useState(null);
     useEffect(() => {
@@ -34,13 +33,14 @@ const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categori
                 <img src={image.src} alt={image.alt} loading="lazy" />
                 <div className="Header-backgroundImage-overlay" />
             </div>
-            <div className={clsx("Header-content")}>
+            <div className={clsx("Header-content")} style={{ maxWidth }}>
                 {categories &&
                     <div className="Header-categories">
                         {renderCategories()}
                     </div>
                 }
                 <h1>{title}</h1>
+                {squiggle && <img className="Header-squiggle" src="/squiggle.svg" alt="squiggle" />}
                 <p className={clsx({ subTitle, description })}>{subTitle || description}</p>
                 {stats && (size > 1) &&
                     < Stats stats={stats} />
@@ -48,7 +48,7 @@ const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categori
             </div>
         </div>
         {stats && (size <= 1) &&
-            < Stats stats={stats} />
+            <Stats stats={stats} />
         }
     </Fragment>
 };

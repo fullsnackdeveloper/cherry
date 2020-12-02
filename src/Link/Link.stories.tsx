@@ -27,3 +27,5 @@ Primary.args = {
 }
 
 export const withIcon = () => <Link icon="discover">Discover</Link>
+
+export const invert = () => <Link invert>Discover</Link>

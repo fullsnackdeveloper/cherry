@@ -17,6 +17,7 @@ import Note from "./Note/Note";
 import PageContainer from "./PageContainer/PageContainer";
 import Popup from "./Popup/Popup";
 import Row from "./Row/Row";
+import SideBySide from "./SideBySide/SideBySide";
 import Stats from './Stats/Stats';
 import Step from './Step/Step';
 import StepBar from "./StepBar/StepBar";
@@ -24,4 +25,4 @@ import Tag from './Tag/Tag';
 import ToolTip from "./ToolTip/ToolTip";
 import Widget from "./Widget/Widget";
 
-export { Button, Card, ActionCard, Header, Icon, Row, Col, Carousel, Link, Menu, NavBar, Image, PageContainer, Block, ToolTip, ActionBar, Avatar, Popup, Stats, Step, Tag, Note, Footer, Widget, StepBar };
+export { Button, Card, ActionCard, Header, Icon, Row, Col, Carousel, Link, Menu, NavBar, Image, PageContainer, Block, ToolTip, ActionBar, Avatar, Popup, Stats, Step, Tag, Note, Footer, Widget, StepBar, SideBySide };

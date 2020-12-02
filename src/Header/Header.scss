@@ -7,7 +7,13 @@
   overflow: hidden;
   border-radius: $border_radius;
   position: relative;
-  margin-bottom: calc(#{$grid-gap}* 2);
+  margin-bottom: $grid-gap;
+  &-squiggle {
+    margin: 8px 0 16px;
+    position: relative;
+    display: inline-block;
+    width: 130px;
+  }
   &-backgroundImage {
     width: 100%;
     height: 100%;
@@ -88,6 +94,12 @@
     }
     @include sm {
       position: relative;
+    }
+  }
+
+  &.display {
+    .Header-content {
+      max-width: 380px;
     }
   }
 }

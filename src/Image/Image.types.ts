@@ -1,10 +1,18 @@
 
 export interface ImageProps {
     image: {
-        url: string,
+        src: string,
         alt: string
-        source: string,
-        sourceUrl: string
+        source?: {
+            author?: {
+                name?: string,
+                link?: string
+            },
+            site?: {
+                name?: string,
+                link?: string
+            }
+        },
     };
     hotspots?:
     {

@@ -7,5 +7,8 @@ export interface RowProps {
     title?: string,
     subTitle?: string,
     backgroundColor?: string,
+    titleStyle?: "center" | "fullwidth",
+    link?: string,
+    linkText?: string,
     lastRow?: boolean
 }

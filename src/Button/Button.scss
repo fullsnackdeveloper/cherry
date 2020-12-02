@@ -76,6 +76,9 @@
     height: 34px;
     padding: 8px;
     border-radius: 50%;
+    &:hover {
+      box-shadow: none;
+    }
     .Icon .Streamline_Icon {
       position: absolute;
       top: 50%;

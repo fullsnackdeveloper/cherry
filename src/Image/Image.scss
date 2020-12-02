@@ -19,9 +19,21 @@
     position: relative;
   }
   &-source {
-    @include source;
     width: 100%;
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    span {
+      @include source;
+      padding: 0 4px;
+    }
+    a {
+      @include source;
+      text-decoration: none;
+      transition: all 0.3s linear;
+      &:hover {
+        color: $color_black;
+      }
+    }
   }
   .Hotspot {
     position: absolute;

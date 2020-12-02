@@ -6,5 +6,6 @@ export interface WidgetProps {
     link: string,
     linkText: string,
     color: string,
-    children?: ReactNode;
+    children?: ReactNode,
+    fullHeight?: boolean
 }
