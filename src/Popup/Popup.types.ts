@@ -6,7 +6,7 @@ export interface PopupProps {
     title?: string;
     opened?: (boolean) => void;
     width?: number;
-    position?: 'tl' | 't' | 'tr' | 'lt' | 'l' | 'lb' | 'bl' | 'b' | 'br' | 'rt' | 'r' | 'rb';
+    position?: 'topLeft' | 'top' | 'topRight' | 'leftTop' | 'left' | 'leftBottom' | 'bottomLeft' | 'bottom' | 'bottomRight' | 'rightTop' | 'right' | 'rightBottom';
     className?: string;
     addedPadding?: boolean;
 }

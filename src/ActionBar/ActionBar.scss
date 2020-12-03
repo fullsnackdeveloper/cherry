@@ -24,17 +24,30 @@
     }
   }
 
+  &-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: $color_white;
+    z-index: 3000;
+    margin: 0;
+    display: none;
+    @include shadow;
+  }
+
   // Action Bar Tablet
   &.tablet {
     flex-direction: row;
-    width: calc(100% - 112px);
+    width: 100%;
     justify-content: space-around;
     background: $color_white;
     padding: 8px;
     position: fixed;
     top: 0;
     right: 0;
-    @include shadow;
+    .ActionBar-background {
+      display: block;
+    }
     .Popup {
       margin: 0;
       position: relative;
@@ -61,8 +74,11 @@
     padding: 16px 0;
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 3000;
-    @include shadow;
+    .ActionBar-background {
+      display: block;
+    }
 
     .Popup {
       margin: 0;
@@ -106,6 +122,9 @@
     top: 36px !important;
     transform: none;
     position: fixed;
+    &.addedPadding {
+      width: calc(100vw - (#{$grid-gap} * 2)) !important;
+    }
     &.open {
       transform: translateY(32px);
       z-index: 20;

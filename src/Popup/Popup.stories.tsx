@@ -1,5 +1,6 @@
 import Avatar from "../Avatar/Avatar";
 import Card from "../Card/Card";
+import Link from "../Link/Link";
 import Popup from "./Popup";
 import React from "react";
 import ToolTip from "../ToolTip/ToolTip";
@@ -37,6 +38,7 @@ export const Default = (args) => <div style={{ display: 'flex', justifyContent: 
     }>
         <ToolTip message="Avatar">
             <Avatar />
+            <Link>Author</Link>
         </ToolTip>
     </Popup>
 </div>

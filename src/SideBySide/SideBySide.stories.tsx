@@ -33,6 +33,7 @@ export const Default = () => <SideBySide
 />;
 
 export const withImage = () => <SideBySide
+    backgroundColor="#F3F4F7"
     ratio="30-70"
     top={<div>
         <h2>What You'll Need</h2>

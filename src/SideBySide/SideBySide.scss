@@ -2,11 +2,25 @@
 
 .SideBySide {
   width: 100%;
+  position: relative;
   &-top {
     margin-bottom: $grid-gap;
+    position: relative;
+    z-index: 10;
   }
   &-lowerContainer {
     display: flex;
+    position: relative;
+    z-index: 10;
+  }
+  &-background {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
   }
 
   h2 {
@@ -35,5 +49,19 @@
         margin-left: -18px;
       }
     }
+  }
+
+  @include sm {
+    .SideBySide-left,
+    .SideBySide-right {
+      width: 100% !important;
+    }
+    .SideBySide-lowerContainer {
+      flex-direction: column;
+    }
+  }
+
+  &.hasBackground {
+    padding: 50px 0;
   }
 }

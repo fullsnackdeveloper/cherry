@@ -1,10 +1,9 @@
 @import "../styles/stylesIndex.scss";
 
-@include fadesAnimations;
-
 .Popup {
   position: relative;
   display: inline-flex;
+  z-index: 3000;
   &-trigger {
     display: inherit;
   }
@@ -47,30 +46,43 @@
       margin-bottom: 0;
     }
 
-    &:before {
-      z-index: 10;
-      content: "";
+    .Popup-arrow {
+      height: 20px;
       position: absolute;
-      width: 8px;
-      height: 100%;
-      border-radius: 4px;
-      margin-left: 0;
-      box-sizing: border-box;
-      background: $color_white;
-    }
-    &:after {
-      z-index: -1;
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 0;
-      margin-left: 0;
-      box-sizing: border-box;
-      border: 4px solid #fff;
-      border-color: transparent transparent #fff #fff;
-      transform-origin: 0 0;
-      transform: rotate(45deg);
-      box-shadow: 0 0 6px rgba(0, 0, 0, 0.13);
+      top: calc(50% - 10px);
+      left: 0px;
+      &:before {
+        z-index: 10;
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 100%;
+        border-radius: 4px;
+        margin-left: 0;
+        box-sizing: border-box;
+        background: $color_white;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 8px;
+      }
+      &:after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        margin-left: 0;
+        box-sizing: border-box;
+        border: 4px solid #fff;
+        border-color: transparent transparent #fff #fff;
+        transform-origin: 0 0;
+        transform: rotate(45deg);
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.13);
+        top: calc(50% - 6px);
+        left: 0;
+      }
     }
 
     &.open {
@@ -78,110 +90,31 @@
     }
 
     // left
-    &.l {
-      left: calc(100% + 25px);
-      top: 50%;
-      transform: translateY(-50%);
+    &.left {
+      transform: translate(10px, -50%);
       &.open {
-        transform: translate(10px, -50%);
-      }
-      &:before {
-        top: 0;
-        bottom: 0;
-        left: 0;
-        height: 100%;
-        width: 8px;
-      }
-      &:after {
-        top: calc(50% - 6px);
-        left: 0;
+        transform: translate(0px, -50%);
       }
     }
 
-    // right
-    &.r {
-      right: calc(100% + 25px);
-      top: 50%;
-      transform: translateY(-50%);
+    // leftTop
+    &.leftTop {
+      transform: translateX(10px);
       &.open {
-        transform: translate(-10px, -50%);
-      }
-      &:before {
-        top: 0;
-        bottom: 0;
-        right: 0;
-        height: 100%;
-        width: 8px;
-      }
-      &:after {
-        top: calc(50% + 6px);
-        right: -8px;
-        transform: rotate(-135deg);
+        transform: translateX(0px);
       }
     }
 
     // bottom
-    &.b {
-      top: calc(100% + 25px);
-      left: 50%;
-      transform: translateX(-50%);
+    &.bottom {
+      transform: translateY(10px);
       &.open {
-        transform: translate(-50%, 10px);
+        transform: translateY(0px);
       }
-      &:before {
-        top: 0;
-        left: 10px;
-        right: 0;
-        width: calc(100% - 20px);
-        height: 8px;
-        border-radius: $border-radius;
-      }
-      &:after {
-        top: 0;
-        left: calc(50% + 6px);
-        transform: rotate(135deg);
-      }
-    }
-
-    // top
-    &.t {
-      bottom: calc(100% + 25px);
-      left: 50%;
-      transform: translateX(-50%);
-      &.open {
-        transform: translateY(10px);
-      }
-      &:before {
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 8px;
-      }
-      &:after {
-        bottom: -8px;
-        left: calc(50% - 6px);
-        transform: rotate(-45deg);
-      }
-    }
-
-    // left top
-    &.lt {
-      left: calc(100% + 25px);
-      top: 0px;
-      &.open {
-        transform: translateX(10px);
-      }
-      &:before {
-        top: 0;
-        bottom: 0;
-        left: 0;
-        height: 100%;
-        width: 8px;
-      }
-      &:after {
-        top: 18px;
-        left: 0;
+      .Popup-arrow {
+        transform: rotate(90deg);
+        top: -10px;
+        left: calc(50% + 10px);
       }
     }
   }

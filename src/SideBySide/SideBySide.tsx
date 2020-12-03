@@ -2,13 +2,16 @@ import "./SideBySide.scss";
 
 import React from "react";
 import { SideBySideProps } from "./SideBySide.types";
+import clsx from "clsx";
 
-const SideBySide: React.FC<SideBySideProps> = ({ top, left, right, ratio }) => {
+const SideBySide: React.FC<SideBySideProps> = ({ top, left, right, ratio, backgroundColor }) => {
 
     let percentages = ratio.split("-");
-    console.log(percentages[0], percentages[1])
 
-    return <div data-testid="SideBySide" className="SideBySide">
+    return <div data-testid="SideBySide" className={clsx("SideBySide", { hasBackground: backgroundColor })}>
+        {backgroundColor &&
+            <div className="SideBySide-background" style={{ backgroundColor }} />
+        }
         <div className="SideBySide-top">
             {top}
         </div>
