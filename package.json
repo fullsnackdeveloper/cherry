@@ -1,6 +1,6 @@
 {
   "name": "@maraschino/cherry",
-  "version": "0.0.1-beta0.0.144",
+  "version": "0.0.1-beta0.0.145",
   "main": "build/index.js",
   "module": "build/index.esm.js",
   "files": [
@@ -62,6 +62,7 @@
   "dependencies": {
     "@jesstelford/react-portal-universal": "^1.0.6",
     "@storybook/theming": "^6.1.9",
+    "@streamlinehq/streamline-bold": "^0.6.1",
     "@streamlinehq/streamline-icons-react": "^0.6.1",
     "@streamlinehq/streamline-mini-line": "^0.6.1",
     "@streamlinehq/streamline-regular": "^0.6.1",
