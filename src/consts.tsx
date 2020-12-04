@@ -32,6 +32,7 @@ export const icons = [
   'plus',
   'refresh',
   'send',
+  'steps',
   'scared',
   'scream',
   'settings',

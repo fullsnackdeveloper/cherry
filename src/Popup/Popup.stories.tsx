@@ -10,7 +10,7 @@ export default {
     component: Popup
 };
 
-export const Default = (args) => <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 100 }}>
+export const Default = (args) => <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
     <Popup position={args.position} content={
         [<Card
             key={1}

@@ -25,6 +25,7 @@ import StreamlineIcon from "@streamlinehq/streamline-icons-react";
 import { StudyingLearning } from "@streamlinehq/streamline-regular/lib/school-learning";
 import { TagsBookmarks } from "@streamlinehq/streamline-regular/lib/interface-essential";
 import { Tasks } from "@streamlinehq/streamline-regular/lib/work-office-companies";
+import { Wayfinder } from "@streamlinehq/streamline-mini-line/lib/maps-travel";
 
 const Icon: React.FC<IconProps> = ({ icon, size }) => {
     return <div className="Icon">
@@ -56,6 +57,7 @@ const Icon: React.FC<IconProps> = ({ icon, size }) => {
         {(icon === "spot") && <StreamlineIcon icon={Select.CursorDoubleClick2} size={size} />}
         {(icon === "tags") && <div className="flip"><StreamlineIcon icon={TagsBookmarks.TagsDouble1} size={size} /></div>}
         {(icon === "send") && <StreamlineIcon icon={SendEmail.SendEmail} size={size} />}
+        {(icon === "steps") && <StreamlineIcon icon={Wayfinder.TravelWayfinderStairs1} size={size} />}
         {(icon === "link") && <StreamlineIcon icon={LinkUnlink.Hyperlink2} size={size} />}
         {(icon === "learn") && <StreamlineIcon icon={StudyingLearning.StudyOwl} size={size} />}
         {(icon === "remember") && <StreamlineIcon icon={Tasks.TaskFingerBandage} size={size} />}

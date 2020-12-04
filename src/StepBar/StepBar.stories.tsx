@@ -7,7 +7,7 @@ export default {
     component: StepBar
 };
 
-export const Default = () => <StepBar steps={[
+export const Default = () => <StepBar onSelect={() => alert('hey')} steps={[
     {
         key: 1,
         title: "Make something happen"

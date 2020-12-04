@@ -8,13 +8,13 @@
     display: inherit;
   }
   &-content {
-    position: absolute;
+    position: fixed;
     z-index: 400;
     padding: $grid-gap/2;
     background: $color_white;
     border-radius: $border-radius;
     animation: fadeOut 0.3s forwards;
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     @include shadow;
     &.addedPadding {
       padding: $space_l;
@@ -115,6 +115,44 @@
         transform: rotate(90deg);
         top: -10px;
         left: calc(50% + 10px);
+      }
+    }
+
+    // bottomLeft
+    &.bottomLeft {
+      transform: translateY(10px);
+      &.open {
+        transform: translateY(0px);
+      }
+      .Popup-arrow {
+        transform: rotate(90deg);
+        top: -10px;
+      }
+    }
+
+    // bottomRight
+    &.bottomRight {
+      transform: translateY(10px);
+      &.open {
+        transform: translateY(0px);
+      }
+      .Popup-arrow {
+        transform: rotate(90deg);
+        top: -10px;
+      }
+    }
+
+    &.fullWidth {
+      width: calc(100% - #{$grid-gap}) !important;
+      top: 0 !important;
+      position: absolute;
+      left: 0 !important;
+      padding-top: 46px;
+      margin-top: $grid-gap/2;
+      border-radius: 0 0 $border-radius $border-radius;
+      &.addedPadding {
+        margin-top: $grid-gap;
+        width: calc(100% - #{$grid-gap * 2}) !important;
       }
     }
   }

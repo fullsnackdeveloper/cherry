@@ -4,9 +4,10 @@ import React, { FC, useEffect, useState } from "react";
 
 import { ColProps } from "./Col.types";
 import _ from 'lodash';
+import clsx from "clsx";
 import { useResize } from "../useResize";
 
-const Col: FC<ColProps> = ({ span, children }: ColProps) => {
+const Col: FC<ColProps> = ({ span, children, style }: ColProps) => {
     const [colRef, updateColumnsRef] = useState(span);
     const { size, sizeIndex } = useResize();
 
@@ -16,7 +17,7 @@ const Col: FC<ColProps> = ({ span, children }: ColProps) => {
         span.hasOwnProperty(sizeIndex) ? updateColumnsRef(span[sizeIndex]) : updateColumnsRef(_.last(span))
     }, [size, sizeIndex]);
 
-    return <div className="Col" style={{ gridColumn: `span ${colRef}`, display: colRef !== 0 ? 'block' : 'none' }}>
+    return <div className={clsx("Col", { noShow: colRef === 0 })} style={{ gridColumn: `span ${colRef}`, ...style }}>
         {children}
     </div>
 };

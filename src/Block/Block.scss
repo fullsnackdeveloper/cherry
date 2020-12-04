@@ -6,6 +6,8 @@
   margin-right: auto;
   max-width: 720px;
   padding-top: $grid-gap / 2;
+  position: relative;
+  z-index: -1;
   @include md {
     padding: 0;
   }

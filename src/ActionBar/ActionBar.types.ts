@@ -5,4 +5,6 @@ export interface ActionBarProps {
     productContent: ReactNode | ReactNode[];
     collapsedAt?: number[];
     authorAvatar?: string;
+    steps?: any,
+    closeSteps?: boolean
 }

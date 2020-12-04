@@ -38,7 +38,7 @@
   // Action Bar Tablet
   &.tablet {
     flex-direction: row;
-    width: 100%;
+    width: calc(100% - 114px);
     justify-content: space-around;
     background: $color_white;
     padding: 8px;
@@ -125,9 +125,17 @@
     &.addedPadding {
       width: calc(100vw - (#{$grid-gap} * 2)) !important;
     }
+    &.fullWidth {
+      transform: translateY(12px);
+      top: 0px !important;
+    }
     &.open {
       transform: translateY(32px);
       z-index: 20;
+      &.fullWidth {
+        transform: translateY(24px);
+        top: 0px !important;
+      }
     }
   }
 }
