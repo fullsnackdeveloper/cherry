@@ -10,7 +10,7 @@ import clsx from "clsx";
 import { responsiveState } from "../utils";
 import { useResize } from "../useResize";
 
-const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, collapsedAt }) => {
+const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, collapsedAt, onNavigate }) => {
     const { sizeIndex } = useResize();
     const [subMenuOpen, subMenuOpenUpdate] = useState(null);
     const [mobileMenuOpen, mobileMenuOpenUpdate] = useState(null);
@@ -40,6 +40,12 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
         mobileMenuOpenUpdate(!mobileMenuOpen);
     }
 
+    const handleClick = (link) => () => {
+        onNavigate(link);
+        subMenuOpenUpdate(null);
+        mobileMenuOpenUpdate(false);
+    }
+
     return <>
         <div data-testid="Navbar" className={clsx("Navbar", navState)}>
             <div className="Navbar-head">
@@ -62,7 +68,7 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
                         title={item.title.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))}
                         icon={item.icon}
                         chevron={item.children}
-                        onClick={item.children ? openSubMenu(index) : handleCloseSubMenu}
+                        onClick={item.children ? openSubMenu(index) : handleClick(item.link)}
                         open={subMenuOpen === index}
                     >
                         {item.title}
@@ -78,7 +84,7 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
                                         compact={navState === 'tablet'}
                                         title={subItem.title.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))}
                                         chevron={subItem.children}
-                                        onClick={subItem.children ? openSubMenu(index) : handleCloseSubMenu}
+                                        onClick={handleClick(subItem.link)}
                                         open={subMenuOpen === index}
                                     >
                                         {subItem.title}
@@ -98,7 +104,7 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
                         <Icon icon="chevron-left" size={18} />
                     </div>
                     {menuItem.children.map((subItem, index) => {
-                        return <Menu.Item key={index}>
+                        return <Menu.Item key={index} onClick={handleClick(subItem.link)}>
                             {subItem.title}
                         </Menu.Item>
                     })}

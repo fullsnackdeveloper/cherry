@@ -9,7 +9,11 @@ export default {
     component: Navbar
 };
 
-export const Default = () => <Navbar logo={logo} logoLink="/" mobileLogo={mobileLogo} collapsedAt={[2, 3]} menu={[
+const handleNavigate = () => {
+    console.log('click')
+}
+
+export const Default = () => <Navbar onNavigate={handleNavigate} logo={logo} logoLink="/" mobileLogo={mobileLogo} collapsedAt={[2, 3]} menu={[
     {
         title: 'home',
         icon: 'home',

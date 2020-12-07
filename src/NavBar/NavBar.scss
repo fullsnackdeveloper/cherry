@@ -32,6 +32,9 @@
       width: 64px;
     }
   }
+  &-navigation {
+    padding-top: 24px;
+  }
   &-subMenu {
     background: $color_offWhite;
     position: fixed;

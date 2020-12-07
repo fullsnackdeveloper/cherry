@@ -13,6 +13,7 @@ export default {
 
 export const Default = () => <PageContainer collapsedAt={[2, 3]}>
     <Navbar
+        onNavigate={link => console.log(link)}
         logo={logo}
         mobileLogo={mobileLogo}
         collapsedAt={[2, 3]}

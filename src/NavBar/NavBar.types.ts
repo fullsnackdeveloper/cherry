@@ -4,5 +4,6 @@ export interface NavbarProps {
     logoLink?: string,
     logo?: string,
     mobileLogo?: string,
-    collapsedAt: number[]
+    collapsedAt: number[],
+    onNavigate?: any
 }
