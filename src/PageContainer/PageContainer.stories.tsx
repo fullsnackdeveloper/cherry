@@ -1,6 +1,6 @@
 import Header from "../Header/Header";
 import Menu from "../Menu/Menu";
-import NavBar from "../NavBar/NavBar";
+import Navbar from "../Navbar/Navbar";
 import PageContainer from "./PageContainer";
 import React from "react";
 import logo from '../images/logo.png'
@@ -12,18 +12,45 @@ export default {
 };
 
 export const Default = () => <PageContainer collapsedAt={[2, 3]}>
-    <NavBar logo={logo} mobileLogo={mobileLogo}>
-        <Menu>
-            <Menu.Item icon="home">home</Menu.Item>
-            <Menu.Item icon="discover">discover</Menu.Item>
-            <Menu.Item icon="categories">categories</Menu.Item>
-            <Menu.Item icon="more">more</Menu.Item>
-        </Menu>
-    </NavBar>
+    <Navbar
+        logo={logo}
+        mobileLogo={mobileLogo}
+        collapsedAt={[2, 3]}
+        menu={[
+            {
+                title: 'home',
+                icon: 'home',
+                link: '/'
+            },
+            {
+                title: 'discover',
+                icon: 'discover',
+                link: '/discover'
+            },
+            {
+                title: 'categories',
+                icon: 'categories',
+                link: '/categories'
+            },
+            {
+                title: 'more',
+                icon: 'more',
+                children: [
+                    {
+                        title: 'about',
+                        link: '/about'
+                    },
+                    {
+                        title: 'contact',
+                        link: '/contact'
+                    }
+                ]
+            }
+        ]}
+    />
     <Header
         title="Header Title"
         subTitle="We’re here to help you out with whatever project you are working on, let’s DIY together!"
-        // description="Originally contributed by name here • last updated 10/20/20"
         image={{
             src: "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
             alt: "header image"

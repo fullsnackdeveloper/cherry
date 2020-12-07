@@ -12,13 +12,29 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  & > span {
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
   &.withIcon .Icon {
     margin-right: $space_m;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     & .Streamline_Icon svg {
       path {
         stroke: $color_black;
         transition: all 0.2s linear;
       }
+    }
+  }
+  &.onlyIcon .Icon {
+    margin-right: 0;
+  }
+  &.hideText {
+    .Icon {
+      margin-right: 0;
+    }
+    & > span {
+      width: 0px;
+      overflow: hidden;
     }
   }
   &.ripple .rippleContainer span {
@@ -46,7 +62,7 @@
     &.active {
       box-shadow: none;
       outline: none;
-      .Icon .Streamline_Icon svg path {
+      &.withIcon .Icon .Streamline_Icon svg path {
         stroke: $color_primary;
       }
     }

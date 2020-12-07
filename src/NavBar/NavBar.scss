@@ -1,6 +1,6 @@
 @import "../styles/stylesIndex.scss";
 
-.NavBar {
+.Navbar {
   width: 220px;
   padding: $space_xl;
   display: flex;
@@ -14,9 +14,6 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  &.hide {
-    left: -285px;
-  }
   &-head {
     width: 100%;
     display: flex;
@@ -35,81 +32,118 @@
       width: 64px;
     }
   }
-  &-navigation {
+  &-subMenu {
+    background: $color_offWhite;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 221px;
+    height: 100vh;
+    padding: 226px 32px;
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    padding: 46px 0;
-    width: 100%;
-    justify-content: center;
-    display: flex;
+    @include lg {
+      left: -197px;
+    }
+    @include md {
+      left: -285px;
+      top: 62px;
+    }
+    &-close {
+      position: absolute;
+      top: $grid-gap;
+      right: $grid-gap;
+      cursor: pointer;
+    }
+    &.open {
+      left: 285px;
+      @include lg {
+        left: 88px;
+      }
+      @include md {
+        left: 80px;
+        top: 62px;
+      }
+    }
+    .MenuItem {
+      margin-bottom: 8px;
+      border-bottom: 1px solid $color_lightGrey;
+    }
   }
 
+  // TABLET
   &.tablet {
     padding: $space_l;
-    width: 50px;
-    &.hide {
-      left: -100px;
-    }
-    .NavBar-logo {
+    width: 40px;
+    .Navbar-logo {
       padding: $space_s 0 $space_l;
       img {
         width: 40px;
       }
     }
-    .NavBar-navigation {
+    .Navbar-navigation {
       padding: $space_l 0;
     }
   }
 
+  // MOBILE
   &.mobile {
-    margin: 0;
-    padding: 0;
-    height: auto;
-    width: 100%;
-    &.hide {
-      top: -100%;
-    }
-    .NavBar-navigation {
-      position: absolute;
-      z-index: 2100;
-      padding: 0;
-      top: 69px;
-      width: 250px;
-      left: -250px;
-      height: calc(100vh - 69px);
+    background: transparent;
+    box-shadow: none;
+    .Navbar-head {
+      position: fixed;
+      top: 0;
+      left: 0;
       background: $color_white;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
-      &.open {
-        left: 0px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      z-index: 999;
+      @include shadow;
+    }
+    .Navbar-logo {
+      padding: $space_m;
+      width: initial;
+      img {
+        display: block;
+        width: 100px;
       }
     }
-  }
-
-  &-overlay {
-    @include overlay;
-  }
-}
-
-.NavBar-head.mobile {
-  width: calc(100% - #{$space_s * 2});
-  top: 0;
-  padding: $space_s;
-  flex-direction: row;
-  z-index: 10000;
-  justify-content: space-between;
-  // position: fixed;
-  position: absolute;
-  background: $color_white;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
-  .NavBar-menuIcon {
-    padding: $space_m;
-    cursor: pointer;
-  }
-  .NavBar-logo {
-    padding: $space_s $space_s $space_xs $space_s;
-    border-bottom: none;
-    text-align: left;
-    img {
-      width: 100px;
+    .Navbar-navigation {
+      padding: 0;
+      position: fixed;
+      top: 62px;
+      left: -248px;
+      background: $color_white;
+      z-index: 998;
+      height: 100vh;
+      width: 220px;
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      @include shadow;
+      &.open {
+        left: 0;
+      }
+      .MenuItem {
+        border-bottom: 1px solid $color_offWhite;
+        padding: 24px;
+      }
+    }
+    .Navbar-menuIcon {
+      padding: $space_m $space_l;
+      cursor: pointer;
+    }
+    // INLINE SUBMENU
+    .Navbar-inlineSubMenu {
+      background: $color_offWhite;
+      height: 0;
+      overflow: hidden;
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      .MenuItem {
+        border-bottom: 1px solid $color_white;
+      }
+      &.open {
+        background: #00ff00;
+      }
     }
   }
 }

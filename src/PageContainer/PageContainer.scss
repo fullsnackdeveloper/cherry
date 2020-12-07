@@ -11,11 +11,11 @@
     padding: $grid-gap;
   }
   &.mobile {
-    margin-top: 69px;
+    margin-top: 62px;
     margin-left: 0;
     padding: $grid-gap;
     @include sm {
-      margin-top: calc(69px - #{$grid-gap});
+      margin-top: calc(62px - #{$grid-gap});
     }
   }
   &.tablet.hasActionBar {

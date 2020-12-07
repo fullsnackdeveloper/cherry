@@ -1,23 +1,24 @@
 import "./Menu.scss";
 
-import { MenuItemProps, MenuProps, SubMenuProps } from "./Menu.types";
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import { MenuItemProps, MenuProps } from "./Menu.types";
+import React, { useEffect, useState } from "react";
 import { childrenWithProps, responsiveState } from "../utils";
 
 import ConditionalWrapper from "../ConditionalWrapper";
 import Icon from "../Icon/Icon";
 import Link from "../Link/Link";
-import ToAppLevel from "../ToAppLevel";
+import ToolTip from "../ToolTip/ToolTip";
 import clsx from "clsx";
-import useDimension from "../useDimension";
 import { useResize } from "../useResize";
 
-const Item: React.FC<MenuItemProps> = ({ active, icon, navState, children }) => (
-    <div className={clsx("MenuItem")}>
-        <Link icon={icon} active={active} invert>
-            {children}
-        </Link>
-        {navState === 'mobile' &&
+const Item: React.FC<MenuItemProps> = ({ open, compact, active, icon, children, title, chevron, onClick }) => (
+    <div className={clsx("MenuItem", { open })}>
+        <ToolTip message={title} disabled={!compact}>
+            <Link compact={compact} onClick={onClick} icon={icon} active={active} invert>
+                {children}
+            </Link>
+        </ToolTip>
+        {chevron && !compact &&
             <div className="MenuItem-chevron">
                 <Icon icon="chevron-right" size={10} />
             </div>
@@ -25,57 +26,7 @@ const Item: React.FC<MenuItemProps> = ({ active, icon, navState, children }) => 
     </div>
 )
 
-const SubMenu: React.FC<SubMenuProps> = ({ icon, navState, mobileMenuOpen, title, children }) => {
-    const subMenuRef = useRef();
-    const dimensions = useDimension(subMenuRef)
-    const [subMenuOpen, updateSubMenuOpen] = useState(false);
-    const [subMenuHeight, updateSubMenuHeight] = useState<any>('auto');
-    const intialHeight = useRef(undefined);
-
-    useEffect(() => {
-        if (intialHeight.current === undefined)
-            intialHeight.current = dimensions?.height
-        if (dimensions?.height)
-            updateSubMenuHeight(0)
-    }, [dimensions]);
-
-    useEffect(() => {
-        if (!mobileMenuOpen)
-            handleSubMenu(false);
-    }, [mobileMenuOpen])
-
-    const handleSubMenu = (setOpen?: boolean) => {
-        updateSubMenuOpen(setOpen ?? !subMenuOpen);
-        updateSubMenuHeight((setOpen ?? !subMenuOpen) ? intialHeight.current : 0);
-    }
-
-    return <Fragment>
-        <div className={clsx("MenuItem", { open: subMenuOpen })} onClick={() => handleSubMenu()}>
-            <Link icon={icon} invert>
-                {title}
-            </Link>
-            {navState !== 'tablet' &&
-                <div className={clsx("MenuItem-chevron")}>
-                    <Icon icon="chevron-right" size={10} />
-                </div>
-            }
-        </div>
-        <ConditionalWrapper conditional={navState !== 'mobile'} wrapper={children => <ToAppLevel>{children}</ToAppLevel>}>
-            <div className={clsx("SubMenu", navState, { open: subMenuOpen })} ref={subMenuRef} style={{ height: subMenuHeight }}>
-                {navState !== 'mobile' &&
-                    <div className="SubMenu-close" onClick={() => handleSubMenu()}>
-                        <Icon icon="chevron-left" />
-                    </div>
-                }
-                <div className="SubMenu-links">
-                    {children}
-                </div>
-            </div>
-        </ConditionalWrapper>
-    </Fragment>
-};
-
-const Menu: React.FC<MenuProps> & { SubMenu: typeof SubMenu } & { Item: typeof Item } = ({ children, collapsedAt, mobileMenuOpen }) => {
+const Menu: React.FC<MenuProps> & { Item: typeof Item } = ({ children, collapsedAt, mobileMenuOpen }) => {
     const { sizeIndex } = useResize();
     const [navState, updateNavState] = useState(null);
     useEffect(() => {
@@ -86,7 +37,6 @@ const Menu: React.FC<MenuProps> & { SubMenu: typeof SubMenu } & { Item: typeof I
 };
 
 Menu.Item = Item;
-Menu.SubMenu = SubMenu;
 
 export default Menu;
 

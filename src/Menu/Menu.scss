@@ -9,77 +9,58 @@
   span {
     transition: all 0.2s linear;
   }
-}
-
-.Menu {
-  width: auto;
-  .MenuItem {
-    &-chevron {
-      transition: all 0.2s linear;
-      .Streamline_Icon path {
-        stroke: $color_lightGrey;
-      }
-    }
-    &.open .MenuItem-chevron {
+  &-chevron {
+    transition: all 0.2s linear;
+  }
+  &.open {
+    .MenuItem-chevron {
       transform: rotate(180deg);
     }
   }
-  &.tablet {
-    width: 100%;
-    .MenuItem {
-      .Link > span {
-        opacity: 0;
-      }
+  @include md {
+    .MenuItem-chevron {
+      transform: rotate(90deg);
     }
-  }
-  &.mobile {
-    width: 100%;
-    .MenuItem {
-      padding: $space_l;
-      border-bottom: 1px solid $color_offWhite;
+    &.open {
       .MenuItem-chevron {
         transform: rotate(-90deg);
-      }
-      &.open .MenuItem-chevron {
-        transform: rotate(90deg);
       }
     }
   }
 }
 
-.SubMenu {
-  background: $color_offWhite;
-  overflow: hidden;
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 1;
-  position: relative;
-  z-index: 900;
-  &-close {
-    position: absolute;
-    top: $space_l;
-    right: $space_l;
-    cursor: pointer;
-  }
-  &.desktop,
-  &.tablet {
-    position: fixed;
-    top: 0;
-    left: 44px;
-    height: 100vh !important;
-    width: 240px;
-    .SubMenu-links {
-      padding: 0 $space_l;
-      margin-top: 274px;
-    }
-    &.open {
-      left: 285px;
-      @include shadow;
-    }
-  }
-  &.tablet {
-    left: -144px;
-    &.open {
-      left: 98px;
-    }
-  }
-}
+// .Menu {
+//   width: auto;
+//   .MenuItem {
+//     &-chevron {
+//       transition: all 0.2s linear;
+//       .Streamline_Icon path {
+//         stroke: $color_lightGrey;
+//       }
+//     }
+//     &.open .MenuItem-chevron {
+//       transform: rotate(180deg);
+//     }
+//   }
+//   &.tablet {
+//     width: 100%;
+//     .MenuItem {
+//       .Link > span {
+//         opacity: 0;
+//       }
+//     }
+//   }
+//   &.mobile {
+//     width: 100%;
+//     .MenuItem {
+//       padding: $space_l;
+//       border-bottom: 1px solid $color_offWhite;
+//       .MenuItem-chevron {
+//         transform: rotate(-90deg);
+//       }
+//       &.open .MenuItem-chevron {
+//         transform: rotate(90deg);
+//       }
+//     }
+//   }
+// }

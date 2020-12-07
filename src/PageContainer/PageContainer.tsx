@@ -18,7 +18,7 @@ const PageContainer: React.FC<PageContainerProps> = ({ collapsedAt, hasActionBar
 
     return <div data-testid="PageContainer" className={clsx("PageContainer", navState && navState, { hasActionBar, hasSteps })}>
         <div style={{ margin: '0 auto', maxWidth: 1488 }}>
-            {childrenWithProps(children, { collapsedAt })}
+            {children}
         </div>
     </div>
 };

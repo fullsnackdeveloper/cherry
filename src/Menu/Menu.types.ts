@@ -6,17 +6,14 @@ export interface MenuProps {
     children: ReactNode;
 }
 
-export interface SubMenuProps {
-    children: ReactNode,
-    icon: string,
-    title: string
-    mobileMenuOpen?: boolean,
-    navState?: string
-}
-
 export interface MenuItemProps {
     children: ReactNode,
     icon?: string,
     navState?: string,
-    active?: boolean
+    active?: boolean,
+    compact?: boolean,
+    chevron?: boolean,
+    title?: string,
+    onClick?: any,
+    open?: boolean
 }

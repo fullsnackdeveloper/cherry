@@ -7,6 +7,7 @@ export interface LinkProps {
     iconSize?: number,
     darkMode?: boolean,
     active?: boolean,
-    invert?: boolean
+    invert?: boolean,
+    compact?: boolean,
     onClick?: () => void,
 }
