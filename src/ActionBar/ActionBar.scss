@@ -4,6 +4,7 @@
   display: inline-flex;
   flex-direction: column;
   align-items: center;
+  position: sticky;
   & > * {
     margin-bottom: $space_m;
   }

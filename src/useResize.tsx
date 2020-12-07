@@ -15,7 +15,7 @@ export const useResize = () => {
   const xsMax = 320;
   const smMax = 540;
   const mdMax = 768;
-  const lgMax = 1080;
+  const lgMax = 1200;
   const xlMax = 1440;
 
   const getDimensions = () => {

@@ -8,4 +8,5 @@ export interface LinkProps {
     darkMode?: boolean,
     active?: boolean,
     invert?: boolean
+    onClick?: () => void,
 }

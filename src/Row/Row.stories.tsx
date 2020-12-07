@@ -40,7 +40,7 @@ export const Default = () => <Row>
 </Row>;
 
 export const RowWithTitle = () => <Row
-    columns={[1, 1, 2, 3, 5]}
+    columns={[0, 0, 0, 3, 5]}
     title="Feeling Makey?"
     subTitle="Turn your “how-to” into “Can Do” with this weeks trending Tutorials"
 >

@@ -14,7 +14,7 @@ import { useResize } from "../useResize";
 
 const Item: React.FC<MenuItemProps> = ({ active, icon, navState, children }) => (
     <div className={clsx("MenuItem")}>
-        <Link icon={icon} active={active}>
+        <Link icon={icon} active={active} invert>
             {children}
         </Link>
         {navState === 'mobile' &&
@@ -51,7 +51,7 @@ const SubMenu: React.FC<SubMenuProps> = ({ icon, navState, mobileMenuOpen, title
 
     return <Fragment>
         <div className={clsx("MenuItem", { open: subMenuOpen })} onClick={() => handleSubMenu()}>
-            <Link icon={icon}>
+            <Link icon={icon} invert>
                 {title}
             </Link>
             {navState !== 'tablet' &&

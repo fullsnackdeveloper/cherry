@@ -58,6 +58,7 @@
       @include shadow;
       path {
         stroke: $color_white;
+        fill: $color_white;
       }
     }
     &-content {
@@ -70,7 +71,7 @@
       &-category {
         background: $color_primary;
         align-self: flex-end;
-        padding: $space_s $space_m;
+        padding: 8px 10px;
         border-radius: 0 $border_radius 0 $border_radius;
         display: flex;
         position: relative;

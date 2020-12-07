@@ -14,13 +14,20 @@
     z-index: 10;
   }
   &-background {
-    width: 100vw;
+    width: calc(100vw - 285px);
     height: 100%;
     position: absolute;
     top: 0;
-    left: 50%;
+    left: calc(50% - 36px);
     transform: translate(-50%, 0);
     z-index: 1;
+    @include lg {
+      width: calc(100vw - 98px);
+      left: 50%;
+    }
+    @include md {
+      width: 100vw;
+    }
   }
 
   h2 {

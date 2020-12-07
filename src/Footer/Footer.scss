@@ -9,9 +9,9 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100vw;
+    width: calc(100vw - 285px);
     height: calc(100% + #{$grid-gap});
-    background-image: url("/footer-bg.png");
+    background-image: url("/footer-bg.svg");
     background-size: cover;
   }
   & * {
@@ -19,12 +19,17 @@
   }
   h3 {
     @include cardTitle;
+    color: $color_white;
     margin-bottom: $grid-gap/2;
   }
   &-links {
     & > * {
       margin-right: $grid-gap;
       margin-bottom: $grid-gap/2;
+      opacity: 0.7;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
   &-copyright {
@@ -36,5 +41,16 @@
     @include sm {
       text-align: left;
     }
+  }
+}
+
+@include lg {
+  .Footer::after {
+    width: calc(100vw - 98px);
+  }
+}
+@include md {
+  .Footer::after {
+    width: 100vw;
   }
 }

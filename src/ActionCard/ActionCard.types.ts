@@ -2,7 +2,7 @@
 export interface ActionCardProps {
     title?: string,
     icon?: string,
-    link?: string,
+    onClick?: () => void,
     linkText?: string,
     image?: string,
     size?: 'regular' | 'small',

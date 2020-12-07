@@ -2151,6 +2151,13 @@
     resolve-from "^5.0.0"
     store2 "^2.7.1"
 
+"@streamlinehq/streamline-bold@^0.6.1":
+  version "0.6.1"
+  resolved "https://npm.cloudsmith.io/streamlinehq/streamline-icons/@streamlinehq/streamline-bold/-/0.6.1/streamline-bold-0.6.1.tgz#f293c69fb6f4a70d695c909485781114d03d9d11"
+  integrity sha512-DaD1FmzJoeVMxmgpXqt/Ebad5uUpXcCpSx3/DKyYjj0lBiluZsRPvhTjiJJ6xkn4PuJRFvTr/8fiaWKcLlLZaA==
+  dependencies:
+    "@babel/polyfill" "^7.8.7"
+
 "@streamlinehq/streamline-icons-react@^0.6.1":
   version "0.6.1"
   resolved "https://npm.cloudsmith.io/streamlinehq/streamline-icons/@streamlinehq/streamline-icons-react/-/0.6.1/streamline-icons-react-0.6.1.tgz#c7ad8e03c8e2d1992ff9c222ace05f86063c1da2"

@@ -13,10 +13,9 @@ import clsx from "clsx";
 import { responsiveState } from "../utils";
 import { useResize } from "../useResize";
 
-const ActionBar: React.FC<ActionBarProps> = ({ collapsedAt, authorContent, productContent, authorAvatar, steps, closeSteps }) => {
+const ActionBar: React.FC<ActionBarProps> = ({ collapsedAt, authorContent, productContent, authorAvatar, steps, closeSteps, top }) => {
     const { sizeIndex } = useResize();
     const [sizeState, updateSizeState] = useState(null);
-    const [tabOpen, updateTabOpen] = useState(false);
     useEffect(() => {
         const sizing = responsiveState(sizeIndex, collapsedAt);
         if (sizing === 'desktop')
@@ -24,23 +23,22 @@ const ActionBar: React.FC<ActionBarProps> = ({ collapsedAt, authorContent, produ
         updateSizeState(sizing);
     }, [sizeIndex, collapsedAt]);
 
-    return <div data-testid="ActionBar" className={clsx("ActionBar", sizeState)}>
-        {console.log(tabOpen)}
+    return <div data-testid="ActionBar" className={clsx("ActionBar", sizeState)} style={{ top: sizeState ? 0 : top }}>
         <div className="ActionBar-background"></div>
         {steps &&
-            <Popup content={steps} position={sizeState ? 'bottomLeft' : 'leftTop'} className={`${sizeState} ActionBar-Popup`} fullWidth closePopup={closeSteps} opened={updateTabOpen}>
+            <Popup content={steps} position={sizeState ? 'bottomLeft' : 'leftTop'} className={`${sizeState} ActionBar-Popup`} fullWidth closePopup={closeSteps}>
                 <ToolTip message="Steps" disabled={sizeState}>
                     {sizeState && <Link icon="steps" iconSize={18}>Steps</Link>}
                 </ToolTip>
             </Popup>
         }
-        <Popup content={authorContent} position={sizeState ? 'bottomLeft' : 'leftTop'} className={`${sizeState} ActionBar-Popup`} addedPadding opened={updateTabOpen}>
+        <Popup content={authorContent} position={sizeState ? 'bottomLeft' : 'leftTop'} className={`${sizeState} ActionBar-Popup`} addedPadding>
             <ToolTip message="Author" disabled={sizeState}>
                 <Avatar image={authorAvatar} initials="NO" size={sizeState ? sizeState === 'mobile' ? 'tiny' : 'small' : 'regular'} />
                 {sizeState && <Link>Author</Link>}
             </ToolTip>
         </Popup>
-        <Popup content={productContent} position={sizeState ? 'bottom' : 'left'} className={`${sizeState} ActionBar-Popup`} addedPadding opened={updateTabOpen}>
+        <Popup content={productContent} position={sizeState ? 'bottom' : 'left'} className={`${sizeState} ActionBar-Popup`} addedPadding>
             <ToolTip message="Products" disabled={sizeState}>
                 {sizeState ?
                     sizeState === 'mobile' ? <Link icon="tags" iconSize={18}>Products</Link> : <Link icon="tags" iconSize={24}>Products</Link> :
@@ -59,7 +57,6 @@ const ActionBar: React.FC<ActionBarProps> = ({ collapsedAt, authorContent, produ
                 <Button type="icon" icon="link" iconSize={18} />
             </div>}
             width={160}
-            opened={updateTabOpen}
         >
             <ToolTip message="Share" disabled={sizeState}>
                 {sizeState ?

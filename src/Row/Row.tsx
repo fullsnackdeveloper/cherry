@@ -26,9 +26,9 @@ const Row: FC<RowProps> = ({ gutter, columns, children, title, subTitle, backgro
             gridTemplateColumns: `repeat(${columnsRef}, minmax(0, 1fr))`,
             gridGap: gutter,
         }
-    }, [columnsRef])
+    }, [columnsRef, sizeIndex])
 
-    return <section className={clsx("Row", { lastRow, hasBackground: backgroundColor, hasTitle: title || subTitle })}>
+    return <section className={clsx("Row", { lastRow, hasBackground: backgroundColor, hasTitle: title || subTitle, hide: columns[sizeIndex] === 0 })}>
         {backgroundColor &&
             <div className="Row-background" style={{ backgroundColor }} />
         }

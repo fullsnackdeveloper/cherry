@@ -16,6 +16,7 @@ $font_serif: "PT Serif", serif;
 @mixin font-defaults {
   font-family: $font_sans;
   font-weight: 500;
+  color: $color_black;
 }
 
 @mixin pageHeading {
@@ -92,7 +93,7 @@ $font_serif: "PT Serif", serif;
 @mixin link {
   @include font-defaults;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
   line-height: 18px;

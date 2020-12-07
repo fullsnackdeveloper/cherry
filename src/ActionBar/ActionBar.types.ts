@@ -7,4 +7,5 @@ export interface ActionBarProps {
     authorAvatar?: string;
     steps?: any,
     closeSteps?: boolean
+    top?: number
 }

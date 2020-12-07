@@ -10,6 +10,7 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, width
     const [open, updateOpen] = useState<boolean>(false);
     const [triggerPosition, updateTriggerPosition] = useState<any>(null);
     const trigger = useRef();
+    const popupRef = useRef();
 
     useEffect(() => {
         if (closePopup && open) {
@@ -17,7 +18,18 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, width
             document.body.style.overflow = "inherit";
             opened && opened(false)
         }
-    }, [closePopup])
+    }, [closePopup]);
+
+    useEffect(() => {
+        window.addEventListener('click', handleAllClicks);
+        return () => window.removeEventListener('click', handleAllClicks);
+    }, []);
+
+    const handleAllClicks = e => {
+        //@ts-ignore
+        if ((!popupRef?.current.contains(e.target)) && (!trigger?.current.contains(e.target)))
+            updateOpen(false);
+    }
 
     const styledContent = useMemo(() => {
         if (!triggerPosition) return {};
@@ -97,7 +109,7 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, width
                 {children}
             </div>
         </div >
-        <div className={clsx("Popup-content", position, className, { open, addedPadding, fullWidth })} style={styledContent}>
+        <div ref={popupRef} className={clsx("Popup-content", position, className, { open, addedPadding, fullWidth })} style={styledContent}>
             <div className="Popup-arrow" style={styledArrow}></div>
             {title && <div className="Popup-content-title">{title}</div>}
             {content}

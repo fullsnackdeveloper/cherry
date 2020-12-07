@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 export interface WidgetProps {
     title: string,
     subTitle: string,
-    link: string,
+    onClick?: () => void,
     linkText: string,
     color: string,
     children?: ReactNode,

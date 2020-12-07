@@ -10,7 +10,7 @@
   &:hover {
     @include hoverShadow;
     a .Icon {
-      margin-left: 20px;
+      margin-right: 10px;
     }
   }
   &-content {
@@ -25,6 +25,7 @@
       justify-content: flex-start;
       & path {
         stroke: $color_white;
+        stroke-width: 2px;
       }
     }
     & > .Icon {

@@ -9,7 +9,7 @@
   }
   &-heading {
     text-align: center;
-    margin-bottom: $grid-gap;
+    margin-bottom: 32px;
     position: relative;
     z-index: 10;
     h2 {
@@ -43,7 +43,7 @@
     z-index: 1;
   }
   &.hasTitle {
-    margin: $space_xxl 0;
+    margin: 88px 0;
   }
   &.hasTitle.lastRow {
     margin: $space_xxl 0 0;
@@ -53,5 +53,8 @@
   }
   &.hasBackground.lastRow .Row-background {
     height: calc(100% + 50px);
+  }
+  &.hide {
+    display: none;
   }
 }
