@@ -14,10 +14,6 @@
   &-head {
     padding: $grid-gap;
     border-radius: $border-radius $border-radius 0 0;
-    h2,
-    h3 {
-      color: $color_white;
-    }
     h2 {
       @include bodyHeading;
       margin-bottom: 8px;
@@ -25,6 +21,10 @@
     h3 {
       @include note;
       font-weight: 500;
+    }
+    h2,
+    h3 {
+      color: $color_white;
     }
   }
   &-body {
