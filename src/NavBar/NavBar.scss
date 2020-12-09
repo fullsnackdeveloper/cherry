@@ -34,7 +34,9 @@
   }
   &-navigation {
     padding-top: 24px;
-    overflow: scroll;
+    @include md {
+      overflow: scroll;
+    }
   }
   &-subMenu {
     background: $color_offWhite;
@@ -51,7 +53,7 @@
     }
     @include lg {
       left: -285px;
-      top: 62px;
+      top: 0;
     }
     &-close {
       position: absolute;
@@ -61,7 +63,7 @@
     }
     &.open {
       left: 285px;
-      @include lg {
+      @include xl {
         left: 88px;
       }
       @include md {
