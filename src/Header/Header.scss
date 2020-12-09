@@ -59,6 +59,22 @@
         opacity: 1;
       }
     }
+    @include md {
+      display: none;
+    }
+    &.outside {
+      position: absolute;
+      bottom: initial;
+      margin-top: -24px;
+      display: inline-flex;
+      background: transparent;
+      span {
+        color: $color_mediumGrey;
+      }
+      a {
+        color: $color_mediumGrey;
+      }
+    }
   }
   @include lg {
     margin-bottom: $grid-gap;

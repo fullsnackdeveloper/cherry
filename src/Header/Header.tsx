@@ -27,6 +27,24 @@ const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categori
         })
     }
 
+    const renderSource = (outside?: boolean) => {
+        return <div className={clsx("Header-source", { outside })}>
+            {image.source?.author?.name && image.source?.author?.link &&
+                <div className="Header-source-author">
+                    <a href={image.source?.author.link} target="_blank">{image.source?.author.name}</a>
+                </div>
+            }
+            {image.source?.site && image.source?.author &&
+                <span>|</span>
+            }
+            {image.source?.site?.name && image.source?.site?.link &&
+                <div className="Header-source-site">
+                    <a href={image.source?.site.link} target="_blank">{image.source?.site.name}</a>
+                </div>
+            }
+        </div>
+    }
+
     return <Fragment>
         <div className={clsx("Header", type)}>
             <div className="Header-backgroundImage">
@@ -46,22 +64,9 @@ const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categori
                     < Stats stats={stats} />
                 }
             </div>
-            <div className="Header-source">
-                {image.source?.author?.name && image.source?.author?.link &&
-                    <div className="Header-source-author">
-                        <a href={image.source?.author.link} target="_blank">{image.source?.author.name}</a>
-                    </div>
-                }
-                {image.source?.site && image.source?.author &&
-                    <span>|</span>
-                }
-                {image.source?.site?.name && image.source?.site?.link &&
-                    <div className="Header-source-site">
-                        <a href={image.source?.site.link} target="_blank">{image.source?.site.name}</a>
-                    </div>
-                }
-            </div>
+            {(size > 2) && renderSource()}
         </div>
+        {(size <= 2) && renderSource(true)}
         {stats && (size <= 1) &&
             <Stats stats={stats} />
         }
