@@ -78,7 +78,7 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
                     <div key={`${index}-subMenu`}>
                         {item.children && navState === 'mobile' &&
                             <div className="Navbar-inlineSubMenu" style={{
-                                height: subMenuOpen === index ? (67 * item.children.length) : 0
+                                height: subMenuOpen === index ? (67 * (item.children.length + 7)) : 0
                             }}>
                                 {item.children.map((subItem, subIndex) => {
                                     return <Menu.Item

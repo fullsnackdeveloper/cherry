@@ -35,7 +35,8 @@
   &-navigation {
     padding-top: 24px;
     @include md {
-      overflow: scroll;
+      overflow-y: scroll;
+      overflow-x: hidden;
     }
   }
   &-subMenu {

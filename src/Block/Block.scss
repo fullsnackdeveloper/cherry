@@ -25,6 +25,7 @@
   a {
     @include paragraph;
     @include squiggleUnderline(false);
+    display: initial;
     color: $color_altBlack;
   }
   i {

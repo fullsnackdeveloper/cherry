@@ -38,19 +38,25 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 100%;
     display: flex;
     justify-content: flex-end;
+    background: rgba(45, 49, 67, 0.4);
+    padding: 0 12px;
+    border-radius: $border_radius 0 0 0;
     span {
       @include source;
+      color: $color_white;
       padding: 0 4px;
     }
     a {
       @include source;
+      color: $color_white;
+      opacity: 0.6;
       text-decoration: none;
       transition: all 0.3s linear;
       &:hover {
-        color: $color_black;
+        color: $color_white;
+        opacity: 1;
       }
     }
   }
