@@ -12,7 +12,9 @@ const Avatar: React.FC<AvatarProps> = ({ size, image, initials }) => {
         avatar.current.focus();
     }, [avatar])
 
-    return <div data-testid="Avatar" ref={avatar} className={clsx("Avatar", size, { noProfile: !image })} style={{ backgroundImage: `url(${image})` }} tabIndex={-1} onClick={handleClick}>{!image && initials}</div>
+    return <div data-testid="Avatar" ref={avatar} className={clsx("Avatar", size, { noProfile: !image })} style={{ backgroundImage: `url(${image})` }} tabIndex={-1} onClick={handleClick}>
+        <span>{!image && initials}</span>
+    </div>
 };
 
 Avatar.defaultProps = {

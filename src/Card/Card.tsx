@@ -12,7 +12,7 @@ const Card: FC<CardProps> = ({ title, category, image, type, size, author, icon,
     <div className={clsx('Card', type, size)} onClick={onClick}>
         {icon &&
             <div className="Card-image-icon">
-                <ConditionalWrapper conditional={iconMessage} wrapper={children => <ToolTip message={iconMessage}>{children}</ToolTip>}>
+                <ConditionalWrapper conditional={iconMessage} wrapper={children => <ToolTip message={iconMessage} position="left">{children}</ToolTip>}>
                     <Icon icon={icon} />
                 </ConditionalWrapper>
             </div>

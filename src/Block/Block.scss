@@ -20,15 +20,16 @@
   }
   p {
     @include paragraph;
-    color: tint($color_black, 8%);
+    color: $color_altBlack;
   }
   a {
     @include paragraph;
-    color: $color_primary;
+    @include squiggleUnderline(false);
+    color: $color_altBlack;
   }
   i {
     @include paragraph;
     font-style: italic;
-    color: tint($color_black, 20%);
+    color: $color_altBlack;
   }
 }

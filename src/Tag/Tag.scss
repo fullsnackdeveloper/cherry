@@ -2,22 +2,21 @@
 
 .Tag {
   background: $color_white;
-  padding: 12px 18px;
-  border: 1px solid $color_grey;
+  padding: 12px 14px;
+  border: 1px solid $color_lightGrey;
   border-radius: $border-radius;
   outline: none;
   cursor: pointer;
   display: inline-flex;
   transition: all 0.2s linear;
   white-space: nowrap;
-  @include cardTitle;
-  font-weight: 400;
+  @include description;
   &:hover {
-    border: 1px solid $color_black;
+    border: 1px solid $color_altBlack;
   }
   &:active,
   &.active {
-    background: $color_black;
+    background: $color_altBlack;
     color: $color_white;
   }
 }

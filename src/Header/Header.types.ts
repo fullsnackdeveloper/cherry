@@ -1,8 +1,9 @@
+import { ReactNode } from 'react';
 
 export interface HeaderProps {
     title?: string,
     subTitle?: string,
-    description?: string,
+    description?: string | ReactNode,
     image?: {
         src: string,
         alt: string
@@ -12,4 +13,5 @@ export interface HeaderProps {
     collapsedAt?: [],
     squiggle?: boolean,
     maxWidth?: number
+    type?: "display" | "content"
 }

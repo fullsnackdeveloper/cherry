@@ -52,8 +52,8 @@
       background: $color_black;
       padding: 8px;
       border-radius: 100px;
-      width: 18px;
-      height: 18px;
+      width: 22px;
+      height: 22px;
       z-index: 20;
       @include shadow;
       path {
@@ -71,7 +71,7 @@
       &-category {
         background: $color_primary;
         align-self: flex-end;
-        padding: 8px 10px;
+        padding: 4px 8px;
         border-radius: 0 $border_radius 0 $border_radius;
         display: flex;
         position: relative;
@@ -137,6 +137,10 @@
       line-height: 28px;
       letter-spacing: 0;
       text-transform: capitalize;
+      @include lg {
+        font-size: 16px;
+        line-height: 20px;
+      }
     }
   }
 

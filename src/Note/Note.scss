@@ -7,15 +7,16 @@
   border-radius: $border-radius;
   p {
     @include note;
-    color: tint($color_black, 10%);
-    b {
+    color: $color_grey;
+    b,
+    strong {
       font-weight: 600;
     }
   }
   &-icon {
     margin-right: $space_m;
     path {
-      stroke: tint($color_black, 60%);
+      stroke: $color_mediumGrey;
     }
   }
 }

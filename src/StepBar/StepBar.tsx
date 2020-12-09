@@ -20,7 +20,7 @@ const StepBar: React.FC<StepBarProps> = ({ steps, onSelect }) => {
         <div className="StepBar-scroll">
             {steps.map((step, index) => (
                 <div key={step.key} className="StepBar-step" onClick={handleStepSelect(step.key)}>
-                    <Tag activate={step.key === currentStep}><span>Step: {index + 1}</span>{step.title}</Tag>
+                    <Tag activate={step.key === currentStep}><span>Step {index + 1}:</span>{step.title}</Tag>
                 </div>
             ))}
         </div>

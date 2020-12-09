@@ -28,15 +28,15 @@ const Row: FC<RowProps> = ({ gutter, columns, children, title, subTitle, backgro
         }
     }, [columnsRef, sizeIndex])
 
-    return <section className={clsx("Row", { lastRow, hasBackground: backgroundColor, hasTitle: title || subTitle, hide: columns[sizeIndex] === 0 })}>
+    return <section className={clsx("Row", titleStyle, { lastRow, hasBackground: backgroundColor, hasTitle: title || subTitle, hide: columns[sizeIndex] === 0 })}>
         {backgroundColor &&
             <div className="Row-background" style={{ backgroundColor }} />
         }
         {title &&
-            <div className={clsx("Row-heading", titleStyle)} >
+            <div className="Row-heading" >
                 <h2>{title}</h2>
                 {subTitle && (titleStyle !== 'fullwidth') && <h3>{subTitle}</h3>}
-                {link && <Link link={link}>{linkText}</Link>}
+                {link && <Link invert link={link}>{linkText}</Link>}
             </div>
         }
         <div className="Row-container" style={renderStyles()}>

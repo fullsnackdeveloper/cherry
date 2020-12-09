@@ -12,6 +12,8 @@ export const Default = () => <ToolTip message="Author">
     <Avatar initials="NO" />
 </ToolTip>;
 
-export const ToolTipAnything = () => <ToolTip message="This is a drill">
-    <Button type="icon" icon="drill" iconSize={30} />
-</ToolTip>;
+export const ToolTipAnything = () => <div style={{ display: "flex", justifyContent: "center" }}>
+    <ToolTip message="This is a drill" position="left">
+        <Button type="icon" icon="drill" iconSize={30} />
+    </ToolTip>
+</div>;

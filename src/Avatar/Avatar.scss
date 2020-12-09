@@ -10,8 +10,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $color_white;
-  background-color: $color_lightGrey;
+  background-color: $color_offPrimary;
+  span {
+    color: $color_primary;
+    font-weight: 500;
+  }
 
   &.tiny {
     width: 20px;

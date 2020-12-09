@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 export const childrenWithProps = (children, props) => {
   return React.Children.map(children, child => {

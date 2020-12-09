@@ -28,39 +28,3 @@
     }
   }
 }
-
-// .Menu {
-//   width: auto;
-//   .MenuItem {
-//     &-chevron {
-//       transition: all 0.2s linear;
-//       .Streamline_Icon path {
-//         stroke: $color_lightGrey;
-//       }
-//     }
-//     &.open .MenuItem-chevron {
-//       transform: rotate(180deg);
-//     }
-//   }
-//   &.tablet {
-//     width: 100%;
-//     .MenuItem {
-//       .Link > span {
-//         opacity: 0;
-//       }
-//     }
-//   }
-//   &.mobile {
-//     width: 100%;
-//     .MenuItem {
-//       padding: $space_l;
-//       border-bottom: 1px solid $color_offWhite;
-//       .MenuItem-chevron {
-//         transform: rotate(-90deg);
-//       }
-//       &.open .MenuItem-chevron {
-//         transform: rotate(90deg);
-//       }
-//     }
-//   }
-// }

@@ -6,4 +6,5 @@ export interface CarouselProps {
     */
     children: React.ReactNode[],
     columns: number[],
+    noTitles?: boolean
 }

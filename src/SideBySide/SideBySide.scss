@@ -14,20 +14,13 @@
     z-index: 10;
   }
   &-background {
-    width: calc(100vw - 285px);
+    width: 2200px;
     height: 100%;
     position: absolute;
     top: 0;
-    left: calc(50% - 36px);
+    left: 50%;
     transform: translate(-50%, 0);
     z-index: 1;
-    @include lg {
-      width: calc(100vw - 98px);
-      left: 50%;
-    }
-    @include md {
-      width: 100vw;
-    }
   }
 
   h2 {
@@ -70,5 +63,6 @@
 
   &.hasBackground {
     padding: 50px 0;
+    margin: 32px 0;
   }
 }

@@ -7,9 +7,10 @@ import React, { useEffect, useState } from 'react';
 import { CarouselProps } from "./Carousel.types";
 import Icon from '../Icon/Icon';
 import _ from 'lodash';
+import clsx from 'clsx';
 import { useResize } from '../useResize';
 
-const Carousel: React.FC<CarouselProps> = ({ children, columns }) => {
+const Carousel: React.FC<CarouselProps> = ({ children, columns, noTitles }) => {
     const { sizeIndex } = useResize();
     const [columnCount, updatecolumnCount] = useState(null);
 
@@ -21,7 +22,7 @@ const Carousel: React.FC<CarouselProps> = ({ children, columns }) => {
             updatecolumnCount(columns[sizeIndex]);
     }, [sizeIndex]);
 
-    return <div className="Carousel">
+    return <div className={clsx("Carousel", { noTitles })}>
         <CarouselProvider
             naturalSlideWidth={100}
             naturalSlideHeight={400}

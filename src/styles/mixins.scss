@@ -28,6 +28,12 @@
   }
 }
 
+@mixin lgAlt {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
 @function tint($color, $percentage) {
   @return mix(white, $color, $percentage);
 }

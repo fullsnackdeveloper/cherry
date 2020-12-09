@@ -1,7 +1,7 @@
 @import "../styles/stylesIndex.scss";
 
 .Footer {
-  padding: 90px 0 $grid-gap;
+  padding: 64px 0 $grid-gap;
   position: relative;
   &::after {
     content: "";
@@ -27,6 +27,7 @@
       margin-right: $grid-gap;
       margin-bottom: $grid-gap/2;
       opacity: 0.7;
+      text-align: left;
       &:hover {
         opacity: 1;
       }
@@ -36,7 +37,7 @@
     position: relative;
     z-index: 10;
     @include meta;
-    opacity: 0.4;
+    opacity: 0.2;
     text-align: right;
     @include sm {
       text-align: left;
@@ -44,12 +45,12 @@
   }
 }
 
-@include lg {
+@include xl {
   .Footer::after {
-    width: calc(100vw - 98px);
+    width: calc(100vw - 90px);
   }
 }
-@include md {
+@include lg {
   .Footer::after {
     width: 100vw;
   }

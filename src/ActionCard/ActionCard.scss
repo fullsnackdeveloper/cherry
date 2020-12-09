@@ -9,8 +9,13 @@
   transition: all 0.4s ease;
   &:hover {
     @include hoverShadow;
-    a .Icon {
-      margin-right: 10px;
+    a {
+      &:hover {
+        opacity: 1;
+      }
+      .Icon {
+        margin-right: 10px;
+      }
     }
   }
   &-content {
@@ -19,7 +24,7 @@
     h3 {
       @include paragraphHeading;
       color: $color_white;
-      margin-bottom: $space_m;
+      margin-bottom: $space_s;
     }
     .Icon span {
       justify-content: flex-start;
@@ -33,6 +38,8 @@
     }
     a {
       @include link;
+      opacity: 0.7;
+      transition: all 0.3s ease;
       color: $color_white;
       display: flex;
       align-items: center;
@@ -52,8 +59,11 @@
     background-size: cover;
     background-position: center center;
     border-radius: 200px 0 0 200px;
-    @include sm {
-      max-width: 0px;
+    @include lgAlt {
+      display: none;
+    }
+    @include md {
+      display: initial;
     }
   }
 }

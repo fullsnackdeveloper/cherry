@@ -34,9 +34,6 @@
       background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.6));
     }
   }
-  @include lg {
-    margin-bottom: $grid-gap/2;
-  }
   @include md {
     margin-bottom: $grid-gap;
     align-items: flex-end;
@@ -55,6 +52,11 @@
   &-categories {
     display: flex;
     align-items: center;
+    margin: 24px 0;
+    .Link {
+      line-height: 26px;
+      @include squiggleUnderline(true);
+    }
     .Icon {
       padding: 0 10px;
       .Streamline_Icon path {
@@ -80,7 +82,11 @@
       color: $color_white;
     }
     p.description {
-      @include meta;
+      @include description;
+      a {
+        @include description;
+        color: $color_white;
+      }
       margin-bottom: $space_s;
       color: $color_white;
     }
@@ -94,6 +100,13 @@
     }
     @include sm {
       position: relative;
+    }
+  }
+  &.content {
+    h1 {
+      @include pageTitle;
+      margin-bottom: 24px;
+      color: $color_white;
     }
   }
 

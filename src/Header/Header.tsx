@@ -9,7 +9,7 @@ import Stats from "../Stats/Stats";
 import clsx from "clsx";
 import { useResize } from "../useResize";
 
-const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categories, stats, squiggle, maxWidth }: HeaderProps) => {
+const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categories, stats, squiggle, maxWidth, type }: HeaderProps) => {
     const { sizeIndex } = useResize();
     const [size, updateSize] = useState(null);
     useEffect(() => {
@@ -28,7 +28,7 @@ const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categori
     }
 
     return <Fragment>
-        <div className={clsx("Header")}>
+        <div className={clsx("Header", type)}>
             <div className="Header-backgroundImage">
                 <img src={image.src} alt={image.alt} loading="lazy" />
                 <div className="Header-backgroundImage-overlay" />
@@ -53,6 +53,9 @@ const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categori
     </Fragment>
 };
 
+Header.defaultProps = {
+    type: 'content'
+}
 
 export default Header;
 

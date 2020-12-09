@@ -10,7 +10,7 @@ import clsx from "clsx";
 import { responsiveState } from "../utils";
 import { useResize } from "../useResize";
 
-const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, collapsedAt, onNavigate }) => {
+const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, collapsedAt, onNavigate, activeLink }) => {
     const { sizeIndex } = useResize();
     const [subMenuOpen, subMenuOpenUpdate] = useState(null);
     const [mobileMenuOpen, mobileMenuOpenUpdate] = useState(null);
@@ -27,6 +27,7 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
     }, [subMenuOpen]);
 
     const openSubMenu = index => () => {
+        console.log(index)
         if (index === subMenuOpen)
             return subMenuOpenUpdate(null);
         subMenuOpenUpdate(index);
@@ -70,6 +71,7 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
                         chevron={item.children}
                         onClick={item.children ? openSubMenu(index) : handleClick(item.link)}
                         open={subMenuOpen === index}
+                        active={activeLink === item.link}
                     >
                         {item.title}
                     </Menu.Item>,
@@ -86,6 +88,7 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
                                         chevron={subItem.children}
                                         onClick={handleClick(subItem.link)}
                                         open={subMenuOpen === index}
+                                        active={activeLink === subItem.link}
                                     >
                                         {subItem.title}
                                     </Menu.Item>
@@ -104,7 +107,7 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
                         <Icon icon="chevron-left" size={18} />
                     </div>
                     {menuItem.children.map((subItem, index) => {
-                        return <Menu.Item key={index} onClick={handleClick(subItem.link)}>
+                        return <Menu.Item key={index} onClick={handleClick(subItem.link)} active={activeLink === subItem.link}>
                             {subItem.title}
                         </Menu.Item>
                     })}

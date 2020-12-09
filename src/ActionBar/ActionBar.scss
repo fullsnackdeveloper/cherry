@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   position: sticky;
+  z-index: 10;
   & > * {
     margin-bottom: $space_m;
   }
@@ -25,6 +26,13 @@
     }
   }
 
+  .overlay.open {
+    opacity: 0 !important;
+    @include lg {
+      opacity: 0.4 !important;
+    }
+  }
+
   &-background {
     position: absolute;
     width: 100%;
@@ -39,7 +47,7 @@
   // Action Bar Tablet
   &.tablet {
     flex-direction: row;
-    width: calc(100% - 114px);
+    width: calc(100% - 104px);
     justify-content: space-around;
     background: $color_white;
     padding: 8px;
@@ -56,7 +64,7 @@
       justify-content: center;
     }
     .Popup + .Popup {
-      border-left: 1px solid $color_lightGrey;
+      border-left: 1px solid $color_mediumGrey;
     }
     .Avatar {
       margin: 0 8px 0 0;
