@@ -6,6 +6,7 @@ import Button from "./Button/Button";
 import Card from "./Card/Card";
 import Carousel from "./Carousel/Carousel";
 import Col from "./Col/Col";
+import Divider from "./Divider/Divider";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import Icon from "./Icon/Icon";
@@ -25,4 +26,4 @@ import Tag from './Tag/Tag';
 import ToolTip from "./ToolTip/ToolTip";
 import Widget from "./Widget/Widget";
 
-export { Button, Card, ActionCard, Header, Icon, Row, Col, Carousel, Link, Menu, Navbar, Image, PageContainer, Block, ToolTip, ActionBar, Avatar, Popup, Stats, Step, Tag, Note, Footer, Widget, StepBar, SideBySide };
+export { Button, Card, ActionCard, Header, Icon, Row, Col, Carousel, Link, Menu, Navbar, Image, PageContainer, Block, ToolTip, ActionBar, Avatar, Popup, Stats, Step, Tag, Note, Footer, Widget, StepBar, SideBySide, Divider };

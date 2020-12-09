@@ -34,6 +34,26 @@
       background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.6));
     }
   }
+  &-source {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    span {
+      @include source;
+      padding: 0 4px;
+    }
+    a {
+      @include source;
+      text-decoration: none;
+      transition: all 0.3s linear;
+      &:hover {
+        color: $color_black;
+      }
+    }
+  }
   @include md {
     margin-bottom: $grid-gap;
     align-items: flex-end;
@@ -82,9 +102,10 @@
       color: $color_white;
     }
     p.description {
-      @include description;
+      @include note;
       a {
-        @include description;
+        @include note;
+        @include squiggleUnderline(false);
         color: $color_white;
       }
       margin-bottom: $space_s;

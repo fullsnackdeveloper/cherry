@@ -41,5 +41,6 @@ export const icons = [
   'twitter',
   'warning',
   'confused',
-  'minus'
+  'minus',
+  'user'
 ]

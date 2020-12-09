@@ -21,9 +21,9 @@ export const Default = () => {
             authorContent={<div>
                 <h3>Originally contributed by Trent Weston</h3>
                 <p>Hey, I’m Trent a Home repair writer with 20 years of hands-on home remodelling, fixing, and improving experience, here to guide you through your next home Reno project!</p>
-                <Link invert>See profile</Link>
+                <Link>See profile</Link>
                 <hr />
-                <Link invert>Editorial guidelines</Link>
+                <Link>Editorial guidelines</Link>
             </div>}
             productContent={<div>
                 <h3>No products have been added yet.</h3>

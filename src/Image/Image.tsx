@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 import Icon from "../Icon/Icon";
 import { ImageProps } from "./Image.types";
-import Link from "../Link/Link";
+import _ from 'lodash';
 import clsx from "clsx";
 
 const Image: React.FC<ImageProps> = ({ image, hotspots }) => {
@@ -26,7 +26,7 @@ const Image: React.FC<ImageProps> = ({ image, hotspots }) => {
                     <Icon icon="spot" size={24} />
                 </div>
                 <div className={clsx("Hotspot-hot", { top: h.y > 50 })} style={{ transform: `translateX(-${h.x}%)` }}>
-                    <a href={h.url}><span>{h.title}</span><span>shop<Icon icon="chevron-right" size={8} /></span></a>
+                    <span className="spot-title">{_.truncate(h.title, { 'length': 32, })}</span><span className="spot-shop">shop<Icon icon="chevron-right" size={8} /></span>
                 </div>
             </div>
         })

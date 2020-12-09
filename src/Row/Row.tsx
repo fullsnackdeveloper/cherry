@@ -36,7 +36,7 @@ const Row: FC<RowProps> = ({ gutter, columns, children, title, subTitle, backgro
             <div className="Row-heading" >
                 <h2>{title}</h2>
                 {subTitle && (titleStyle !== 'fullwidth') && <h3>{subTitle}</h3>}
-                {link && <Link invert link={link}>{linkText}</Link>}
+                {link && <Link link={link}>{linkText}</Link>}
             </div>
         }
         <div className="Row-container" style={renderStyles()}>

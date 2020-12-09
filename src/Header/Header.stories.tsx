@@ -6,14 +6,26 @@ export default {
     component: Header
 };
 
+const image = {
+    src: 'https://images.unsplash.com/photo-1474128670149-7082a8d370ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+    alt: 'chute',
+    source: {
+        author: {
+            name: 'Paterson Mongumry',
+            link: 'https://someone.com',
+        },
+        site: {
+            name: 'Unsplash',
+            link: 'https://unsplash.com',
+        }
+    }
+}
+
 export const Default = () => <Header
     title="Header Title About Something Really Long to Test the Stretching Feature"
     subTitle="We’re here to help you out with whatever project you are working on, let’s DIY together!"
     // description="Originally contributed by name here • last updated 10/20/20"
-    image={{
-        src: "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-        alt: "some alt text here"
-    }}
+    image={image}
     squiggle
     categories={[
         {

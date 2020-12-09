@@ -25,3 +25,22 @@ export const Default = () => <StepBar onSelect={() => alert('hey')} steps={[
         title: "Finished it"
     }
 ]} />;
+
+export const withWrapper = () => <StepBar onSelect={() => alert('hey')} wrapper={children => <i className={"something"}>{children}</i>} steps={[
+    {
+        key: 1,
+        title: "Make something happen"
+    },
+    {
+        key: 2,
+        title: "Something once its done"
+    },
+    {
+        key: 3,
+        title: "There you go its close"
+    },
+    {
+        key: 4,
+        title: "Finished it"
+    }
+]} />;

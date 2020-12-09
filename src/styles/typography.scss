@@ -36,8 +36,8 @@ $font_serif: "PT Serif", serif;
   font-weight: 500;
   line-height: 40px;
   @include md {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 24px;
+    line-height: 32px;
   }
 }
 
@@ -110,7 +110,7 @@ $font_serif: "PT Serif", serif;
   line-height: 18px;
   letter-spacing: 1px;
   text-decoration: none;
-  @include sm {
+  @include md {
     font-size: 12px;
   }
 }
@@ -119,12 +119,9 @@ $font_serif: "PT Serif", serif;
   @include font-defaults;
   font-size: 14px;
   line-height: 20px;
-}
-
-@mixin description {
-  @include font-defaults;
-  font-size: 14px;
-  line-height: 22px;
+  @include md {
+    font-size: 12px;
+  }
 }
 
 @mixin meta {
@@ -138,5 +135,5 @@ $font_serif: "PT Serif", serif;
   font-size: 14px;
   line-height: 22px;
   font-style: italic;
-  color: $color_grey;
+  color: $color_mediumGrey;
 }

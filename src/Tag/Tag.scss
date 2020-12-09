@@ -10,7 +10,7 @@
   display: inline-flex;
   transition: all 0.2s linear;
   white-space: nowrap;
-  @include description;
+  @include note;
   &:hover {
     border: 1px solid $color_altBlack;
   }

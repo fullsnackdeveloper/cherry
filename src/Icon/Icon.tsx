@@ -1,32 +1,25 @@
 import "./Icon.scss";
 
-import { Menu, View } from "@streamlinehq/streamline-regular/lib/interface-essential";
+import { Alerts, FormValidation, Home, Layouts, LinkUnlink, Menu, Select, TagsBookmarks, View } from "@streamlinehq/streamline-regular/lib/interface-essential";
+import { PhotosImages, ProfessionalNetworks, SocialMedias, Videos } from "@streamlinehq/streamline-regular/lib/logos";
 
-import { Alerts } from "@streamlinehq/streamline-regular/lib/interface-essential";
 import { Apps } from "@streamlinehq/streamline-regular/lib/programing-apps-websites";
 import { Arrows } from "@streamlinehq/streamline-regular/lib/arrows-diagrams";
 import { Books } from "@streamlinehq/streamline-regular/lib/content";
 import { Envelopes } from "@streamlinehq/streamline-regular/lib/emails";
-import { FormValidation } from "@streamlinehq/streamline-regular/lib/interface-essential";
+import { GeomerticCloseUpSingleUserActionsNeutral } from "@streamlinehq/streamline-regular/lib/users";
+import { GeomerticCloseUpSingleUserNeutral } from "@streamlinehq/streamline-regular/lib/users";
 import { Glasses } from "@streamlinehq/streamline-regular/lib/clothes-footwear-accessories";
-import { Home } from "@streamlinehq/streamline-regular/lib/interface-essential";
 import { IconProps } from "./Icon.types";
-import { Layouts } from "@streamlinehq/streamline-regular/lib/interface-essential";
-import { LinkUnlink } from "@streamlinehq/streamline-regular/lib/interface-essential";
 import { LoveIt } from "@streamlinehq/streamline-regular/lib/social-medias-rewards-rating";
-import { PhotosImages } from "@streamlinehq/streamline-regular/lib/logos";
+import { MultimediaControls } from "@streamlinehq/streamline-bold/lib/interface-essential"
 import { PowerTools } from "@streamlinehq/streamline-regular/lib/tools-constructions";
 import React from "react";
-import { Select } from "@streamlinehq/streamline-regular/lib/interface-essential";
 import { SendEmail } from "@streamlinehq/streamline-regular/lib/emails";
 import { Smileys } from "@streamlinehq/streamline-regular/lib/messages-chat-smileys";
-import { SocialMedias } from "@streamlinehq/streamline-regular/lib/logos";
 import StreamlineIcon from "@streamlinehq/streamline-icons-react";
-import { StudyingLearning } from "@streamlinehq/streamline-bold/lib/school-learning";
-import { TagsBookmarks } from "@streamlinehq/streamline-regular/lib/interface-essential";
 import { Tasks } from "@streamlinehq/streamline-regular/lib/work-office-companies";
 import { Wayfinder } from "@streamlinehq/streamline-mini-line/lib/maps-travel";
-import gradHat from "../images/grad-hat.svg";
 
 const Icon: React.FC<IconProps> = ({ icon, size }) => {
     return <div className="Icon">
@@ -50,12 +43,16 @@ const Icon: React.FC<IconProps> = ({ icon, size }) => {
         {(icon === "email") && <StreamlineIcon icon={Envelopes.Envelope} size={size} />}
         {(icon === "facebook") && <StreamlineIcon icon={SocialMedias.SocialMediaFacebook} size={size} />}
         {(icon === "twitter") && <StreamlineIcon icon={SocialMedias.SocialMediaTwitter} size={size} />}
+        {(icon === "snapchat") && <StreamlineIcon icon={SocialMedias.SocialMediaSnapchat} size={size} />}
         {(icon === "pinterest") && <StreamlineIcon icon={PhotosImages.SocialPinterest} size={size} />}
+        {(icon === "youtube") && <StreamlineIcon icon={Videos.SocialVideoYoutube} size={size} />}
+        {(icon === "instagram") && <StreamlineIcon icon={PhotosImages.SocialInstagram} size={size} />}
+        {(icon === "linkedin") && <StreamlineIcon icon={ProfessionalNetworks.ProfessionalNetworkLinkedin} size={size} />}
         {(icon === "happy") && <StreamlineIcon icon={Smileys.SmileyThrilled} size={size} />}
         {(icon === "hide") && <StreamlineIcon icon={View.ViewOff} size={size} />}
         {(icon === "more") && <StreamlineIcon icon={Menu.NavigationMenuHorizontal} size={size} />}
         {(icon === "menu") && <StreamlineIcon icon={Menu.NavigationMenu} size={size} />}
-        {(icon === "spot") && <StreamlineIcon icon={Select.CursorDoubleClick2} size={size} />}
+        {(icon === "spot") && <StreamlineIcon icon={MultimediaControls.ButtonRecordAlternate} size={size} />}
         {(icon === "tags") && <div className="flip"><StreamlineIcon icon={TagsBookmarks.TagsDouble1} size={size} /></div>}
         {(icon === "send") && <StreamlineIcon icon={SendEmail.SendEmail} size={size} />}
         {(icon === "steps") && <StreamlineIcon icon={Wayfinder.TravelWayfinderStairs1} size={size} />}
@@ -71,6 +68,8 @@ const Icon: React.FC<IconProps> = ({ icon, size }) => {
         {(icon === "remember") && <StreamlineIcon icon={Tasks.TaskFingerBandage} size={size} />}
         {(icon === "info") && <StreamlineIcon icon={Alerts.InformationCircle} size={size} />}
         {(icon === "warning") && <StreamlineIcon icon={Alerts.AlertTriangle} size={size} />}
+        {(icon === "user") && <StreamlineIcon icon={GeomerticCloseUpSingleUserNeutral.SingleNeutralCircle} size={size} />}
+        {(icon === "userPencil") && <StreamlineIcon icon={GeomerticCloseUpSingleUserActionsNeutral.SingleNeutralActionsEdit1} size={size} />}
     </div>
 }
 

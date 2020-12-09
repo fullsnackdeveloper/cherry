@@ -5,8 +5,8 @@ import { LinkProps } from "./Link.types";
 import React from "react";
 import clsx from "clsx";
 
-const Link: React.FC<LinkProps> = ({ active, children, icon, iconSize, darkMode, onClick, invert, compact }) => (
-    <button data-testid="Link" className={clsx("Link", { active, darkMode, withIcon: icon, invert, onlyIcon: !children, hideText: compact && icon })} onClick={onClick}>
+const Link: React.FC<LinkProps> = ({ active, children, icon, iconSize, darkMode, onClick, compact }) => (
+    <button data-testid="Link" className={clsx("Link", { active, darkMode, withIcon: icon, onlyIcon: !children, hideText: compact && icon })} onClick={onClick}>
         {icon &&
             <Icon size={iconSize} icon={icon}></Icon>
         }
