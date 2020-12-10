@@ -1,33 +1,34 @@
 import "./StepBar.scss";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import ConditionalWrapper from "../ConditionalWrapper";
 import { StepBarProps } from "./StepBar.types";
 import Tag from "../Tag/Tag";
 
-const StepBar: React.FC<StepBarProps> = ({ steps, onSelect, wrapper }) => {
+const StepBar: React.FC<StepBarProps> = ({ steps, wrapper, activeStep }) => {
     const [currentStep, updateCurrentStep] = useState(0);
 
-    const handleStepSelect = key => () => {
-        updateCurrentStep(key);
-        onSelect(key);
-    }
+    useEffect(() => {
+        updateCurrentStep(activeStep)
+    }, [activeStep])
 
     return <div data-testid="StepBar" className="StepBar">
-        <div className="StepBar-setup" onClick={handleStepSelect(0)}>
-            <Tag activate={0 === currentStep}>Setup</Tag>
+        <div className="StepBar-setup">
+            <ConditionalWrapper conditional={wrapper} wrapper={wrapper} props={{ index: 0 }}>
+                <Tag activate={0 === currentStep}>Setup</Tag>
+            </ConditionalWrapper>
         </div>
         <div className="StepBar-scroll">
             {steps.map((step, index) => (
-                <div key={step.key} className="StepBar-step" onClick={handleStepSelect(step.key)}>
-                    <ConditionalWrapper conditional={wrapper} wrapper={wrapper}>
+                <div key={step.key} className="StepBar-step">
+                    <ConditionalWrapper conditional={wrapper} wrapper={wrapper} props={{ index: index + 1 }}>
                         <Tag activate={step.key === currentStep}><span>Step {index + 1}:</span>{step.title}</Tag>
                     </ConditionalWrapper>
                 </div>
             ))}
         </div>
-    </div>
+    </div >
 };
 
 export default StepBar;

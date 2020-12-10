@@ -1,6 +1,6 @@
 import "./Navbar.scss";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import ConditionalWrapper from "../ConditionalWrapper";
 import Icon from "../Icon/Icon";
@@ -10,11 +10,13 @@ import clsx from "clsx";
 import { responsiveState } from "../utils";
 import { useResize } from "../useResize";
 
-const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, collapsedAt, onNavigate, activeLink }) => {
+const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, collapsedAt, onNavigate, activeLink, hideDepth }) => {
     const { sizeIndex } = useResize();
     const [subMenuOpen, subMenuOpenUpdate] = useState(null);
     const [mobileMenuOpen, mobileMenuOpenUpdate] = useState(null);
     const [navState, updateNavState] = useState(null);
+    const [mobileHideNav, updateMobileHideNav] = useState(null);
+    const scroll = useRef(0);
 
     useEffect(() => {
         updateNavState(responsiveState(sizeIndex, collapsedAt));
@@ -25,6 +27,30 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
             document.body.style.overflow = 'hidden' :
             document.body.style.overflow = 'visible';
     }, [subMenuOpen]);
+
+    useEffect(() => {
+        window.addEventListener('scroll', listenToScroll)
+        return () => {
+            window.removeEventListener('scroll', listenToScroll)
+        }
+    }, []);
+
+    const listenToScroll = () => {
+        let y = window.pageYOffset;
+        console.log(scroll.current, y)
+        if (scroll.current > y) {
+            scroll.current = y;
+            return updateMobileHideNav(false);
+        }
+        if (scroll.current <= y) {
+            if (y >= hideDepth) {
+                updateMobileHideNav(true);
+            } else {
+                updateMobileHideNav(false);
+            }
+        }
+        scroll.current = y;
+    }
 
     const openSubMenu = index => () => {
         console.log(index)
@@ -49,7 +75,7 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
 
     return <>
         <div data-testid="Navbar" className={clsx("Navbar", navState)}>
-            <div className="Navbar-head">
+            <div className={clsx("Navbar-head", { hide: mobileHideNav })}>
                 <div className="Navbar-logo">
                     <ConditionalWrapper conditional={logoLink} wrapper={children => <a href={logoLink}>{children}</a>}>
                         <img src={navState === 'mobile' ? mobileLogo : logo} alt="logo" />

@@ -6,5 +6,6 @@ export interface NavbarProps {
     mobileLogo?: string,
     collapsedAt: number[],
     onNavigate?: any,
-    activeLink?: string
+    activeLink?: string,
+    hideDepth?: number
 }

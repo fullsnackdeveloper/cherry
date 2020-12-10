@@ -47,16 +47,17 @@ const ActionBar: React.FC<ActionBarProps> = ({ collapsedAt, authorContent, produ
             </ToolTip>
         </Popup>
         <Popup
+            addedPadding
             className={`${sizeState} ActionBar-Popup`}
             position={sizeState ? 'bottomRight' : 'left'}
             content={<div className="ActionBar-share">
-                <Button type="icon" icon="twitter" iconSize={18} />
-                <Button type="icon" icon="facebook" iconSize={18} />
-                <Button type="icon" icon="pinterest" iconSize={18} />
-                <Button type="icon" icon="email" iconSize={18} />
-                <Button type="icon" icon="link" iconSize={18} />
+                <Button type="icon" icon="twitter" iconSize={24} />
+                <Button type="icon" icon="facebook" iconSize={24} />
+                <Button type="icon" icon="pinterest" iconSize={24} />
+                <Button type="icon" icon="email" iconSize={24} />
+                <Button type="icon" icon="link" iconSize={24} />
             </div>}
-            width={160}
+            width={240}
         >
             <ToolTip message="Share" disabled={sizeState}>
                 {sizeState ?

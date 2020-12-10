@@ -9,7 +9,7 @@ import Stats from "../Stats/Stats";
 import clsx from "clsx";
 import { useResize } from "../useResize";
 
-const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categories, stats, squiggle, maxWidth, type }: HeaderProps) => {
+const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categories, stats, squiggle, maxWidth, type, hideSource }: HeaderProps) => {
     const { sizeIndex } = useResize();
     const [size, updateSize] = useState(null);
     useEffect(() => {
@@ -45,8 +45,8 @@ const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categori
         </div>
     }
 
-    return <Fragment>
-        <div className={clsx("Header", type)}>
+    return <Fragment key="header-frag">
+        <div key="header" className={clsx("Header", type)}>
             <div className="Header-backgroundImage">
                 <img src={image.src} alt={image.alt} loading="lazy" />
                 <div className="Header-backgroundImage-overlay" />
@@ -59,22 +59,26 @@ const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categori
                 }
                 <h1>{title}</h1>
                 {squiggle && <img className="Header-squiggle" src="/squiggle.svg" alt="squiggle" />}
-                <p className={clsx({ subTitle, description })}>{subTitle || description}</p>
+                <div>
+                    {description && description}
+                    {subTitle && <p className={clsx({ subTitle })}>{subTitle}</p>}
+                </div>
                 {stats && (size > 1) &&
                     < Stats stats={stats} />
                 }
             </div>
-            {(size > 2) && renderSource()}
+            {((size > 2) && !hideSource) && renderSource()}
         </div>
-        {(size <= 2) && renderSource(true)}
-        {stats && (size <= 1) &&
+        {(size <= 2) && !hideSource && renderSource(true)}
+        {stats && (size <= 1) && !hideSource &&
             <Stats stats={stats} />
         }
     </Fragment>
 };
 
 Header.defaultProps = {
-    type: 'content'
+    type: 'content',
+    hideSource: false
 }
 
 export default Header;

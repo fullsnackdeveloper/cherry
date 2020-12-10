@@ -12,6 +12,10 @@
     outline: none;
     &.Button {
       @include intenseShadow;
+      @include md {
+        width: 40px;
+        height: 40px;
+      }
     }
     .Icon .Streamline_Icon path {
       stroke: $color_primary;

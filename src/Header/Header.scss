@@ -65,7 +65,7 @@
     &.outside {
       position: absolute;
       bottom: initial;
-      margin-top: -24px;
+      margin-top: -44px;
       display: inline-flex;
       background: transparent;
       span {
@@ -87,6 +87,7 @@
     border-radius: 0;
     margin-left: -$grid-gap;
     margin-right: -$grid-gap;
+    margin-bottom: 48px;
     &-backgroundImage-overlay {
       background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.6));
     }

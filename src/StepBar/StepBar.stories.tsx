@@ -7,7 +7,7 @@ export default {
     component: StepBar
 };
 
-export const Default = () => <StepBar onSelect={() => alert('hey')} steps={[
+export const Default = () => <StepBar activeStep={2} onSelect={() => alert('hey')} steps={[
     {
         key: 1,
         title: "Make something happen"
@@ -26,7 +26,7 @@ export const Default = () => <StepBar onSelect={() => alert('hey')} steps={[
     }
 ]} />;
 
-export const withWrapper = () => <StepBar onSelect={() => alert('hey')} wrapper={children => <i className={"something"}>{children}</i>} steps={[
+export const withWrapper = () => <StepBar activeStep={2} onSelect={() => alert('hey')} wrapper={children => <i className={"something"}>{children}</i>} steps={[
     {
         key: 1,
         title: "Make something happen"

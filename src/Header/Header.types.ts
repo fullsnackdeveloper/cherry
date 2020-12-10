@@ -23,5 +23,6 @@ export interface HeaderProps {
     collapsedAt?: [],
     squiggle?: boolean,
     maxWidth?: number
-    type?: "display" | "content"
+    type?: "display" | "content",
+    hideSource?: boolean
 }
