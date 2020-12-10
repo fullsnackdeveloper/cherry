@@ -158,4 +158,10 @@
       }
     }
   }
+
+  &-overlay {
+    @include overlay;
+    top: 0;
+    left: 0;
+  }
 }

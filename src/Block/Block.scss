@@ -39,8 +39,14 @@
   }
   &.pullUp {
     margin-top: -32px;
+    @include md {
+      margin-top: -16px;
+    }
   }
   &.pullDown {
     margin-bottom: 0;
+    @include md {
+      margin-bottom: 16px;
+    }
   }
 }

@@ -29,6 +29,12 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
     }, [subMenuOpen]);
 
     useEffect(() => {
+        mobileMenuOpen ?
+            document.body.style.overflow = 'hidden' :
+            document.body.style.overflow = 'visible';
+    }, [mobileMenuOpen]);
+
+    useEffect(() => {
         window.addEventListener('scroll', listenToScroll)
         return () => {
             window.removeEventListener('scroll', listenToScroll)
@@ -37,7 +43,6 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
 
     const listenToScroll = () => {
         let y = window.pageYOffset;
-        console.log(scroll.current, y)
         if (scroll.current > y) {
             scroll.current = y;
             return updateMobileHideNav(false);
@@ -53,7 +58,6 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
     }
 
     const openSubMenu = index => () => {
-        console.log(index)
         if (index === subMenuOpen)
             return subMenuOpenUpdate(null);
         subMenuOpenUpdate(index);
@@ -75,6 +79,7 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
 
     return <>
         <div data-testid="Navbar" className={clsx("Navbar", navState)}>
+            {/* <div className={clsx("Navbar-overlay", { open: mobileMenuOpen })}></div> */}
             <div className={clsx("Navbar-head", { hide: mobileHideNav })}>
                 <div className="Navbar-logo">
                     <ConditionalWrapper conditional={logoLink} wrapper={children => <a href={logoLink}>{children}</a>}>
