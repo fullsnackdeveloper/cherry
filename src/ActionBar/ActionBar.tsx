@@ -1,6 +1,6 @@
 import "./ActionBar.scss";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { ActionBarProps } from "./ActionBar.types";
 import Avatar from "../Avatar/Avatar";
@@ -13,9 +13,11 @@ import clsx from "clsx";
 import { responsiveState } from "../utils";
 import { useResize } from "../useResize";
 
-const ActionBar: React.FC<ActionBarProps> = ({ collapsedAt, authorContent, productContent, authorAvatar, steps, onStepsClick, top }) => {
+const ActionBar: React.FC<ActionBarProps> = ({ showDepth, collapsedAt, authorContent, productContent, authorAvatar, steps, onStepsClick, top }) => {
+    const scroll = useRef(0);
     const { sizeIndex } = useResize();
     const [sizeState, updateSizeState] = useState(null);
+    const [hideActionBar, updateHideActionBar] = useState(false);
     useEffect(() => {
         const sizing = responsiveState(sizeIndex, collapsedAt);
         if (sizing === 'desktop')
@@ -23,7 +25,30 @@ const ActionBar: React.FC<ActionBarProps> = ({ collapsedAt, authorContent, produ
         updateSizeState(sizing);
     }, [sizeIndex, collapsedAt]);
 
-    return <div data-testid="ActionBar" className={clsx("ActionBar", sizeState)} style={{ top: sizeState ? 0 : top }}>
+    const listenToScroll = () => {
+        let y = window.pageYOffset;
+        if (scroll.current < y) {
+            scroll.current = y;
+            return updateHideActionBar(false);
+        }
+        if (scroll.current >= y) {
+            if (y <= showDepth) {
+                updateHideActionBar(true);
+            } else {
+                updateHideActionBar(false);
+            }
+        }
+        scroll.current = y;
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', listenToScroll);
+        return () => {
+            window.removeEventListener('scroll', listenToScroll)
+        }
+    }, []);
+
+    return <div data-testid="ActionBar" className={clsx("ActionBar", sizeState, { hideActionBar })} style={{ top: sizeState ? 0 : top }}>
         <div className="ActionBar-background"></div>
         {steps &&
             <ToolTip message="Steps" disabled={sizeState}>

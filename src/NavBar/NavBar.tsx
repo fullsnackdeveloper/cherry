@@ -17,23 +17,45 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
     const [navState, updateNavState] = useState(null);
     const [mobileHideNav, updateMobileHideNav] = useState(null);
     const scroll = useRef(0);
+    const menuRef = useRef();
+    const subRef = useRef();
 
     useEffect(() => {
         updateNavState(responsiveState(sizeIndex, collapsedAt));
     }, [sizeIndex, collapsedAt]);
 
     useEffect(() => {
-        mobileMenuOpen ?
-            document.body.style.overflow = 'hidden' :
+        if (mobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
             document.body.style.overflow = 'visible';
+        }
     }, [mobileMenuOpen]);
 
     useEffect(() => {
-        window.addEventListener('scroll', listenToScroll)
+        if (subMenuOpen) {
+            if (navState !== 'mobile') {
+                document.addEventListener("mousedown", handleSubMenuOffClick);
+            }
+        } else {
+            document.removeEventListener("mousedown", handleSubMenuOffClick);
+        }
+    }, [subMenuOpen])
+
+    useEffect(() => {
+        window.addEventListener('scroll', listenToScroll);
         return () => {
             window.removeEventListener('scroll', listenToScroll)
         }
     }, []);
+
+    const handleSubMenuOffClick = e => {
+        if (menuRef && menuRef.current) {
+            //@ts-ignore
+            if (!menuRef.current.contains(e.target) && !subRef.current.contains(e.target))
+                subMenuOpenUpdate(false);
+        }
+    }
 
     const listenToScroll = () => {
         let y = window.pageYOffset;
@@ -74,7 +96,7 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
     }
 
     return <>
-        <div data-testid="Navbar" className={clsx("Navbar", navState)}>
+        <div data-testid="Navbar" className={clsx("Navbar", navState)} ref={menuRef}>
             <div className={clsx("Navbar-overlay", { open: mobileMenuOpen })} onClick={handleOpenMobileMenu}></div>
             <div className={clsx("Navbar-head", { hide: mobileHideNav })}>
                 <div className="Navbar-logo">
@@ -102,10 +124,10 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
                     >
                         {item.title}
                     </Menu.Item>,
-                    <div key={`${index}-subMenu`}>
+                    <div key={`${index}-subMenu`} className={clsx({ "Navbar-inlineSubMenu-wrapper": item.children })}>
                         {item.children && navState === 'mobile' &&
                             <div className="Navbar-inlineSubMenu" style={{
-                                height: subMenuOpen === index ? (67 * (item.children.length + 7)) : 0
+                                height: subMenuOpen === index ? (67 * (item.children.length + 8)) : 0
                             }}>
                                 {item.children.map((subItem, subIndex) => {
                                     return <Menu.Item
@@ -129,7 +151,7 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
         </div>
         {(navState !== 'mobile') && menu.map((menuItem, index) => {
             if (menuItem.children)
-                return <div key={index} className={clsx("Navbar-subMenu", { open: subMenuOpen === index })}>
+                return <div key={index} ref={subRef} className={clsx("Navbar-subMenu", { open: subMenuOpen === index })}>
                     <div className="Navbar-subMenu-close" onClick={handleCloseSubMenu}>
                         <Icon icon="chevron-left" size={18} />
                     </div>

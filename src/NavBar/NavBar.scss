@@ -13,7 +13,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 4000;
   &-head {
     width: 100%;
     display: flex;
@@ -35,8 +35,7 @@
   &-navigation {
     padding-top: 24px;
     @include md {
-      overflow-y: scroll;
-      overflow-x: hidden;
+      overflow: hidden;
     }
   }
   &-subMenu {
@@ -44,7 +43,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 999;
+    z-index: 3999;
     width: 221px;
     height: 100vh;
     padding: 226px 32px;
@@ -54,7 +53,7 @@
     }
     @include lg {
       left: -285px;
-      top: 0;
+      top: 46px;
     }
     &-close {
       position: absolute;
@@ -64,6 +63,7 @@
     }
     &.open {
       left: 285px;
+      @include shadow;
       @include xl {
         left: 88px;
       }
@@ -150,6 +150,10 @@
       height: 0;
       overflow: hidden;
       transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      &-wrapper {
+        height: 100%;
+        overflow: scroll;
+      }
       .MenuItem {
         border-bottom: 1px solid $color_white;
       }

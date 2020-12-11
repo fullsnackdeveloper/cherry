@@ -4,12 +4,26 @@
   width: 100%;
   overflow: hidden;
   display: flex;
-  &-scroll {
+  position: relative;
+  &-wrapper {
+    overflow: hidden;
     display: flex;
+    padding-top: 12px;
+  }
+  &-scroll {
     width: 100%;
+    display: flex;
     overflow-x: scroll;
     &::-webkit-scrollbar {
       display: none;
+    }
+    &:after {
+      content: " ";
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.01) 30%, rgb(255, 255, 255));
+      width: 52px;
+      height: 46px;
+      position: absolute;
+      right: 0px;
     }
   }
   &-setup {
@@ -22,6 +36,12 @@
     span {
       margin-right: 4px;
       font-weight: 600;
+    }
+    &:last-child {
+      margin-right: 30px;
+      .Tag {
+        margin-right: 30px;
+      }
     }
   }
 }

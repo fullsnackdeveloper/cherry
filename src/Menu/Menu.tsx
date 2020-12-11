@@ -12,9 +12,9 @@ import clsx from "clsx";
 import { useResize } from "../useResize";
 
 const Item: React.FC<MenuItemProps> = ({ open, compact, active, icon, children, title, chevron, onClick }) => (
-    <div className={clsx("MenuItem", { open })}>
+    <div className={clsx("MenuItem", { open })} onClick={onClick}>
         <ToolTip message={title} disabled={!compact}>
-            <Link compact={compact} onClick={onClick} icon={icon} active={active}>
+            <Link compact={compact} icon={icon} active={active}>
                 {children}
             </Link>
         </ToolTip>
