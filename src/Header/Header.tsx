@@ -69,7 +69,7 @@ const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categori
             </div>
             {(!hideSource) && renderSource()}
         </div>
-        {stats && (size <= 1) && !hideSource &&
+        {stats && (size <= 1) &&
             <Stats stats={stats} />
         }
     </Fragment>
