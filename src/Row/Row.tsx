@@ -8,7 +8,7 @@ import _ from 'lodash';
 import clsx from "clsx";
 import { useResize } from "../useResize";
 
-const Row: FC<RowProps> = ({ gutter, columns, children, title, subTitle, backgroundColor, lastRow, titleStyle, link, linkText }: RowProps) => {
+const Row: FC<RowProps> = ({ gutter, columns, children, title, subTitle, backgroundColor, lastRow, titleStyle, link, linkText, zIndex }: RowProps) => {
     const [columnsRef, updateColumnsRef] = useState(columns);
     const { size, sizeIndex } = useResize();
 
@@ -21,11 +21,15 @@ const Row: FC<RowProps> = ({ gutter, columns, children, title, subTitle, backgro
     }, [size, sizeIndex]);
 
     const renderStyles = useCallback(() => {
-        return {
+        let styles = {
             display: 'grid',
             gridTemplateColumns: `repeat(${columnsRef}, minmax(0, 1fr))`,
             gridGap: gutter,
         }
+        if (zIndex) {
+            styles['zIndex'] = zIndex;
+        }
+        return styles
     }, [columnsRef, sizeIndex])
 
     return <section className={clsx("Row", titleStyle, { lastRow, hasBackground: backgroundColor, hasTitle: title || subTitle, hide: columns[sizeIndex] === 0 })}>

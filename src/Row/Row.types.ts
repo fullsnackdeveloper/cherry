@@ -10,5 +10,6 @@ export interface RowProps {
     titleStyle?: "center" | "fullwidth",
     link?: string,
     linkText?: string,
-    lastRow?: boolean
+    lastRow?: boolean,
+    zIndex?: number
 }

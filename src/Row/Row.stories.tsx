@@ -8,7 +8,7 @@ export default {
     component: Row
 };
 
-export const Default = () => <Row>
+export const Default = () => <Row zIndex={10}>
     <Col span={3}>
         <Card
             icon="learn"
