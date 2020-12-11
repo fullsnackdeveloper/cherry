@@ -13,7 +13,7 @@ import clsx from "clsx";
 import { responsiveState } from "../utils";
 import { useResize } from "../useResize";
 
-const ActionBar: React.FC<ActionBarProps> = ({ collapsedAt, authorContent, productContent, authorAvatar, steps, closeSteps, top }) => {
+const ActionBar: React.FC<ActionBarProps> = ({ collapsedAt, authorContent, productContent, authorAvatar, steps, onStepsClick, top }) => {
     const { sizeIndex } = useResize();
     const [sizeState, updateSizeState] = useState(null);
     useEffect(() => {
@@ -26,11 +26,9 @@ const ActionBar: React.FC<ActionBarProps> = ({ collapsedAt, authorContent, produ
     return <div data-testid="ActionBar" className={clsx("ActionBar", sizeState)} style={{ top: sizeState ? 0 : top }}>
         <div className="ActionBar-background"></div>
         {steps &&
-            <Popup content={steps} position={sizeState ? 'bottomLeft' : 'leftTop'} className={`${sizeState} ActionBar-Popup`} fullWidth closePopup={closeSteps}>
-                <ToolTip message="Steps" disabled={sizeState}>
-                    {sizeState && <Link icon="steps" iconSize={18}>Steps</Link>}
-                </ToolTip>
-            </Popup>
+            <ToolTip message="Steps" disabled={sizeState}>
+                {sizeState && <Link icon="steps" iconSize={18} onClick={onStepsClick}>Steps</Link>}
+            </ToolTip>
         }
         <Popup content={authorContent} position={sizeState ? 'bottomLeft' : 'leftTop'} className={`${sizeState} ActionBar-Popup`} addedPadding>
             <ToolTip message="Author" disabled={sizeState}>

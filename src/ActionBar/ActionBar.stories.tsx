@@ -29,24 +29,7 @@ export const Default = () => {
                 <h3>No products have been added yet.</h3>
             </div>}
             closeSteps={closeSteps}
-            steps={<StepBar onSelect={() => { updateCloseSteps(true), setTimeout(() => updateCloseSteps(false), 200) }} steps={[
-                {
-                    key: 1,
-                    title: "Make something happen"
-                },
-                {
-                    key: 2,
-                    title: "Something once its done"
-                },
-                {
-                    key: 3,
-                    title: "There you go its close"
-                },
-                {
-                    key: 4,
-                    title: "Finished it"
-                }
-            ]} />}
+            steps={true}
         />
     </PageContainer>
 };

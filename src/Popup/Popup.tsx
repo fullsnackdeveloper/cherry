@@ -6,7 +6,7 @@ import { PopupProps } from "./Popup.types";
 import _ from 'lodash';
 import clsx from "clsx";
 
-const Popup: React.FC<PopupProps> = ({ position, title, content, children, width, opened, className, addedPadding, fullWidth, closePopup }) => {
+const Popup: React.FC<PopupProps> = ({ position, title, content, children, width, opened, className, addedPadding, fullWidth, closePopup, noOverlay }) => {
     const [open, updateOpen] = useState<boolean>(false);
     const [triggerPosition, updateTriggerPosition] = useState<any>(null);
     const trigger = useRef();
@@ -90,7 +90,8 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, width
 
     const handleClick = () => {
         updateOpen(true);
-        document.body.style.overflow = "hidden"
+        if (!noOverlay)
+            document.body.style.overflow = "hidden"
         //@ts-ignore
         updateTriggerPosition(trigger?.current?.getBoundingClientRect());
         opened && opened(true)
@@ -103,7 +104,7 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, width
     }
 
     return <>
-        <div className={clsx("overlay", { open })} onClick={handleDeselect}></div>
+        { !noOverlay && <div className={clsx("overlay", { open })} onClick={handleDeselect}></div>}
         <div data-testid="Popup" className="Popup">
             <div ref={trigger} className="Popup-trigger" onClick={handleClick}>
                 {children}
@@ -119,7 +120,8 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, width
 
 Popup.defaultProps = {
     width: 300,
-    position: 'bottomRight'
+    position: 'bottomRight',
+    noOverlay: false
 }
 
 export default Popup;

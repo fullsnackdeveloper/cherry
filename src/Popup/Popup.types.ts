@@ -11,4 +11,5 @@ export interface PopupProps {
     className?: string;
     addedPadding?: boolean;
     closePopup?: boolean;
+    noOverlay?: boolean;
 }

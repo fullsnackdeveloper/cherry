@@ -10,6 +10,10 @@
   @include md {
     padding: 0;
   }
+  h1,
+  h1 strong {
+    @include pageTitle;
+  }
   h2,
   h2 strong {
     @include bodyHeading;
@@ -36,6 +40,22 @@
     @include paragraph;
     font-style: italic;
     color: $color_altBlack;
+  }
+  ol,
+  ul {
+    list-style: none;
+    padding-left: 24px;
+    li {
+      @include paragraph;
+      color: $color_altBlack;
+      &:before {
+        content: "\2022";
+        color: $color_lightGrey;
+        display: inline-block;
+        width: $grid-gap;
+        margin-left: -24px;
+      }
+    }
   }
   &.pullUp {
     margin-top: -32px;

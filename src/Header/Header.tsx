@@ -67,9 +67,8 @@ const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categori
                     < Stats stats={stats} />
                 }
             </div>
-            {((size > 2) && !hideSource) && renderSource()}
+            {(!hideSource) && renderSource()}
         </div>
-        {(size <= 2) && !hideSource && renderSource(true)}
         {stats && (size <= 1) && !hideSource &&
             <Stats stats={stats} />
         }

@@ -6,6 +6,7 @@ export interface ActionBarProps {
     collapsedAt?: number[];
     authorAvatar?: string;
     steps?: any,
-    closeSteps?: boolean
-    top?: number
+    closeSteps?: boolean,
+    top?: number,
+    onStepsClick?: () => void
 }

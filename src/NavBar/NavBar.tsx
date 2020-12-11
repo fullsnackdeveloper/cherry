@@ -23,12 +23,6 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
     }, [sizeIndex, collapsedAt]);
 
     useEffect(() => {
-        subMenuOpen ?
-            document.body.style.overflow = 'hidden' :
-            document.body.style.overflow = 'visible';
-    }, [subMenuOpen]);
-
-    useEffect(() => {
         mobileMenuOpen ?
             document.body.style.overflow = 'hidden' :
             document.body.style.overflow = 'visible';
@@ -69,6 +63,8 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
 
     const handleOpenMobileMenu = () => {
         mobileMenuOpenUpdate(!mobileMenuOpen);
+        if (mobileMenuOpen)
+            subMenuOpenUpdate(3);
     }
 
     const handleClick = (link) => () => {
@@ -79,7 +75,7 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
 
     return <>
         <div data-testid="Navbar" className={clsx("Navbar", navState)}>
-            {/* <div className={clsx("Navbar-overlay", { open: mobileMenuOpen })}></div> */}
+            <div className={clsx("Navbar-overlay", { open: mobileMenuOpen })} onClick={handleOpenMobileMenu}></div>
             <div className={clsx("Navbar-head", { hide: mobileHideNav })}>
                 <div className="Navbar-logo">
                     <ConditionalWrapper conditional={logoLink} wrapper={children => <a href={logoLink}>{children}</a>}>

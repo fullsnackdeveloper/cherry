@@ -59,11 +59,15 @@
     .ActionBar-background {
       display: block;
     }
-    .Popup {
+    .Popup,
+    & > .ToolTip {
       margin: 0;
       position: relative;
       flex: 1 1 auto;
       justify-content: center;
+    }
+    .Link {
+      z-index: 3000;
     }
     .Popup + .Popup {
       border-left: 1px solid $color_mediumGrey;
@@ -78,6 +82,7 @@
 
   // Action Bar Mobile
   &.mobile {
+    margin-top: 0px;
     flex-direction: row;
     width: 100%;
     justify-content: space-around;
@@ -91,12 +96,17 @@
       display: block;
     }
 
-    .Popup {
+    .Popup,
+    & > .ToolTip {
       margin: 0;
       position: initial;
       flex: 1 1 auto;
       justify-content: center;
     }
+    .Link {
+      z-index: 3000;
+    }
+
     .Popup + .Popup {
       border-left: 1px solid $color_lightGrey;
     }
