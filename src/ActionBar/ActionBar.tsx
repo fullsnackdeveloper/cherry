@@ -61,14 +61,16 @@ const ActionBar: React.FC<ActionBarProps> = ({ showDepth, collapsedAt, authorCon
                 {sizeState && <Link>Author</Link>}
             </ToolTip>
         </Popup>
-        <Popup content={productContent} position={sizeState ? 'bottom' : 'left'} className={`${sizeState} ActionBar-Popup`} addedPadding>
-            <ToolTip message="Products" disabled={sizeState}>
-                {sizeState ?
-                    sizeState === 'mobile' ? <Link icon="tags" iconSize={18}>Products</Link> : <Link icon="tags" iconSize={24}>Products</Link> :
-                    <Button icon="tags" type="icon" iconSize={26} />
-                }
-            </ToolTip>
-        </Popup>
+        {productContent &&
+            <Popup content={productContent} position={sizeState ? 'bottom' : 'left'} className={`${sizeState} ActionBar-Popup`} addedPadding>
+                <ToolTip message="Products" disabled={sizeState}>
+                    {sizeState ?
+                        sizeState === 'mobile' ? <Link icon="tags" iconSize={18}>Products</Link> : <Link icon="tags" iconSize={24}>Products</Link> :
+                        <Button icon="tags" type="icon" iconSize={26} />
+                    }
+                </ToolTip>
+            </Popup>
+        }
         <Popup
             addedPadding
             className={`${sizeState} ActionBar-Popup`}
