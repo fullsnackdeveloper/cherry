@@ -45,7 +45,7 @@ const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categori
         </div>
     }
 
-    return <Fragment key="header-frag">
+    return <>
         <div key="header" className={clsx("Header", type)}>
             <div className="Header-backgroundImage">
                 <img src={image.src} alt={image.alt} loading="lazy" />
@@ -72,7 +72,7 @@ const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categori
         {stats && (size <= 1) &&
             <Stats stats={stats} />
         }
-    </Fragment>
+    </>
 };
 
 Header.defaultProps = {

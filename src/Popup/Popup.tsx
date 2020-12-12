@@ -36,14 +36,14 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, width
         if (position === 'left')
             return {
                 width,
-                top: triggerPosition?.y + (triggerPosition?.height / 2) + window.pageXOffset,
-                left: triggerPosition?.x + triggerPosition?.width + 14
+                top: triggerPosition.height / 2,
+                left: triggerPosition.width + 14
             }
         if (position === 'leftTop')
             return {
                 width,
-                top: triggerPosition?.y + window.pageXOffset,
-                left: triggerPosition?.x + triggerPosition?.width + 14
+                top: 0,
+                left: triggerPosition.width + 14
             }
         if (position === 'bottom') {
             let left = triggerPosition?.x - (width / 2) + (triggerPosition?.width / 2) - 12;
@@ -54,19 +54,23 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, width
                 top: triggerPosition?.y + triggerPosition?.height + 14 + window.pageXOffset
             }
         }
-        if (position === 'bottomLeft')
+        if (position === 'bottomLeft') {
+            let left = triggerPosition.width / 2;
+            if (addedPadding) left += 24;
             return {
                 width,
-                top: triggerPosition?.y + triggerPosition?.height + 14 + window.pageXOffset,
-                left: triggerPosition?.x
+                top: triggerPosition.height + 14,
+                left
             }
+        }
         if (position === 'bottomRight') {
-            let left = triggerPosition?.x - (width + 24) + (triggerPosition?.width);
-            if (addedPadding) left -= 24;
+            let right = triggerPosition.width / 2;
+            if (addedPadding) right += 24;
             return {
                 width,
-                left,
-                top: triggerPosition?.y + triggerPosition?.height + 14 + window.pageXOffset
+                top: triggerPosition.height + 14,
+                left: 'initial',
+                right
             }
         }
     }, [triggerPosition]);
@@ -109,12 +113,12 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, width
             <div ref={trigger} className="Popup-trigger" onClick={handleClick}>
                 {children}
             </div>
+            <div ref={popupRef} className={clsx("Popup-content", position, className, { open, addedPadding, fullWidth })} style={styledContent}>
+                <div className="Popup-arrow" style={styledArrow}></div>
+                {title && <div className="Popup-content-title">{title}</div>}
+                {content}
+            </div>
         </div >
-        <div ref={popupRef} className={clsx("Popup-content", position, className, { open, addedPadding, fullWidth })} style={styledContent}>
-            <div className="Popup-arrow" style={styledArrow}></div>
-            {title && <div className="Popup-content-title">{title}</div>}
-            {content}
-        </div>
     </>
 };
 
