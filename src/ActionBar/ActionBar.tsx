@@ -17,7 +17,7 @@ const ActionBar: React.FC<ActionBarProps> = ({ showDepth, collapsedAt, authorCon
     const scroll = useRef(0);
     const { sizeIndex } = useResize();
     const [sizeState, updateSizeState] = useState(null);
-    const [hideActionBar, updateHideActionBar] = useState(false);
+    const [showActionBar, updateShowActionBar] = useState(false);
     useEffect(() => {
         const sizing = responsiveState(sizeIndex, collapsedAt);
         if (sizing === 'desktop')
@@ -27,15 +27,15 @@ const ActionBar: React.FC<ActionBarProps> = ({ showDepth, collapsedAt, authorCon
 
     const listenToScroll = () => {
         let y = window.pageYOffset;
-        if (scroll.current < y) {
+        if (scroll.current > y) {
             scroll.current = y;
-            return updateHideActionBar(false);
+            return updateShowActionBar(false);
         }
-        if (scroll.current >= y) {
-            if (y <= showDepth) {
-                updateHideActionBar(true);
+        if (scroll.current <= y) {
+            if (y >= showDepth) {
+                updateShowActionBar(true);
             } else {
-                updateHideActionBar(false);
+                updateShowActionBar(false);
             }
         }
         scroll.current = y;
@@ -48,7 +48,7 @@ const ActionBar: React.FC<ActionBarProps> = ({ showDepth, collapsedAt, authorCon
         }
     }, []);
 
-    return <div data-testid="ActionBar" className={clsx("ActionBar", sizeState, { hideActionBar })} style={{ top: sizeState ? 0 : top }}>
+    return <div data-testid="ActionBar" className={clsx("ActionBar", sizeState, { showActionBar })} style={{ top: sizeState ? 0 : top }}>
         <div className="ActionBar-background"></div>
         {steps &&
             <ToolTip message="Steps" disabled={sizeState}>

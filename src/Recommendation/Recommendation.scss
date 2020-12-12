@@ -1,0 +1,67 @@
+@import "../styles/stylesIndex.scss";
+
+.Recommendation {
+  display: flex;
+  background: $color_offWhite;
+  padding: 24px;
+  justify-content: space-between;
+  border-radius: $border-radius;
+  @include sm {
+    flex-direction: column-reverse;
+  }
+  &-text {
+    margin-right: 32px;
+    h2 {
+      @include paragraphHeading;
+      font-weight: 600;
+      text-transform: capitalize;
+      margin-bottom: 16px;
+    }
+    p {
+      @include paragraph;
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+    .Link span {
+      display: flex;
+      align-items: center;
+      .Icon {
+        margin-left: 8px;
+        path {
+          stroke: $color_mediumGrey;
+          stroke-width: 3px;
+          transition: stroke 0.3s linear;
+        }
+      }
+      &:hover .Icon path {
+        stroke: $color_black;
+      }
+    }
+  }
+  &-image {
+    width: 150px;
+    height: 150px;
+    border-radius: $border-radius;
+    flex-shrink: 0;
+    position: relative;
+    @include sm {
+      margin-bottom: 24px;
+    }
+    &-icon {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: $color_black;
+      padding: 8px;
+      border-radius: 100px;
+      width: 22px;
+      height: 22px;
+      z-index: 20;
+      @include shadow;
+      path {
+        stroke: $color_white;
+        fill: $color_white;
+      }
+    }
+  }
+}
