@@ -5,12 +5,14 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { PopupProps } from "./Popup.types";
 import _ from 'lodash';
 import clsx from "clsx";
+import { useResize } from "../useResize";
 
 const Popup: React.FC<PopupProps> = ({ position, title, content, children, width, opened, className, addedPadding, fullWidth, closePopup, noOverlay }) => {
     const [open, updateOpen] = useState<boolean>(false);
     const [triggerPosition, updateTriggerPosition] = useState<any>(null);
     const trigger = useRef();
     const popupRef = useRef();
+    const { size } = useResize();
 
     useEffect(() => {
         if (closePopup && open) {
@@ -56,7 +58,7 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, width
         }
         if (position === 'bottomLeft') {
             let left = triggerPosition.width / 2;
-            if (addedPadding) left += 24;
+            if (addedPadding) left += 48;
             return {
                 width,
                 top: triggerPosition.height + 14,
@@ -65,7 +67,7 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, width
         }
         if (position === 'bottomRight') {
             let right = triggerPosition.width / 2;
-            if (addedPadding) right += 24;
+            if (addedPadding) right += 48;
             return {
                 width,
                 top: triggerPosition.height + 14,
@@ -113,12 +115,21 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, width
             <div ref={trigger} className="Popup-trigger" onClick={handleClick}>
                 {children}
             </div>
+            {(size !== 'md') && (size !== 'sm') &&
+                <div ref={popupRef} className={clsx("Popup-content", position, className, { open, addedPadding, fullWidth })} style={styledContent}>
+                    <div className="Popup-arrow" style={styledArrow}></div>
+                    {title && <div className="Popup-content-title">{title}</div>}
+                    {content}
+                </div>
+            }
+        </div>
+        {((size === 'md') || (size === 'sm')) &&
             <div ref={popupRef} className={clsx("Popup-content", position, className, { open, addedPadding, fullWidth })} style={styledContent}>
                 <div className="Popup-arrow" style={styledArrow}></div>
                 {title && <div className="Popup-content-title">{title}</div>}
                 {content}
             </div>
-        </div >
+        }
     </>
 };
 
