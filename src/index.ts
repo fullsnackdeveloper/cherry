@@ -13,6 +13,7 @@ import Icon from "./Icon/Icon";
 import Image from "./Image/Image";
 import Link from "./Link/Link";
 import Menu from "./Menu/Menu";
+import Modal from "./Modal/Modal";
 import Navbar from "./Navbar/Navbar";
 import Note from "./Note/Note";
 import PageContainer from "./PageContainer/PageContainer";
@@ -27,4 +28,4 @@ import Tag from './Tag/Tag';
 import ToolTip from "./ToolTip/ToolTip";
 import Widget from "./Widget/Widget";
 
-export { Button, Card, ActionCard, Header, Icon, Row, Col, Carousel, Link, Menu, Navbar, Image, PageContainer, Block, ToolTip, ActionBar, Avatar, Popup, Stats, Step, Tag, Note, Footer, Widget, StepBar, SideBySide, Divider, Recommendation };
+export { Button, Card, ActionCard, Header, Icon, Row, Col, Carousel, Link, Menu, Navbar, Image, PageContainer, Block, ToolTip, ActionBar, Avatar, Popup, Stats, Step, Tag, Note, Footer, Widget, StepBar, SideBySide, Divider, Recommendation, Modal };

@@ -47,13 +47,13 @@
     0% {
       opacity: 0;
       pointer-events: none;
-      z-index: 2000;
+      // z-index: 2000;
     }
 
     100% {
       opacity: 1;
       pointer-events: initial;
-      z-index: 2000;
+      // z-index: 2000;
     }
   }
 
@@ -61,7 +61,7 @@
     0% {
       opacity: 1;
       pointer-events: none;
-      z-index: 2000;
+      // z-index: 2000;
     }
 
     100% {
