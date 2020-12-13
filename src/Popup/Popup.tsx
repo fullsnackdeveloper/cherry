@@ -96,7 +96,8 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, width
 
     const handleClick = () => {
         updateOpen(true);
-        if (!noOverlay)
+        console.log(size, noOverlay)
+        if (!noOverlay || ["sm", "md"].includes(size))
             document.body.style.overflow = "hidden"
         //@ts-ignore
         updateTriggerPosition(trigger?.current?.getBoundingClientRect());

@@ -39,7 +39,6 @@ const Carousel: React.FC<CarouselProps> = ({ children, columns, noTitles }) => {
                     </Slide>
                 })}
             </Slider>
-            {console.log(sizeIndex)}
             <ButtonBack key="back" className="Carousel-button Carousel-back Button iconButton white shadow"><Icon icon="chevron-left" size={(sizeIndex < 3) ? 16 : 12} /></ButtonBack>
             <ButtonNext key="next" className="Carousel-button Carousel-next Button iconButton white shadow"><Icon icon="chevron-right" size={(sizeIndex < 3) ? 16 : 12} /></ButtonNext>
         </CarouselProvider>

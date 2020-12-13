@@ -15,6 +15,7 @@
     border-radius: $border-radius;
     animation: fadeOut 0.3s forwards;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
     @include shadow;
     &.addedPadding {
       padding: $space_l;
@@ -87,6 +88,7 @@
 
     &.open {
       animation: fadeIn 0.3s forwards;
+      pointer-events: initial;
     }
 
     // left
