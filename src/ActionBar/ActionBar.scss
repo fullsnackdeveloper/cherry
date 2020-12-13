@@ -30,6 +30,7 @@
     opacity: 0 !important;
     @include lg {
       opacity: 0.4 !important;
+      z-index: 18;
     }
   }
 
@@ -108,6 +109,10 @@
 
     .Popup + .Popup {
       border-left: 1px solid $color_lightGrey;
+    }
+
+    .Popup-content .Link {
+      font-size: 14px;
     }
 
     .Avatar {
