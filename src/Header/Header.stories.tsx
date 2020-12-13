@@ -30,17 +30,18 @@ export const Default = () => <Header
     categories={[
         {
             title: 'Garden',
-            uri: '/category/garden'
+            link: '/category/garden'
         },
         {
             title: 'Pottery',
-            uri: '/category/garden/pottery'
+            link: '/category/garden/pottery'
         },
         {
             title: 'Planters',
-            uri: '/category/garden/pottery/planters'
+            link: '/category/garden/pottery/planters'
         },
     ]}
+    onCategoryClick={link => console.log(link)}
 ></Header>;
 
 export const WithStats = () => <Header
@@ -53,15 +54,15 @@ export const WithStats = () => <Header
     categories={[
         {
             title: 'Garden',
-            uri: '/category/garden'
+            link: '/category/garden'
         },
         {
             title: 'Pottery',
-            uri: '/category/garden/pottery'
+            link: '/category/garden/pottery'
         },
         {
             title: 'Planters',
-            uri: '/category/garden/pottery/planters'
+            link: '/category/garden/pottery/planters'
         },
     ]}
     stats={[

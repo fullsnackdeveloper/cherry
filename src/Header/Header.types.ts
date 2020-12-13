@@ -18,11 +18,12 @@ export interface HeaderProps {
             }
         },
     },
-    categories?: { title: string, uri: string }[],
+    categories?: { title: string, link: string }[],
     stats?: { measurement: string, amount: string }[],
     collapsedAt?: [],
     squiggle?: boolean,
     maxWidth?: number
     type?: "display" | "content",
-    hideSource?: boolean
+    hideSource?: boolean,
+    onCategoryClick?: any
 }

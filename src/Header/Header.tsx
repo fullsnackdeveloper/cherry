@@ -9,17 +9,21 @@ import Stats from "../Stats/Stats";
 import clsx from "clsx";
 import { useResize } from "../useResize";
 
-const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categories, stats, squiggle, maxWidth, type, hideSource }: HeaderProps) => {
+const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categories, stats, squiggle, maxWidth, type, hideSource, onCategoryClick }: HeaderProps) => {
     const { sizeIndex } = useResize();
     const [size, updateSize] = useState(null);
     useEffect(() => {
         updateSize(sizeIndex);
-    }, [sizeIndex])
+    }, [sizeIndex]);
+
+    const handleCategoryClick = link => () => {
+        onCategoryClick && onCategoryClick(link);
+    }
 
     const renderCategories = () => {
         return categories.map((c, index) => {
             return <>
-                <Link key={index} darkMode>{c.title}</Link>
+                <Link key={index} darkMode onClick={handleCategoryClick(c.link)}>{c.title}</Link>
                 { categories.length - 1 > index &&
                     <Icon key={2} icon="chevron-right" size={10} />
                 }

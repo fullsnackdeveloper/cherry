@@ -1,0 +1,80 @@
+@import "../styles/stylesIndex.scss";
+@include fadesAnimations;
+
+.Modal {
+  &-overlay {
+    background: rgba(0, 0, 0, 0.3);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+    opacity: 0;
+    animation: fadeOut 0.2s forwards;
+    &.open {
+      animation: fadeIn 0.2s forwards;
+      opacity: 1;
+    }
+  }
+  &.open {
+    transform: translateY(-50%) scale(1);
+  }
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  margin: auto;
+  top: 45%;
+  transform: translateY(-50%) scale(0.8);
+  padding: 24px;
+  background: $color_white;
+  border-radius: $border-radius;
+  overflow: hidden;
+  position: relative;
+  @include intenseShadow;
+  h1 {
+    @include pageTitle;
+  }
+  h2 {
+    @include paragraphHeading;
+  }
+  p {
+    @include paragraph;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  &-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+  }
+
+  &-content {
+    position: relative;
+    z-index: 12;
+  }
+
+  .pattern {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .pattern1 {
+    width: 70px;
+    right: 10%;
+    bottom: 10%;
+  }
+  .pattern2 {
+    width: 100px;
+    left: 10%;
+    top: 10%;
+  }
+  .pattern3 {
+    width: 140px;
+    left: 10%;
+    bottom: 10%;
+  }
+  .pattern4 {
+    width: 120px;
+    right: 10%;
+    top: 10%;
+  }
+}
