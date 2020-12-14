@@ -12,7 +12,7 @@ const Recommendation: React.FC<RecommendationProps> = ({ type, title, descriptio
             <p>{description}</p>
             <Link>Read more<Icon icon="chevron-right" size={10} /></Link>
         </div>
-        <div className="Recommendation-image" style={{ backgroundImage: `url(${image.src})` }}>
+        <div className="Recommendation-image" style={{ backgroundImage: `url(${image?.src})` }}>
             {type === 'lesson' &&
                 <div className="Recommendation-image-icon">
                     <Icon icon="learn" />
