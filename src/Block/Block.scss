@@ -10,23 +10,23 @@
   @include md {
     padding: 0;
   }
-  h1,
-  h1 strong {
+  & > h1,
+  & > h1 strong {
     @include pageTitle;
   }
-  h2,
-  h2 strong {
+  & > h2,
+  & > h2 strong {
     @include bodyHeading;
   }
-  h3,
-  h3 strong {
+  & > h3,
+  & > h3 strong {
     @include paragraphHeading;
   }
-  h2,
-  h3 {
+  & > h2,
+  & > h3 {
     margin-top: 12px;
   }
-  p {
+  & > p {
     @include paragraph;
     color: $color_altBlack;
   }
