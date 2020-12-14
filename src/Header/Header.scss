@@ -59,20 +59,6 @@
         opacity: 1;
       }
     }
-    // &.outside {
-    //   position: absolute;
-    //   bottom: initial;
-    //   margin-top: -44px;
-    //   display: inline-flex;
-    //   background: transparent;
-    //   z-index: 14;
-    //   span {
-    //     color: $color_mediumGrey;
-    //   }
-    //   a {
-    //     color: $color_mediumGrey;
-    //   }
-    // }
   }
   @include lg {
     margin-bottom: $grid-gap;
@@ -103,6 +89,10 @@
         stroke: $color_white;
       }
     }
+  }
+  &-meta {
+    @include note;
+    color: $color_white;
   }
   &-content {
     padding: 30px 100px;
