@@ -11,5 +11,6 @@ export interface RowProps {
     link?: string,
     linkText?: string,
     lastRow?: boolean,
-    zIndex?: number
+    zIndex?: number,
+    onLinkClick?: () => void
 }

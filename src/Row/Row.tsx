@@ -8,7 +8,7 @@ import _ from 'lodash';
 import clsx from "clsx";
 import { useResize } from "../useResize";
 
-const Row: FC<RowProps> = ({ gutter, columns, children, title, subTitle, backgroundColor, lastRow, titleStyle, link, linkText, zIndex }: RowProps) => {
+const Row: FC<RowProps> = ({ gutter, columns, children, title, subTitle, backgroundColor, lastRow, titleStyle, onLinkClick, linkText, zIndex }: RowProps) => {
     const [columnsRef, updateColumnsRef] = useState(columns);
     const { size, sizeIndex } = useResize();
 
@@ -40,7 +40,7 @@ const Row: FC<RowProps> = ({ gutter, columns, children, title, subTitle, backgro
             <div className="Row-heading" >
                 <h2>{title}</h2>
                 {subTitle && (titleStyle !== 'fullwidth') && <h3>{subTitle}</h3>}
-                {link && <Link link={link}>{linkText}</Link>}
+                {onLinkClick && <Link onClick={onLinkClick}>{linkText}</Link>}
             </div>
         }
         <div className="Row-container" style={renderStyles()}>
