@@ -1,4 +1,4 @@
-import "./Navbar.scss";
+import "./NavBar.scss";
 
 import React, { useEffect, useRef, useState } from "react";
 
