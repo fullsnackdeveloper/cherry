@@ -22,12 +22,10 @@ const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categori
 
     const renderCategories = () => {
         return categories.map((c, index) => {
-            return <>
-                <Link key={index} darkMode onClick={handleCategoryClick(c.link)}>{c.title}</Link>
-                { categories.length - 1 > index &&
-                    <Icon key={2} icon="chevron-right" size={10} />
-                }
-            </>
+            return [
+                <Link key={index} darkMode onClick={handleCategoryClick(c.link)}>{c.title}</Link>,
+                categories.length - 1 > index && <Icon key={index} icon="chevron-right" size={10} />
+            ]
         })
     }
 
