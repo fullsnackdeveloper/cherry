@@ -6,8 +6,8 @@ import React from "react";
 import { RecommendationProps } from "./Recommendation.types";
 import _ from 'lodash';
 
-const Recommendation: React.FC<RecommendationProps> = ({ type, title, description, image, uri }) => {
-    return <div data-testid="Recommendation" className="Recommendation">
+const Recommendation: React.FC<RecommendationProps> = ({ type, title, description, image, onClick }) => {
+    return <div data-testid="Recommendation" className="Recommendation" onClick={onClick}>
         <div className="Recommendation-text">
             <h3>Recommended</h3>
             <h2>{title}</h2>

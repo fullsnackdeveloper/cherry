@@ -59,4 +59,7 @@
       border: 2px solid $color_primary;
     }
   }
+  &.noHover:after {
+    border: none;
+  }
 }

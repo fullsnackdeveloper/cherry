@@ -26,5 +26,5 @@ const article = {
     uri: "/example"
 }
 
-export const Default = () => <Recommendation {...article} />;
-export const lesson = () => <Recommendation {...article} type="lesson" />;
+export const Default = () => <Recommendation {...article} onClick={() => alert('something')} />;
+export const lesson = () => <Recommendation {...article} onClick={() => alert('something')} type="lesson" />;
