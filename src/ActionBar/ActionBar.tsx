@@ -6,7 +6,6 @@ import { ActionBarProps } from "./ActionBar.types";
 import Avatar from "../Avatar/Avatar";
 import Button from "../Button/Button";
 import Link from "../Link/Link";
-import PageContainer from "../PageContainer/PageContainer";
 import Popup from "../Popup/Popup";
 import ToolTip from "../ToolTip/ToolTip";
 import clsx from "clsx";
@@ -18,6 +17,9 @@ const ActionBar: React.FC<ActionBarProps> = ({ showDepth, collapsedAt, authorCon
     const { sizeIndex } = useResize();
     const [sizeState, updateSizeState] = useState(null);
     const [showActionBar, updateShowActionBar] = useState(false);
+    const [openPopups, updateOpenPopups] = useState([]);
+    const [canScroll, updateCanScroll] = useState<boolean>(true);
+
     useEffect(() => {
         const sizing = responsiveState(sizeIndex, collapsedAt);
         if (sizing === 'desktop')
@@ -42,11 +44,32 @@ const ActionBar: React.FC<ActionBarProps> = ({ showDepth, collapsedAt, authorCon
     }
 
     useEffect(() => {
+        if (canScroll) {
+            document.body.style.overflow = "inherit";
+        } else {
+            document.body.style.overflow = "hidden";
+        }
+    }, [canScroll]);
+
+    useEffect(() => {
         window.addEventListener('scroll', listenToScroll);
         return () => {
             window.removeEventListener('scroll', listenToScroll)
         }
     }, []);
+
+    const handleOpened = (bool, index) => {
+        let newPopups = openPopups;
+        newPopups[index] = bool;
+        if (newPopups.includes(true)) {
+            console.log('includes it')
+            updateCanScroll(false)
+        } else {
+            console.log('doesnt includes it')
+            updateCanScroll(true)
+        }
+        updateOpenPopups(newPopups);
+    }
 
     return <div data-testid="ActionBar" className={clsx("ActionBar", sizeState, { showActionBar })} style={{ top: sizeState ? 0 : top }}>
         <div className="ActionBar-background"></div>
@@ -55,14 +78,14 @@ const ActionBar: React.FC<ActionBarProps> = ({ showDepth, collapsedAt, authorCon
                 {sizeState && <Link icon="steps" iconSize={18} onClick={onStepsClick}>Steps</Link>}
             </ToolTip>
         }
-        <Popup content={authorContent} position={sizeState ? 'bottomLeft' : 'leftTop'} className={`${sizeState} ActionBar-Popup`} addedPadding>
+        <Popup content={authorContent} position={sizeState ? 'bottomLeft' : 'leftTop'} className={`${sizeState} ActionBar-Popup`} addedPadding opened={bool => handleOpened(bool, 1)}>
             <ToolTip message="Author" disabled={sizeState}>
                 <Avatar image={authorAvatar} initials="NO" size={sizeState ? sizeState === 'mobile' ? 'tiny' : 'small' : 'regular'} />
                 {sizeState && <Link>Author</Link>}
             </ToolTip>
         </Popup>
         {productContent &&
-            <Popup content={productContent} position={sizeState ? 'bottom' : 'left'} className={`${sizeState} ActionBar-Popup`} addedPadding>
+            <Popup content={productContent} position={sizeState ? 'bottom' : 'left'} className={`${sizeState} ActionBar-Popup`} addedPadding opened={bool => handleOpened(bool, 2)}>
                 <ToolTip message="Products" disabled={sizeState}>
                     {sizeState ?
                         sizeState === 'mobile' ? <Link icon="tags" iconSize={18}>Products</Link> : <Link icon="tags" iconSize={24}>Products</Link> :
@@ -83,6 +106,7 @@ const ActionBar: React.FC<ActionBarProps> = ({ showDepth, collapsedAt, authorCon
                 <Button type="icon" icon="link" iconSize={24} />
             </div>}
             width={240}
+            opened={bool => handleOpened(bool, 3)}
         >
             <ToolTip message="Share" disabled={sizeState}>
                 {sizeState ?

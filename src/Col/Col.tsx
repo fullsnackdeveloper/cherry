@@ -7,7 +7,7 @@ import _ from 'lodash';
 import clsx from "clsx";
 import { useResize } from "../useResize";
 
-const Col: FC<ColProps> = ({ span, children, style }: ColProps) => {
+const Col: FC<ColProps> = ({ span, children, style, ...props }: ColProps) => {
     const [colRef, updateColumnsRef] = useState(span);
     const { size, sizeIndex } = useResize();
 
@@ -17,7 +17,7 @@ const Col: FC<ColProps> = ({ span, children, style }: ColProps) => {
         span.hasOwnProperty(sizeIndex) ? updateColumnsRef(span[sizeIndex]) : updateColumnsRef(_.last(span))
     }, [size, sizeIndex]);
 
-    return <div className={clsx("Col", { noShow: colRef === 0 })} style={{ gridColumn: `span ${colRef}`, ...style }}>
+    return <div className={clsx("Col", { noShow: colRef === 0 })} style={{ gridColumn: `span ${colRef}`, ...style }} {...props}>
         {children}
     </div>
 };

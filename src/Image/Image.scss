@@ -30,8 +30,8 @@
       @include source;
       text-decoration: none;
       transition: all 0.3s linear;
-      &:hover {
-        color: $color_black;
+      &:after {
+        display: none;
       }
     }
   }
@@ -65,7 +65,7 @@
       z-index: -1;
       margin-top: 10px;
       margin-bottom: 10px;
-      animation: fadeOut 0.3s forwards;
+      animation: fadeOutZIndex 0.3s forwards;
       & > * {
         color: $color_white;
       }
@@ -105,5 +105,19 @@
         }
       }
     }
+  }
+}
+
+@keyframes fadeOutZIndex {
+  0% {
+    opacity: 1;
+    pointer-events: none;
+    z-index: 2000;
+  }
+
+  100% {
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
   }
 }

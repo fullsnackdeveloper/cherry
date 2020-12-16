@@ -1,5 +1,5 @@
 import Menu from "../Menu/Menu";
-import Navbar from "./NavBar";
+import Navbar from "./Navbar";
 import React from "react";
 import logo from '../images/logo.png';
 import mobileLogo from '../images/logo-horizontal.png';

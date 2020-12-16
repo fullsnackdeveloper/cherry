@@ -2,7 +2,7 @@ import ActionCard from "../ActionCard/ActionCard";
 import Card from '../Card/Card';
 import Col from '../Col/Col';
 import Header from "../Header/Header";
-import Navbar from "../NavBar/NavBar";
+import Navbar from "../Navbar/Navbar";
 import PageContainer from "./PageContainer";
 import React from "react";
 import Row from '../Row/Row';
