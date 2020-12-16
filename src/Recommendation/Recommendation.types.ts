@@ -3,6 +3,6 @@ export interface RecommendationProps {
     title: string,
     description?: string,
     image: any,
-    uri: string,
+    onClick: () => void,
     type?: string
 }

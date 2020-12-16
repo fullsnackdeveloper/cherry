@@ -12,6 +12,10 @@
   }
   &-chevron {
     transition: all 0.2s linear;
+    svg path {
+      stroke: $color_blueBlack;
+      stroke-width: 3px;
+    }
   }
   &.open {
     .MenuItem-chevron {

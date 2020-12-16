@@ -6,6 +6,7 @@
   padding: 24px;
   justify-content: space-between;
   border-radius: $border-radius;
+  cursor: pointer;
   @include sm {
     flex-direction: column-reverse;
   }

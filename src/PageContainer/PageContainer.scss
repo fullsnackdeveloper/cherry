@@ -26,4 +26,7 @@
   &.tablet.hasSteps .Block {
     padding-left: 50px;
   }
+  &.shadedBackground {
+    background: $color_offWhite;
+  }
 }

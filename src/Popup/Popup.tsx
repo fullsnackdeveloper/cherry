@@ -9,6 +9,7 @@ import { useResize } from "../useResize";
 
 const Popup: React.FC<PopupProps> = ({ position, title, content, children, width, opened, className, addedPadding, fullWidth, closePopup, noOverlay }) => {
     const [open, updateOpen] = useState<boolean>(false);
+    const [canScroll, updateCanScroll] = useState<boolean>(true);
     const [triggerPosition, updateTriggerPosition] = useState<any>(null);
     const trigger = useRef();
     const popupRef = useRef();
@@ -17,10 +18,18 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, width
     useEffect(() => {
         if (closePopup && open) {
             updateOpen(false);
-            document.body.style.overflow = "inherit";
+            updateCanScroll(true);
             opened && opened(false)
         }
     }, [closePopup]);
+
+    useEffect(() => {
+        if (canScroll) {
+            document.body.style.overflow = "inherit";
+        } else {
+            document.body.style.overflow = "hidden";
+        }
+    }, [canScroll]);
 
     useEffect(() => {
         window.addEventListener('click', handleAllClicks);
@@ -28,9 +37,13 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, width
     }, []);
 
     const handleAllClicks = e => {
+        console.log(popupRef, trigger)
         //@ts-ignore
-        if ((!popupRef?.current.contains(e.target)) && (!trigger?.current.contains(e.target)))
+        if (!(popupRef?.current.contains(e.target)) && !(trigger?.current.contains(e.target))) {
+            //@ts-ignore
             updateOpen(false);
+            updateCanScroll(true);
+        }
     }
 
     const styledContent = useMemo(() => {
@@ -96,9 +109,9 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, width
 
     const handleClick = () => {
         updateOpen(true);
-        console.log(size, noOverlay)
+        updateCanScroll(false);
         if (!noOverlay || ["sm", "md"].includes(size))
-            document.body.style.overflow = "hidden"
+            updateCanScroll(false);
         //@ts-ignore
         updateTriggerPosition(trigger?.current?.getBoundingClientRect());
         opened && opened(true)

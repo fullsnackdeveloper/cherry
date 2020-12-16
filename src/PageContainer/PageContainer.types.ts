@@ -5,4 +5,5 @@ export interface PageContainerProps {
     collapsedAt?: number[];
     hasActionBar?: boolean;
     hasSteps?: boolean;
+    shadedBackground?: boolean;
 }

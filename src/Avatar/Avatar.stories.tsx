@@ -6,7 +6,7 @@ export default {
     component: Avatar
 };
 
-export const Default = () => <Avatar image="https://images.unsplash.com/photo-1518806118471-f28b20a1d79d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />;
+export const Default = () => <Avatar image="https://images.unsplash.com/photo-1518806118471-f28b20a1d79d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" noHover />;
 export const WithoutImage = () => <Avatar />;
 export const Size = () => <div style={{ display: 'flex' }}>
     <div className="storybook-spacer">
