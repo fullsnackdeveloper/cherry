@@ -37,3 +37,17 @@ const hotspots = [
 ]
 
 export const Default = () => <Image image={image} hotspots={hotspots} />;
+export const sameSiteAuthorName = () => <Image image={{
+    src: 'https://images.unsplash.com/photo-1474128670149-7082a8d370ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+    alt: 'chute',
+    source: {
+        author: {
+            name: 'Paterson Mongumry',
+            link: 'https://someone.com',
+        },
+        site: {
+            name: 'Paterson Mongumry',
+            link: 'https://unsplash.com',
+        }
+    }
+}} hotspots={hotspots} />;

@@ -1,12 +1,12 @@
 import "./Image.scss";
 
 import React, { useEffect, useState } from "react";
-import {useInView} from 'react-intersection-observer';
 
 import Icon from "../Icon/Icon";
 import { ImageProps } from "./Image.types";
 import _ from 'lodash';
 import clsx from "clsx";
+import { useInView } from 'react-intersection-observer';
 
 const Image: React.FC<ImageProps> = ({ image, hotspots }) => {
 
@@ -67,13 +67,17 @@ const Image: React.FC<ImageProps> = ({ image, hotspots }) => {
                         <a href={image.source?.author.link} target="_blank">{image.source?.author.name}</a>
                     </div>
                 }
-                {image.source?.site && image.source?.author &&
-                    <span>|</span>
-                }
-                {image.source?.site?.name && image.source?.site?.link &&
-                    <div className="Image-source-site">
-                        <a href={image.source?.site.link} target="_blank">{image.source?.site.name}</a>
-                    </div>
+                {!(image.source.site.name === image.source.author.name) &&
+                    <>
+                        {image.source?.site && image.source?.author &&
+                            <span>|</span>
+                        }
+                        {image.source?.site?.name && image.source?.site?.link &&
+                            <div className="Image-source-site">
+                                <a href={image.source?.site.link} target="_blank">{image.source?.site.name}</a>
+                            </div>
+                        }
+                    </>
                 }
             </div>
         </div>
