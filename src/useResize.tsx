@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import styles from '../styles/variables.scss';
-
 export const useResize = () => {
   const [size, updateSize] = useState(null);
   const [sizeIndex, updatesizeIndex] = useState(null);
