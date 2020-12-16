@@ -17,16 +17,18 @@ const Image: React.FC<ImageProps> = ({ image, hotspots }) => {
     const [hideHotspotTimeout, setHideHotspotTimeout] = useState(null);
 
     useEffect(() => {
-        if (inView) {
-            openHotspot(0);
-            setHideHotspotTimeout(setTimeout(() => {
+        if (hotspots?.length > 0) {
+            if (inView) {
+                openHotspot(0);
+                setHideHotspotTimeout(setTimeout(() => {
+                    openHotspot(null);
+                }, 4000));
+            } else if (!inView) {
+                clearTimeout(hideHotspotTimeout);
                 openHotspot(null);
-            }, 4000));
-        } else if (!inView) {
-            clearTimeout(hideHotspotTimeout);
-            openHotspot(null);
+            }
         }
-    }, [inView]);
+    }, [inView, hotspots]);
 
     const handleHotspotHover = (index: number) => () => {
         openHotspot(index);
