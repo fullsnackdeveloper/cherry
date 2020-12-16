@@ -4,7 +4,7 @@ export interface PopupProps {
     children: ReactNode;
     content: ReactNode[] | ReactNode;
     title?: string;
-    opened?: (boolean) => void;
+    opened?: any;
     width?: number;
     fullWidth?: boolean;
     position?: 'topLeft' | 'top' | 'topRight' | 'leftTop' | 'left' | 'leftBottom' | 'bottomLeft' | 'bottom' | 'bottomRight' | 'rightTop' | 'right' | 'rightBottom';

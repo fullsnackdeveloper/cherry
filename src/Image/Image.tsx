@@ -1,6 +1,7 @@
 import "./Image.scss";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import {useInView} from 'react-intersection-observer';
 
 import Icon from "../Icon/Icon";
 import { ImageProps } from "./Image.types";
@@ -10,6 +11,24 @@ import clsx from "clsx";
 const Image: React.FC<ImageProps> = ({ image, hotspots }) => {
 
     const [hotspotOpen, openHotspot] = useState(null);
+    const { ref, inView } = useInView({
+        delay: 500
+    });
+    const [hideHotspotTimeout, setHideHotspotTimeout] = useState(null);
+
+    useEffect(() => {
+        if (hotspots?.length > 0) {
+            if (inView) {
+                openHotspot(0);
+                setHideHotspotTimeout(setTimeout(() => {
+                    openHotspot(null);
+                }, 4000));
+            } else if (!inView) {
+                clearTimeout(hideHotspotTimeout);
+                openHotspot(null);
+            }
+        }
+    }, [inView, hotspots]);
 
     const handleHotspotHover = (index: number) => () => {
         openHotspot(index);
@@ -32,7 +51,7 @@ const Image: React.FC<ImageProps> = ({ image, hotspots }) => {
         })
     }
 
-    return <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+    return <div ref={ref} style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
         <div data-testid="Image" className="Image">
             <div className="Image-container">
                 <div className="Image-Hotspots">
