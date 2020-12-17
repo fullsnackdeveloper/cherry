@@ -25,5 +25,6 @@ export interface HeaderProps {
     maxWidth?: number
     type?: "display" | "content",
     hideSource?: boolean,
-    onCategoryClick?: any
+    onCategoryClick?: any,
+    nextImage?: ReactNode,
 }

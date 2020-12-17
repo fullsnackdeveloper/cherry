@@ -9,7 +9,7 @@ import Stats from "../Stats/Stats";
 import clsx from "clsx";
 import { useResize } from "../useResize";
 
-const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categories, stats, squiggle, maxWidth, type, hideSource, onCategoryClick }: HeaderProps) => {
+const Header: FC<HeaderProps> = ({ nextImage, title, subTitle, description, image, categories, stats, squiggle, maxWidth, type, hideSource, onCategoryClick }: HeaderProps) => {
     const { sizeIndex } = useResize();
     const [size, updateSize] = useState(null);
     useEffect(() => {
@@ -50,7 +50,12 @@ const Header: FC<HeaderProps> = ({ title, subTitle, description, image, categori
     return <>
         <div key="header" className={clsx("Header", type)}>
             <div className="Header-backgroundImage">
-                <img src={image.src} alt={image.alt} loading="lazy" />
+                {nextImage &&
+                    nextImage
+                }
+                {!nextImage &&
+                    <img src={image.src} alt={image.alt} loading="lazy" />
+                }
                 <div className="Header-backgroundImage-overlay" />
             </div>
             <div className={clsx("Header-content")} style={{ maxWidth }}>

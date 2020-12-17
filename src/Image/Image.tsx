@@ -8,7 +8,7 @@ import _ from 'lodash';
 import clsx from "clsx";
 import { useInView } from 'react-intersection-observer';
 
-const Image: React.FC<ImageProps> = ({ image, hotspots }) => {
+const Image: React.FC<ImageProps> = ({ children, image, hotspots }) => {
 
     const [hotspotOpen, openHotspot] = useState(null);
     const { ref, inView } = useInView({
@@ -58,7 +58,7 @@ const Image: React.FC<ImageProps> = ({ image, hotspots }) => {
                     {hotspots && renderHotspots()}
                 </div>
                 <picture>
-                    <img src={image.src} alt={image.alt} loading="lazy" />
+                    {children}
                 </picture>
             </div>
             <div className="Image-source">

@@ -71,6 +71,33 @@ const ActionBar: React.FC<ActionBarProps> = ({ showDepth, collapsedAt, authorCon
         updateOpenPopups(newPopups);
     }
 
+    const handleSocialShare = type => () => {
+        let link = '';
+        switch (type) {
+            case 'facebook':
+                link = 'https://www.facebook.com/sharer/sharer.php?u=https://skunkwork.netlify.app/how-to-fix-garbage-disposal';
+                break;
+            case 'twitter':
+                link = 'https://twitter.com/intent/tweet?url=https://skunkwork.netlify.app/how-to-fix-garbage-disposal&text=';
+                break;
+            case 'pinterest':
+                link = 'https://pinterest.com/pin/create/button/?url=https://skunkwork.netlify.app/how-to-fix-garbage-disposal&media=&description=';
+                break;
+            case 'email':
+                link = 'mailto:info@example.com?&subject=&body=https://skunkwork.netlify.app/how-to-fix-garbage-disposal';
+                break;
+            default:
+                break;
+        }
+        // <a href="https://twitter.com/intent/tweet?url=https://skunkwork.netlify.app/how-to-fix-garbage-disposal&text=">Tweet</a>
+        // <a href="https://www.facebook.com/sharer/sharer.php?u=https://skunkwork.netlify.app/how-to-fix-garbage-disposal">Share</a>
+        // <a href="https://pinterest.com/pin/create/button/?url=https://skunkwork.netlify.app/how-to-fix-garbage-disposal&media=&description=">Save</a>
+        // <a href="mailto:info@example.com?&subject=&body=https://skunkwork.netlify.app/how-to-fix-garbage-disposal ">Email</a>
+
+        console.log(type);
+        window?.open(link, "name", "width=600, height=400");
+    }
+
     return <div data-testid="ActionBar" className={clsx("ActionBar", sizeState, { showActionBar })} style={{ top: sizeState ? 0 : top }}>
         <div className="ActionBar-background"></div>
         {steps &&
@@ -99,10 +126,10 @@ const ActionBar: React.FC<ActionBarProps> = ({ showDepth, collapsedAt, authorCon
             className={`${sizeState} ActionBar-Popup`}
             position={sizeState ? 'bottomRight' : 'left'}
             content={<div className="ActionBar-share">
-                <Button type="icon" icon="twitter" iconSize={24} />
-                <Button type="icon" icon="facebook" iconSize={24} />
-                <Button type="icon" icon="pinterest" iconSize={24} />
-                <Button type="icon" icon="email" iconSize={24} />
+                <Button type="icon" icon="twitter" iconSize={24} onClick={handleSocialShare('twitter')} />
+                <Button type="icon" icon="facebook" iconSize={24} onClick={handleSocialShare('facebook')} />
+                <Button type="icon" icon="pinterest" iconSize={24} onClick={handleSocialShare('pinterest')} />
+                <Button type="icon" icon="email" iconSize={24} onClick={handleSocialShare('email')} />
                 <Button type="icon" icon="link" iconSize={24} />
             </div>}
             width={240}
