@@ -9,5 +9,7 @@ export interface ActionBarProps {
     closeSteps?: boolean,
     top?: number,
     onStepsClick?: () => void,
-    showDepth?: number
+    showDepth?: number;
+    shareLink: string;
+    copyClick?: (string) => void;
 }

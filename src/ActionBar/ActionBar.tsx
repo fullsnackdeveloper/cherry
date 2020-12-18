@@ -9,10 +9,11 @@ import Link from "../Link/Link";
 import Popup from "../Popup/Popup";
 import ToolTip from "../ToolTip/ToolTip";
 import clsx from "clsx";
+import copy from "copy-to-clipboard";
 import { responsiveState } from "../utils";
 import { useResize } from "../useResize";
 
-const ActionBar: React.FC<ActionBarProps> = ({ showDepth, collapsedAt, authorContent, productContent, authorAvatar, steps, onStepsClick, top }) => {
+const ActionBar: React.FC<ActionBarProps> = ({ copyClick, shareLink, showDepth, collapsedAt, authorContent, productContent, authorAvatar, steps, onStepsClick, top }) => {
     const scroll = useRef(0);
     const { sizeIndex } = useResize();
     const [sizeState, updateSizeState] = useState(null);
@@ -62,10 +63,8 @@ const ActionBar: React.FC<ActionBarProps> = ({ showDepth, collapsedAt, authorCon
         let newPopups = openPopups;
         newPopups[index] = bool;
         if (newPopups.includes(true)) {
-            console.log('includes it')
             updateCanScroll(false)
         } else {
-            console.log('doesnt includes it')
             updateCanScroll(true)
         }
         updateOpenPopups(newPopups);
@@ -75,26 +74,23 @@ const ActionBar: React.FC<ActionBarProps> = ({ showDepth, collapsedAt, authorCon
         let link = '';
         switch (type) {
             case 'facebook':
-                link = 'https://www.facebook.com/sharer/sharer.php?u=https://skunkwork.netlify.app/how-to-fix-garbage-disposal';
+                link = `https://www.facebook.com/sharer/sharer.php?u=${shareLink}`;
                 break;
             case 'twitter':
-                link = 'https://twitter.com/intent/tweet?url=https://skunkwork.netlify.app/how-to-fix-garbage-disposal&text=';
+                link = `https://twitter.com/intent/tweet?url=${shareLink}&text=`;
                 break;
             case 'pinterest':
-                link = 'https://pinterest.com/pin/create/button/?url=https://skunkwork.netlify.app/how-to-fix-garbage-disposal&media=&description=';
+                link = `https://pinterest.com/pin/create/button/?url=${shareLink}&media=&description=`;
                 break;
             case 'email':
-                link = 'mailto:info@example.com?&subject=&body=https://skunkwork.netlify.app/how-to-fix-garbage-disposal';
+                link = `mailto:info@example.com?&subject=&body=${shareLink}`;
                 break;
+            case 'copy':
+                copy(shareLink);
+                copyClick && copyClick(shareLink);
             default:
                 break;
         }
-        // <a href="https://twitter.com/intent/tweet?url=https://skunkwork.netlify.app/how-to-fix-garbage-disposal&text=">Tweet</a>
-        // <a href="https://www.facebook.com/sharer/sharer.php?u=https://skunkwork.netlify.app/how-to-fix-garbage-disposal">Share</a>
-        // <a href="https://pinterest.com/pin/create/button/?url=https://skunkwork.netlify.app/how-to-fix-garbage-disposal&media=&description=">Save</a>
-        // <a href="mailto:info@example.com?&subject=&body=https://skunkwork.netlify.app/how-to-fix-garbage-disposal ">Email</a>
-
-        console.log(type);
         window?.open(link, "name", "width=600, height=400");
     }
 

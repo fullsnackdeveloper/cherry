@@ -16,6 +16,7 @@ export const Default = () => {
 
     return <PageContainer>
         <ActionBar
+            shareLink="https://google.com"
             top={100}
             authorAvatar="https://images.unsplash.com/photo-1606802523486-7fb118e84b8c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
             authorContent={<div>
@@ -38,6 +39,7 @@ export const noProducts = () => {
 
     return <PageContainer>
         <ActionBar
+            shareLink="https://google.com"
             top={100}
             authorAvatar="https://images.unsplash.com/photo-1606802523486-7fb118e84b8c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
             authorContent={<div>
