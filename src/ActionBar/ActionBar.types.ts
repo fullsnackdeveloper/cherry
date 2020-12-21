@@ -11,5 +11,5 @@ export interface ActionBarProps {
     onStepsClick?: () => void,
     showDepth?: number;
     shareLink: string;
-    copyClick?: (string) => void;
+    onCopyClick?: (string) => void;
 }

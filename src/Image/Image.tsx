@@ -51,7 +51,7 @@ const Image: React.FC<ImageProps> = ({ children, image, hotspots }) => {
         })
     }
 
-    return <div ref={ref} style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+    return <div ref={ref} style={{ display: 'flex', width: '100%' }}>
         <div data-testid="Image" className="Image">
             <div className="Image-container">
                 <div className="Image-Hotspots">

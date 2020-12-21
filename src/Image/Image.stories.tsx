@@ -26,28 +26,19 @@ const hotspots = [
         title: "The Awesome Blue Mask",
         url: "https://amazon.com",
         x: 58,
-        y: 38,
+        y: 40,
     },
     {
         title: "This other really cool thing with a long name",
         url: "https://amazon.com",
-        x: 90,
-        y: 59,
+        x: 50,
+        y: 50,
     }
 ]
 
-export const Default = () => <Image image={image} hotspots={hotspots} />;
-export const sameSiteAuthorName = () => <Image image={{
-    src: 'https://images.unsplash.com/photo-1474128670149-7082a8d370ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-    alt: 'chute',
-    source: {
-        author: {
-            name: 'Paterson Mongumry',
-            link: 'https://someone.com',
-        },
-        site: {
-            name: 'Paterson Mongumry',
-            link: 'https://unsplash.com',
-        }
-    }
-}} hotspots={hotspots} />;
+export const Default = () => <Image image={image} hotspots={hotspots}>
+    <img src={image.src} alt={image.alt} />
+</Image>;
+export const sameSiteAuthorName = () => <Image image={image} hotspots={hotspots}>
+    <img src={image.src} alt={image.alt} />
+</Image>;

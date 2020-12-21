@@ -44,7 +44,7 @@
     &-spot {
       position: absolute;
       transform: translate(-50%, -50%);
-      z-index: 100;
+      z-index: 1;
       padding: 10px;
       .Icon .Streamline_Icon {
         border-radius: 50px;
@@ -62,7 +62,7 @@
       padding: $space_s $space_m;
       opacity: 0;
       transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-      z-index: -1;
+      z-index: 4;
       margin-top: 10px;
       margin-bottom: 10px;
       animation: fadeOutZIndex 0.3s forwards;

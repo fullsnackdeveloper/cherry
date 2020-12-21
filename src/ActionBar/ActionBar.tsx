@@ -13,7 +13,7 @@ import copy from "copy-to-clipboard";
 import { responsiveState } from "../utils";
 import { useResize } from "../useResize";
 
-const ActionBar: React.FC<ActionBarProps> = ({ copyClick, shareLink, showDepth, collapsedAt, authorContent, productContent, authorAvatar, steps, onStepsClick, top }) => {
+const ActionBar: React.FC<ActionBarProps> = ({ onCopyClick, shareLink, showDepth, collapsedAt, authorContent, productContent, authorAvatar, steps, onStepsClick, top }) => {
     const scroll = useRef(0);
     const { sizeIndex } = useResize();
     const [sizeState, updateSizeState] = useState(null);
@@ -86,12 +86,14 @@ const ActionBar: React.FC<ActionBarProps> = ({ copyClick, shareLink, showDepth, 
                 link = `mailto:info@example.com?&subject=&body=${shareLink}`;
                 break;
             case 'copy':
+                onCopyClick && onCopyClick(shareLink);
                 copy(shareLink);
-                copyClick && copyClick(shareLink);
             default:
                 break;
         }
-        window?.open(link, "name", "width=600, height=400");
+        updateOpenPopups([]);
+        if (type !== 'copy')
+            window?.open(link, "name", "width=600, height=400");
     }
 
     return <div data-testid="ActionBar" className={clsx("ActionBar", sizeState, { showActionBar })} style={{ top: sizeState ? 0 : top }}>
@@ -101,14 +103,14 @@ const ActionBar: React.FC<ActionBarProps> = ({ copyClick, shareLink, showDepth, 
                 {sizeState && <Link icon="steps" iconSize={18} onClick={onStepsClick}>Steps</Link>}
             </ToolTip>
         }
-        <Popup content={authorContent} position={sizeState ? 'bottomLeft' : 'leftTop'} className={`${sizeState} ActionBar-Popup`} addedPadding opened={bool => handleOpened(bool, 1)}>
+        <Popup content={authorContent} position={sizeState ? 'bottomLeft' : 'leftTop'} className={`${sizeState} ActionBar-Popup`} addedPadding closePopup={!openPopups[1]} opened={bool => handleOpened(bool, 1)}>
             <ToolTip message="Author" disabled={sizeState}>
                 <Avatar image={authorAvatar} initials="NO" size={sizeState ? sizeState === 'mobile' ? 'tiny' : 'small' : 'regular'} />
                 {sizeState && <Link>Author</Link>}
             </ToolTip>
         </Popup>
         {productContent &&
-            <Popup content={productContent} position={sizeState ? 'bottom' : 'left'} className={`${sizeState} ActionBar-Popup`} addedPadding opened={bool => handleOpened(bool, 2)}>
+            <Popup content={productContent} position={sizeState ? 'bottom' : 'left'} className={`${sizeState} ActionBar-Popup`} addedPadding closePopup={!openPopups[2]} opened={bool => handleOpened(bool, 2)}>
                 <ToolTip message="Products" disabled={sizeState}>
                     {sizeState ?
                         sizeState === 'mobile' ? <Link icon="tags" iconSize={18}>Products</Link> : <Link icon="tags" iconSize={24}>Products</Link> :
@@ -126,10 +128,11 @@ const ActionBar: React.FC<ActionBarProps> = ({ copyClick, shareLink, showDepth, 
                 <Button type="icon" icon="facebook" iconSize={24} onClick={handleSocialShare('facebook')} />
                 <Button type="icon" icon="pinterest" iconSize={24} onClick={handleSocialShare('pinterest')} />
                 <Button type="icon" icon="email" iconSize={24} onClick={handleSocialShare('email')} />
-                <Button type="icon" icon="link" iconSize={24} />
+                <Button type="icon" icon="link" iconSize={24} onClick={handleSocialShare('copy')} />
             </div>}
             width={240}
             opened={bool => handleOpened(bool, 3)}
+            closePopup={!openPopups[3]}
         >
             <ToolTip message="Share" disabled={sizeState}>
                 {sizeState ?

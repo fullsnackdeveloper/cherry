@@ -15,7 +15,7 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, width
     const { size } = useResize();
 
     useEffect(() => {
-        if (closePopup && open) {
+        if (closePopup) {
             updateOpen(false);
             opened && opened(false)
         }

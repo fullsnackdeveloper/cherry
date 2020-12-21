@@ -31,6 +31,7 @@ export const Default = () => {
             </div>}
             closeSteps={closeSteps}
             steps={true}
+            onCopyClick={() => alert('sometihng')}
         />
     </PageContainer>
 };
