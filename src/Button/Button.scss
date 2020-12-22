@@ -175,8 +175,8 @@
   }
 
   &:disabled {
-    background: $color_lightGrey;
-    color: $color_white;
+    background: $color_offWhite;
+    color: $color_lightGrey;
     cursor: not-allowed;
     box-shadow: none;
     border-color: $color_lightGrey;

@@ -91,3 +91,10 @@ export const Display = () => <Header
     }}
     squiggle
 ></Header>;
+
+export const noImage = () => <Header
+    maxWidth={380}
+    title="Let’s How -To Together"
+    subTitle="Skip store bought decorations and personalize your space with items that you make yourself. Browse beautiful and easy-to-follow DIY projects for every room in your home."
+    squiggle
+></Header>;

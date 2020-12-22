@@ -53,7 +53,7 @@ const Header: FC<HeaderProps> = ({ nextImage, title, subTitle, description, imag
                 {nextImage &&
                     nextImage
                 }
-                {!nextImage &&
+                {!nextImage && image &&
                     <img src={image.src} alt={image.alt} loading="lazy" />
                 }
                 <div className="Header-backgroundImage-overlay" />
@@ -74,7 +74,7 @@ const Header: FC<HeaderProps> = ({ nextImage, title, subTitle, description, imag
                     < Stats stats={stats} />
                 }
             </div>
-            {(!hideSource) && renderSource()}
+            {(!hideSource) && image && renderSource()}
         </div>
         {stats && (size <= 1) &&
             <Stats stats={stats} />

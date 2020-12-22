@@ -12,6 +12,11 @@
     strong {
       font-weight: 600;
     }
+    i {
+      @include note;
+      font-style: italic;
+      color: $color_grey;
+    }
   }
   &-icon {
     margin-right: $space_m;

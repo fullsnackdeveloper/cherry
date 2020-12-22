@@ -4,7 +4,7 @@ export interface HeaderProps {
     title?: string,
     subTitle?: string,
     description?: string | ReactNode,
-    image: {
+    image?: {
         src: string,
         alt: string
         source?: {
