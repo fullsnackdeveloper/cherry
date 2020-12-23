@@ -24,6 +24,7 @@
     animation: fadeOut 0.2s forwards;
     pointer-events: none;
     white-space: nowrap;
+    opacity: 0;
     &:before {
       z-index: 10;
       content: "";
