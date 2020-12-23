@@ -19,7 +19,6 @@
     box-sizing: border-box;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.13);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    animation: fadeOut 0.2s forwards;
     pointer-events: none;
     white-space: nowrap;
     opacity: 0;
@@ -63,7 +62,6 @@
   &:hover {
     .ToolTip-popup {
       opacity: 1;
-      animation: fadeIn 0.2s forwards;
       transform: translate(0px, -50%);
     }
   }
@@ -71,7 +69,6 @@
   &.disabled {
     .ToolTip-popup {
       opacity: 0;
-      animation: fadeOut 0.2s forwards;
       transform: translate(6px, -50%);
     }
   }
@@ -97,7 +94,6 @@
     &:hover {
       .ToolTip-popup {
         opacity: 1;
-        animation: fadeIn 0.2s forwards;
         transform: translate(-50%, 8px);
       }
     }
@@ -122,30 +118,8 @@
     &:hover {
       .ToolTip-popup {
         opacity: 1;
-        animation: fadeIn 0.2s forwards;
         transform: translate(calc(-100% - 8px), -50%);
       }
     }
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    pointer-events: none;
-  }
-
-  100% {
-    pointer-events: initial;
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    pointer-events: none;
-  }
-
-  100% {
-    pointer-events: none;
-    z-index: -1;
   }
 }
