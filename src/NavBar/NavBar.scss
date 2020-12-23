@@ -28,7 +28,8 @@
     width: 100%;
     text-align: center;
     padding: $space_xl 0 $space_xxl;
-    img {
+    img,
+    svg {
       width: 64px;
       height: 88px;
     }
@@ -85,7 +86,8 @@
     width: 40px;
     .Navbar-logo {
       padding: $space_s 0 $space_l;
-      img {
+      img,
+      svg {
         width: 40px;
         height: 55px;
       }
@@ -118,7 +120,8 @@
     .Navbar-logo {
       padding: $space_m;
       width: initial;
-      img {
+      img,
+      svg {
         display: block;
         width: 100px;
         height: 35px;

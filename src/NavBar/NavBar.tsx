@@ -101,7 +101,7 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
             <div className={clsx("Navbar-head", { hide: mobileHideNav })}>
                 <div className="Navbar-logo">
                     <ConditionalWrapper conditional={logoLink} wrapper={children => <a href={logoLink}>{children}</a>}>
-                        <img src={navState === 'mobile' ? mobileLogo : logo} alt="logo" />
+                        {navState === 'mobile' ? mobileLogo : logo}
                     </ConditionalWrapper>
                 </div>
                 {navState === 'mobile' &&
