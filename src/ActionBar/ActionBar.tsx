@@ -45,19 +45,14 @@ const ActionBar: React.FC<ActionBarProps> = ({ onCopyClick, shareLink, showDepth
         scroll.current = y;
     }
 
-    const preventDefault = e => {
-        e.preventDefault();
-    }
-
     useEffect(() => {
+        console.log(canScroll)
         if (canScroll) {
             document.body.style.height = 'initial';
             document.body.style.overflow = 'initial';
-            document.body.removeEventListener('touchmove', preventDefault);
         } else {
-            document.body.style.height = '100%';
+            document.body.style.height = '100vh';
             document.body.style.overflow = 'hidden';
-            document.body.addEventListener('touchmove', preventDefault);
         }
     }, [canScroll]);
 
