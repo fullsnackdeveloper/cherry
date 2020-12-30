@@ -13,15 +13,15 @@
     position: relative;
     z-index: 10;
   }
-  &-background {
-    width: 2200px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 1;
-  }
+  // &-background {
+  //   width: 2200px;
+  //   height: 100%;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 50%;
+  //   transform: translate(-50%, 0);
+  //   z-index: 1;
+  // }
 
   h2 {
     @include bodyHeading;
@@ -55,6 +55,7 @@
     .SideBySide-left,
     .SideBySide-right {
       width: 100% !important;
+      margin-bottom: $grid-gap;
     }
     .SideBySide-lowerContainer {
       flex-direction: column;
@@ -62,7 +63,9 @@
   }
 
   &.hasBackground {
-    padding: 50px 0;
+    width: calc(100% - 96px);
+    padding: 48px;
     margin: 32px 0;
+    border-radius: $border-radius;
   }
 }

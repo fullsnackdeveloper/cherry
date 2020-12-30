@@ -7,6 +7,21 @@ export default {
     component: SideBySide
 };
 
+const image = {
+    src: 'https://images.unsplash.com/photo-1474128670149-7082a8d370ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+    alt: 'chute',
+    source: {
+        author: {
+            name: 'Paterson Mongumry',
+            link: 'https://someone.com',
+        },
+        site: {
+            name: 'Unsplash',
+            link: 'https://unsplash.com',
+        }
+    }
+}
+
 export const Default = () => <SideBySide
     top={<div>
         <h2>What You'll Need</h2>
@@ -58,6 +73,8 @@ export const withImage = () => <SideBySide
         </ul>
     </div>]}
     right={
-        <Image image={{ src: "https://images.unsplash.com/photo-1602526429399-f5955066ffe2?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2195&q=80", alt: "something" }} />
+        <Image image={image}>
+            <img src={image.src} alt={image.alt} />
+        </Image>
     }
 />;

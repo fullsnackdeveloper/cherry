@@ -5,7 +5,6 @@
   padding: $grid-gap $space_xxl;
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   background: $color_white;
-  overflow: hidden;
   &.tablet {
     margin-left: 90px;
     padding: $grid-gap;
@@ -19,6 +18,7 @@
     margin-top: 62px;
     margin-left: 0;
     padding: $grid-gap;
+    overflow: hidden;
     @include md {
       margin-top: calc(62px - #{$grid-gap});
     }

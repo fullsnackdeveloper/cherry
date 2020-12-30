@@ -8,10 +8,10 @@ const SideBySide: React.FC<SideBySideProps> = ({ top, left, right, ratio, backgr
 
     let percentages = ratio.split("-");
 
-    return <div data-testid="SideBySide" className={clsx("SideBySide", { hasBackground: backgroundColor })}>
-        {backgroundColor &&
+    return <div data-testid="SideBySide" className={clsx("SideBySide", { hasBackground: backgroundColor })} style={{ backgroundColor }}>
+        {/* {backgroundColor &&
             <div className="SideBySide-background" style={{ backgroundColor }} />
-        }
+        } */}
         <div className="SideBySide-top">
             {top}
         </div>

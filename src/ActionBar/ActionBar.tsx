@@ -15,6 +15,7 @@ import { useResize } from "../useResize";
 
 const ActionBar: React.FC<ActionBarProps> = ({ onCopyClick, shareLink, showDepth, collapsedAt, authorContent, productContent, authorAvatar, steps, onStepsClick, top }) => {
     const scroll = useRef(0);
+    const lastStopped = useRef(0);
     const { sizeIndex } = useResize();
     const [sizeState, updateSizeState] = useState(null);
     const [showActionBar, updateShowActionBar] = useState(false);
@@ -46,9 +47,18 @@ const ActionBar: React.FC<ActionBarProps> = ({ onCopyClick, shareLink, showDepth
 
     useEffect(() => {
         if (canScroll) {
-            document.body.style.overflow = "inherit";
+            document.body.style.height = 'initial';
+            document.body.style.overflow = 'initial';
+            // document.body.style.position = '';
+            // document.body.style.top = '';
+            // window.scrollTo(0, lastStopped.current);
         } else {
-            document.body.style.overflow = "hidden";
+            document.body.style.height = '100%';
+            document.body.style.overflow = 'hidden';
+            // lastStopped.current = scroll.current;
+            // document.body.style.position = 'fixed';
+            // document.body.style.top = `-${lastStopped.current}px`;
+            // setTimeout(() => updateShowActionBar(true), 1);
         }
     }, [canScroll]);
 

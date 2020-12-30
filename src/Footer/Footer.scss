@@ -55,5 +55,8 @@
 @include lg {
   .Footer::after {
     width: 100vw;
+    right: -24px;
+    left: initial;
+    transform: none;
   }
 }
