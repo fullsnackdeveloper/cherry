@@ -45,20 +45,19 @@ const ActionBar: React.FC<ActionBarProps> = ({ onCopyClick, shareLink, showDepth
         scroll.current = y;
     }
 
+    const preventDefault = e => {
+        e.preventDefault();
+    }
+
     useEffect(() => {
         if (canScroll) {
             document.body.style.height = 'initial';
             document.body.style.overflow = 'initial';
-            // document.body.style.position = '';
-            // document.body.style.top = '';
-            // window.scrollTo(0, lastStopped.current);
+            document.body.removeEventListener('touchmove', preventDefault);
         } else {
             document.body.style.height = '100%';
             document.body.style.overflow = 'hidden';
-            // lastStopped.current = scroll.current;
-            // document.body.style.position = 'fixed';
-            // document.body.style.top = `-${lastStopped.current}px`;
-            // setTimeout(() => updateShowActionBar(true), 1);
+            document.body.addEventListener('touchmove', preventDefault);
         }
     }, [canScroll]);
 
