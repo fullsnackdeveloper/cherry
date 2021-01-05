@@ -108,7 +108,7 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, width
     }
 
     return <>
-        { !noOverlay && <div className={clsx("overlay", { open })} onClick={handleDeselect}></div>}
+        { !noOverlay && <div className={clsx("overlay", { open })} onMouseDown={handleDeselect}></div>}
         <div data-testid="Popup" className="Popup">
             <div ref={trigger} className="Popup-trigger" onClick={handleClick}>
                 {children}

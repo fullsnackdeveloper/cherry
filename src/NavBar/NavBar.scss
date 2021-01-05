@@ -55,7 +55,6 @@
     }
     @include lg {
       left: -285px;
-      top: 46px;
     }
     &-close {
       position: absolute;
@@ -174,5 +173,11 @@
     z-index: -1 !important;
     top: 0;
     left: 0;
+    &.open {
+      opacity: 0;
+      @include md {
+        opacity: 1;
+      }
+    }
   }
 }

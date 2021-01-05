@@ -46,13 +46,19 @@ const ActionBar: React.FC<ActionBarProps> = ({ onCopyClick, shareLink, showDepth
     }
 
     useEffect(() => {
-        console.log(canScroll)
         if (canScroll) {
-            document.body.style.height = 'initial';
-            document.body.style.overflow = 'initial';
+            document.getElementById('__next').style.position = '';
+            document.getElementById('__next').style.top = '';
+            document.getElementById('__next').style.width = '';
+            window.scrollTo(0, lastStopped.current);
+            document.getElementById('Navbar-head').style.top = '';
         } else {
-            document.body.style.height = '100vh';
-            document.body.style.overflow = 'hidden';
+            document.getElementById('Navbar-head').style.top = '-64px';
+            lastStopped.current = scroll.current;
+            document.getElementById('__next').style.position = 'fixed';
+            document.getElementById('__next').style.width = '100%';
+            document.getElementById('__next').style.top = `-${lastStopped.current}px`;
+            setTimeout(() => updateShowActionBar(true), 1);
         }
     }, [canScroll]);
 

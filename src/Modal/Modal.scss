@@ -11,9 +11,7 @@
     left: 0;
     z-index: 100000 !important;
     opacity: 0;
-    animation: fadeOut 0.2s forwards;
     &.open {
-      animation: fadeIn 0.2s forwards;
       opacity: 1;
     }
   }
