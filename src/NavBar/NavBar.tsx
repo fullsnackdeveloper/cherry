@@ -100,7 +100,7 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
             <div className={clsx("Navbar-overlay", { open: mobileMenuOpen })} onClick={handleOpenMobileMenu}></div>
             <div className={clsx("Navbar-head", { hide: mobileHideNav })} id="Navbar-head">
                 <div className="Navbar-logo">
-                    <ConditionalWrapper conditional={logoLink} wrapper={children => <a href={logoLink}>{children}</a>}>
+                    <ConditionalWrapper conditional={logoLink} wrapper={children => <div className="Navbar-logo-container" onClick={handleClick(logoLink)}>{children}</div>}>
                         {navState === 'mobile' ? mobileLogo : logo}
                     </ConditionalWrapper>
                 </div>
