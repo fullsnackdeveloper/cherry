@@ -45,7 +45,7 @@ const Image: React.FC<ImageProps> = ({ children, image, hotspots }) => {
                     <Icon icon="spot" size={24} />
                 </div>
                 <div className={clsx("Hotspot-hot", { top: h.y > 50 })} style={{ transform: `translateX(-${h.x}%)` }}>
-                    <a target="_blank" href={h.url}>
+                    <a target="_blank" href={h.link}>
                         <span className="spot-title">{_.truncate(h.title, { 'length': 32, })}</span><span className="spot-shop">shop<Icon icon="chevron-right" size={8} /></span>
                     </a>
                 </div>

@@ -17,7 +17,7 @@ export interface ImageProps {
     hotspots?:
     {
         title: string,
-        url: string,
+        link: string,
         x: number,
         y: number
     }[]

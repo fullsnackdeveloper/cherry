@@ -24,13 +24,13 @@ const image = {
 const hotspots = [
     {
         title: "The Awesome Blue Mask",
-        url: "https://amazon.com",
+        link: "https://amazon.com",
         x: 58,
         y: 40,
     },
     {
         title: "This other really cool thing with a long name",
-        url: "https://amazon.com",
+        link: "https://amazon.com",
         x: 50,
         y: 50,
     }
