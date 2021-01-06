@@ -1,6 +1,6 @@
 {
   "name": "@maraschino/cherry",
-  "version": "0.0.1-beta0.0.272",
+  "version": "0.0.1-beta0.0.273",
   "main": "build/index.js",
   "module": "build/index.esm.js",
   "files": [
@@ -73,6 +73,7 @@
     "next": "^10.0.3",
     "pure-react-carousel": "^1.27.5",
     "react-intersection-observer": "^8.30.2",
+    "rollup-plugin-scss": "^2.6.1",
     "svg-inline-loader": "^0.8.2"
   }
 }
