@@ -29,4 +29,7 @@
   &.shadedBackground {
     background: $color_offWhite;
   }
+  &.overflowHidden {
+    overflow: hidden;
+  }
 }

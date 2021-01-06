@@ -6,4 +6,5 @@ export interface PageContainerProps {
     hasActionBar?: boolean;
     hasSteps?: boolean;
     shadedBackground?: boolean;
+    overflowHidden?: boolean;
 }
