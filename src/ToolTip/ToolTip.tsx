@@ -1,4 +1,4 @@
-import "./ToolTip.scss";
+// import "./ToolTip.scss";
 
 import React, { useState } from "react";
 

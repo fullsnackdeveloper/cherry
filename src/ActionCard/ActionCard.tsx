@@ -1,4 +1,4 @@
-import "./ActionCard.scss";
+// import "./ActionCard.scss";
 
 import React, { FC } from "react";
 

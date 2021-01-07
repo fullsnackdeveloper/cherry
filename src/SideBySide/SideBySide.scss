@@ -1,4 +1,4 @@
-@import "../styles/stylesIndex.scss";
+// @import "../styles/stylesIndex.scss";
 
 .SideBySide {
   width: 100%;
@@ -13,15 +13,6 @@
     position: relative;
     z-index: 10;
   }
-  // &-background {
-  //   width: 2200px;
-  //   height: 100%;
-  //   position: absolute;
-  //   top: 0;
-  //   left: 50%;
-  //   transform: translate(-50%, 0);
-  //   z-index: 1;
-  // }
 
   h2 {
     @include bodyHeading;

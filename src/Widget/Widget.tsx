@@ -1,4 +1,4 @@
-import "./Widget.scss";
+// import "./Widget.scss";
 
 import Link from "../Link/Link";
 import React from "react";

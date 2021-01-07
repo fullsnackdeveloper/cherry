@@ -1,4 +1,4 @@
-import "./Recommendation.scss";
+// import "./Recommendation.scss";
 
 import Icon from "../Icon/Icon";
 import Link from "../Link/Link";

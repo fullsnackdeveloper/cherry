@@ -1,4 +1,4 @@
-import "./Navbar.scss";
+// import "./Navbar.scss";
 
 import React, { useEffect, useRef, useState } from "react";
 
@@ -85,7 +85,8 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
 
     const handleOpenMobileMenu = () => {
         mobileMenuOpenUpdate(!mobileMenuOpen);
-        if (mobileMenuOpen)
+        console.log(mobileMenuOpen)
+        if (!mobileMenuOpen)
             subMenuOpenUpdate(3);
     }
 

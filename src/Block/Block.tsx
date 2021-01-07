@@ -1,4 +1,4 @@
-import "./Block.scss";
+// import "./Block.scss";
 
 import { BlockProps } from "./Block.types";
 import React from "react";

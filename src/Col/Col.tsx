@@ -1,4 +1,4 @@
-import "./Col.scss";
+// import "./Col.scss";
 
 import React, { FC, useEffect, useState } from "react";
 

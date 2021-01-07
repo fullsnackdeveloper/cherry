@@ -1,4 +1,4 @@
-import "./Menu.scss";
+// import "./Menu.scss";
 
 import { MenuItemProps, MenuProps } from "./Menu.types";
 import React, { useEffect, useState } from "react";

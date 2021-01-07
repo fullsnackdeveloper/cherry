@@ -1,4 +1,4 @@
-import "./Image.scss";
+// import "./Image.scss";
 
 import React, { useEffect, useState } from "react";
 

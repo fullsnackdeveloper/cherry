@@ -29,15 +29,15 @@ export const Default = () => <Header
     squiggle
     categories={[
         {
-            title: 'Garden',
+            title: 'Garden Title needs to be longer',
             link: '/category/garden'
         },
         {
-            title: 'Pottery',
+            title: 'Pottery so i can test',
             link: '/category/garden/pottery'
         },
         {
-            title: 'Planters',
+            title: 'Planters longer names',
             link: '/category/garden/pottery/planters'
         },
     ]}

@@ -1,3 +1,5 @@
+import '!style-loader!css-loader!sass-loader!../src/styles/stylesIndex.scss';
+
 export const parameters = {
   backgrounds: {
     default: 'light',

@@ -1,4 +1,4 @@
-import "./Popup.scss";
+// import "./Popup.scss";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 

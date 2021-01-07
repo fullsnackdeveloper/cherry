@@ -1,3 +1,5 @@
+import "./styles/stylesIndex.scss";
+
 import ActionBar from "./ActionBar/ActionBar";
 import ActionCard from "./ActionCard/ActionCard";
 import Avatar from "./Avatar/Avatar";

@@ -1,4 +1,4 @@
-import "./Icon.scss";
+// import "./Icon.scss";
 
 import { Alerts, FormValidation, Home, Layouts, LinkUnlink, Menu, Select, TagsBookmarks, View } from "@streamlinehq/streamline-regular/lib/interface-essential";
 import { PhotosImages, ProfessionalNetworks, SocialMedias, Videos } from "@streamlinehq/streamline-regular/lib/logos";

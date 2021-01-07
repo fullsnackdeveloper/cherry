@@ -27,7 +27,12 @@ export default {
     resolve(),
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true }),
-    postcss(),
+    postcss({
+      extract: true,
+      modules: false,
+      minimize: true,
+      use: ['sass'],
+    }),
     copy({
       targets: [
         {
@@ -44,6 +49,11 @@ export default {
           src: "src/styles/typography.scss",
           dest: "build",
           rename: "typography.scss"
+        },
+        {
+          src: "src/styles/fonts",
+          dest: "build",
+          rename: "fonts"
         }
       ]
     })

@@ -1,4 +1,4 @@
-@import "../styles/stylesIndex.scss";
+// @import "../styles/stylesIndex.scss";
 
 .Header {
   min-height: 450px;
@@ -43,6 +43,7 @@
     background: rgba(45, 49, 67, 0.4);
     padding: 0 12px;
     border-radius: $border_radius 0 0 0;
+    z-index: 100;
     span {
       @include source;
       color: $color_white;
@@ -72,16 +73,21 @@
     margin-left: -$grid-gap;
     margin-right: -$grid-gap;
     &-backgroundImage-overlay {
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.6));
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.7));
     }
   }
   &-categories {
     display: flex;
     align-items: center;
     margin: 24px 0;
-    .Link {
+    .Link.darkMode {
       line-height: 26px;
-      @include squiggleUnderline(true);
+      opacity: 0.8;
+      span {
+        @include squiggleUnderline(true);
+        line-height: 20px;
+        text-align: left;
+      }
     }
     .Icon {
       padding: 0 10px;

@@ -1,4 +1,4 @@
-import "./StepBar.scss";
+// import "./StepBar.scss";
 
 import React, { useEffect, useState } from "react";
 

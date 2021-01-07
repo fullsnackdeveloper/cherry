@@ -1,5 +1,4 @@
 import 'pure-react-carousel/dist/react-carousel.es.css';
-import "./Carousel.scss";
 
 import { ButtonBack, ButtonNext, CarouselProvider, Slide, Slider } from 'pure-react-carousel';
 import React, { useEffect, useState } from 'react';
@@ -9,6 +8,9 @@ import Icon from '../Icon/Icon';
 import _ from 'lodash';
 import clsx from 'clsx';
 import { useResize } from '../useResize';
+// import "./Carousel.scss";
+
+
 
 const Carousel: React.FC<CarouselProps> = ({ children, columns, noTitles }) => {
     const { sizeIndex } = useResize();

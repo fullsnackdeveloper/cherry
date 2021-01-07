@@ -1,4 +1,4 @@
-import "./Divider.scss";
+// import "./Divider.scss";
 
 import { DividerProps } from "./Divider.types";
 import React from "react";

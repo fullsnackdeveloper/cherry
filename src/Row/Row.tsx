@@ -1,4 +1,4 @@
-import "./Row.scss";
+// import "./Row.scss";
 
 import React, { FC, useCallback, useEffect, useState } from "react";
 

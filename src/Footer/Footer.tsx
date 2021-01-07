@@ -1,4 +1,4 @@
-import "./Footer.scss";
+// import "./Footer.scss";
 
 import { FooterProps } from "./Footer.types";
 import React from "react";

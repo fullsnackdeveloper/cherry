@@ -1,4 +1,4 @@
-import "./Step.scss";
+// import "./Step.scss";
 
 import React from "react";
 import { StepProps } from "./Step.types";

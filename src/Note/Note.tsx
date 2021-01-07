@@ -1,4 +1,4 @@
-import "./Note.scss";
+// import "./Note.scss";
 
 import Icon from "../Icon/Icon";
 import { NoteProps } from "./Note.types";

@@ -1,4 +1,4 @@
-import "./Header.scss";
+// import "./Header.scss";
 
 import React, { FC, Fragment, useEffect, useState } from "react";
 

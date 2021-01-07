@@ -1,4 +1,4 @@
-import "./Avatar.scss";
+// import "./Avatar.scss";
 
 import React, { useCallback, useEffect, useRef } from "react";
 

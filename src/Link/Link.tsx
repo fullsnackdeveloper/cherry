@@ -1,4 +1,4 @@
-import "./Link.scss";
+// import "./Link.scss";
 
 import Icon from "../Icon/Icon";
 import { LinkProps } from "./Link.types";

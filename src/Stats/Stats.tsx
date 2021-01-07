@@ -1,4 +1,4 @@
-import "./Stats.scss";
+// import "./Stats.scss";
 
 import React from "react";
 import { StatsProps } from "./Stats.types";

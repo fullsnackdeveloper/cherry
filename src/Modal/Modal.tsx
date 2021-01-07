@@ -1,4 +1,4 @@
-import "./Modal.scss";
+// import "./Modal.scss";
 
 import Icon from "../Icon/Icon";
 import { ModalProps } from "./Modal.types";
