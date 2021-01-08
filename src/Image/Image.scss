@@ -2,6 +2,10 @@
 
 @include fadesAnimations;
 
+.Block .Image-source a {
+  @include source;
+}
+
 .Image {
   position: relative;
   display: inline-flex;

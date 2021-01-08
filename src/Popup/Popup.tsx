@@ -96,10 +96,10 @@ const Popup: React.FC<PopupProps> = ({ position, title, content, children, width
     }, [triggerPosition]);
 
     const handleClick = () => {
-        updateOpen(true);
+        updateOpen(!open);
         //@ts-ignore
         updateTriggerPosition(trigger?.current?.getBoundingClientRect());
-        opened && opened(true)
+        opened && opened(!open)
     }
 
     const handleDeselect = () => {
