@@ -4,6 +4,7 @@
 
 .Block .Image-source a {
   @include source;
+  text-decoration: none;
 }
 
 .Image {
@@ -35,9 +36,6 @@
       @include source;
       text-decoration: none;
       transition: all 0.3s linear;
-      &:after {
-        display: none;
-      }
     }
   }
   .Hotspot {

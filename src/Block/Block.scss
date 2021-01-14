@@ -29,12 +29,13 @@
   & > p {
     @include paragraph;
     color: $color_altBlack;
+    & > a {
+      @include squiggleUnderline(false);
+      color: $color_altBlack;
+    }
   }
   a {
     @include paragraph;
-    @include squiggleUnderline(false);
-    display: initial;
-    color: $color_altBlack;
   }
   i {
     @include paragraph;

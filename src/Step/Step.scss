@@ -3,7 +3,8 @@
 .Step {
   margin: $grid-gap 0 #{$grid-gap/2};
   position: relative;
-  h2 {
+  h2,
+  h2 strong {
     @include bodyHeading;
   }
   &-num {
