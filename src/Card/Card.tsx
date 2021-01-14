@@ -6,6 +6,7 @@ import { CardProps } from "./Card.types";
 import ConditionalWrapper from "../ConditionalWrapper";
 import Icon from "../Icon/Icon";
 import ToolTip from "../ToolTip/ToolTip";
+import _ from 'lodash';
 import clsx from "clsx";
 
 const Card: FC<CardProps> = ({ title, category, image, type, size, author, icon, iconMessage, onClick }: CardProps) => (

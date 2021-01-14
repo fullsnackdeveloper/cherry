@@ -13,7 +13,7 @@ const ActionCard: FC<ActionCardProps> = ({ title, icon, onClick, linkText, image
                 <Icon icon={icon} size={32} />
             }
             <h3>{title}</h3>
-            <a href="#">{linkText}<Icon icon="chevron-right" size={11} /></a>
+            <span>{linkText}<Icon icon="chevron-right" size={11} /></span>
         </div>
         <div className="ActionCard-image" style={{ backgroundImage: `url(${image})` }}></div>
     </div>

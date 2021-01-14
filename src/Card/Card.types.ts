@@ -1,6 +1,7 @@
+import { ReactNode } from 'react';
 
 export interface CardProps {
-    title?: string,
+    title?: string | ReactNode,
     category?: string,
     image?: string,
     type?: 'post' | 'category',
@@ -8,5 +9,5 @@ export interface CardProps {
     icon?: string,
     iconMessage?: string,
     author?: string,
-    onClick?: () => void
+    onClick?: () => void,
 }

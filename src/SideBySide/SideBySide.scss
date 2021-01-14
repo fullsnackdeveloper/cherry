@@ -54,9 +54,9 @@
   }
 
   &.hasBackground {
-    width: calc(100% - 96px);
-    padding: 48px;
-    margin: 32px 0;
+    width: calc(100% - 64px);
+    padding: 32px;
+    margin: 32px 0 0;
     border-radius: $border-radius;
   }
 }

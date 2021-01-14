@@ -115,15 +115,17 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
                 {menu.map((item, index) => {
                     return [<Menu.Item
                         key={index}
+                        title={item.title}
                         compact={(navState === 'tablet')}
-                        title={item.title.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))}
                         icon={item.icon}
                         chevron={item.children}
                         onClick={item.children ? openSubMenu(index) : handleClick(item.link)}
                         open={subMenuOpen === index}
                         active={activeLink === item.link}
                     >
-                        {item.title}
+                        <ConditionalWrapper conditional={!!item.nextWrapper} wrapper={item.nextWrapper}>
+                            {item.title}
+                        </ConditionalWrapper>
                     </Menu.Item>,
                     <div key={`${index}-subMenu`} className={clsx({ "Navbar-inlineSubMenu-wrapper": item.children })}>
                         {item.children && navState === 'mobile' &&
@@ -134,13 +136,14 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
                                     return <Menu.Item
                                         key={`${index}-${subIndex}`}
                                         compact={navState === 'tablet'}
-                                        title={subItem.title.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))}
                                         chevron={subItem.children}
                                         onClick={handleClick(subItem.link)}
                                         open={subMenuOpen === index}
                                         active={activeLink === subItem.link}
                                     >
-                                        {subItem.title}
+                                        <ConditionalWrapper conditional={!!subItem.nextWrapper} wrapper={subItem.nextWrapper}>
+                                            {subItem.title}
+                                        </ConditionalWrapper>
                                     </Menu.Item>
                                 })}
                             </div>
@@ -158,7 +161,9 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
                     </div>
                     {menuItem.children.map((subItem, index) => {
                         return <Menu.Item key={index} onClick={handleClick(subItem.link)} active={activeLink === subItem.link}>
-                            {subItem.title}
+                            <ConditionalWrapper conditional={!!subItem.nextWrapper} wrapper={subItem.nextWrapper}>
+                                {subItem.title}
+                            </ConditionalWrapper>
                         </Menu.Item>
                     })}
                 </div>

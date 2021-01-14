@@ -36,7 +36,8 @@
     & > .Icon {
       margin-bottom: $space_xl;
     }
-    a {
+    a,
+    span {
       @include link;
       opacity: 0.7;
       transition: all 0.3s ease;

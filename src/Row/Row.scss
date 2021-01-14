@@ -5,7 +5,6 @@
   &-container {
     margin-bottom: $grid-gap;
     position: relative;
-    // z-index: 10;
   }
   &-heading {
     text-align: center;
@@ -19,11 +18,15 @@
       @include rowHeading;
       text-transform: capitalize;
       margin-bottom: $space_s;
+      margin-right: 24px;
     }
     h3 {
       @include paragraphHeading;
       font-family: $font_serif;
       color: $color_altBlack;
+    }
+    .Link {
+      flex-shrink: 0;
     }
   }
   &.fullwidth {
@@ -31,7 +34,7 @@
       display: flex;
       width: 100%;
       justify-content: space-between;
-      margin-bottom: 4px;
+      margin-bottom: 12px;
       @include sm {
         padding: 0;
       }
@@ -39,6 +42,10 @@
         @include bodyHeading;
         text-transform: capitalize;
         margin-bottom: $space_s;
+        text-align: left;
+        @include sm {
+          margin-bottom: 0;
+        }
       }
     }
   }

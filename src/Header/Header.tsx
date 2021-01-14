@@ -54,7 +54,7 @@ const Header: FC<HeaderProps> = ({ nextImage, title, subTitle, description, imag
                     nextImage
                 }
                 {!nextImage && image &&
-                    <img src={image.src} alt={image.alt} loading="lazy" />
+                    <img src={image.src} alt={image.alt} loading="eager" />
                 }
                 <div className="Header-backgroundImage-overlay" />
             </div>

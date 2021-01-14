@@ -1,6 +1,7 @@
 // @import "../styles/stylesIndex.scss";
 
-.Link {
+.Link,
+.Link a {
   @include link;
   cursor: pointer;
   position: relative;

@@ -21,8 +21,8 @@ const Image: React.FC<ImageProps> = ({ children, image, hotspots }) => {
             if (inView) {
                 openHotspot(0);
                 setHideHotspotTimeout(setTimeout(() => {
-                    openHotspot(null);
-                }, 4000));
+                    // openHotspot(null);
+                }, 6000));
             } else if (!inView) {
                 clearTimeout(hideHotspotTimeout);
                 openHotspot(null);

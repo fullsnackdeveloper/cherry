@@ -44,7 +44,7 @@ export const Default = () => <Row zIndex={10}>
 </Row>;
 
 export const RowWithTitle = () => <Row
-    columns={[0, 0, 0, 3, 5]}
+    columns={[1, 2, 3, 3, 5]}
     title="Feeling Makey?"
     subTitle="Turn your “how-to” into “Can Do” with this weeks trending Tutorials"
 >
@@ -123,7 +123,7 @@ export const Set5Columns = () => <Row columns={[1, 1, 2, 3, 5]}>
     </Col>
 </Row>;
 
-export const fullwidthTitle = () => <Row columns={[1, 1, 2, 3, 5]} title="topic" subTitle="somthing" titleStyle="fullwidth" link="/categories" linkText="see more" backgroundColor="#F8F1E7">
+export const fullwidthTitle = () => <Row columns={[1, 1, 2, 3, 5]} title="topic" subTitle="somthing" titleStyle="fullwidth" onLinkClick={() => console.log('clicked')} linkText="see more" backgroundColor="#F8F1E7" zIndex={10}>
     <Col span={1}>
         <Card
             title="How To Install A Kitchen Backsplash"

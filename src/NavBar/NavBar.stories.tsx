@@ -16,7 +16,10 @@ export const Default = () => <Navbar onNavigate={handleNavigate} logo={<svg xmln
         {
             title: 'home',
             icon: 'home',
-            link: '/'
+            link: '/',
+            nextWrapper: children => {
+                return <div className="link wrapper">{children}</div>
+            }
         },
         {
             title: 'discover',

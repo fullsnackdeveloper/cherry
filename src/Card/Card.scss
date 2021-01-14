@@ -21,6 +21,11 @@
     @include cardTitle;
     text-transform: capitalize;
     transition: all 0.3s ease;
+    a {
+      @include cardTitle;
+      text-transform: capitalize;
+      transition: all 0.3s ease;
+    }
   }
   &-image {
     margin-bottom: $space_s;
@@ -141,6 +146,14 @@
         font-size: 16px;
         line-height: 20px;
       }
+      a {
+        @include cardTitle;
+        font-size: 20px;
+        line-height: 28px;
+        letter-spacing: 0;
+        text-transform: capitalize;
+        color: $color_white;
+      }
     }
   }
 
@@ -164,6 +177,13 @@
         @include cardTitle;
         color: $color_white;
         z-index: 14;
+        a {
+          @include cardTitle;
+          text-transform: capitalize;
+          transition: all 0.3s ease;
+          color: $color_white;
+          z-index: 14;
+        }
       }
     }
   }

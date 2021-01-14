@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import StepBar from "./StepBar";
-import _ from 'lodash';
 
 export default {
     title: "StepBar",

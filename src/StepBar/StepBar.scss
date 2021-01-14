@@ -9,6 +9,7 @@
     overflow: hidden;
     display: flex;
     padding-top: 12px;
+    width: calc(100% - 50px);
   }
   &-scroll {
     width: 100%;

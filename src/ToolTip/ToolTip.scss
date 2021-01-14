@@ -58,6 +58,9 @@
       color: tint($color_black, 40%);
     }
   }
+  &.capitalize p {
+    text-transform: capitalize;
+  }
 
   &:hover {
     .ToolTip-popup {

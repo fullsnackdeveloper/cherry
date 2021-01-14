@@ -8,12 +8,13 @@ export default {
 
 export const Default = () => <div style={{ maxWidth: 250 }}>
     <Card
-        title="How To Install A Kitchen Backsplash"
+        title="How To Install A Kitchen Backsplash How To Install A Kitchen Backsplash"
         category="Home Improvement"
         image="https://firebasestorage.googleapis.com/v0/b/skull-3d276.appspot.com/o/media%2F11-20%2Fbest-green-paint-colours-2020-720?alt=media&token=a231e60a-e002-44fb-aef7-9630b244e049"
         icon="learn"
         iconMessage="This piece of content is a lesson"
         onClick={() => alert('clicked')}
+        truncateAt={40}
     />
 </div>;
 

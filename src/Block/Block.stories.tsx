@@ -23,7 +23,7 @@ export default {
 };
 
 export const Paragraph = () => <Block html="<p>This is some paragraph text</p>" />;
-export const Heading2 = () => <Block html="<h2>This is some heading text</h2>" />;
+export const Heading2 = () => <Block html="<h2>2.</h2><h2>This is some heading text</h2>" />;
 export const Heading3 = () => <Block html="<h3>This is some heading 3 text</h3>" />;
 export const ImageBlock = () => <Block>
     <Image image={image}>

@@ -5,4 +5,5 @@ export interface ToolTipProps {
     message: string;
     disabled?: boolean;
     position?: "top" | "right" | "bottom" | "left";
+    capitalize?: boolean;
 }
