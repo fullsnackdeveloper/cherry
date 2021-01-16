@@ -1,6 +1,6 @@
 {
   "name": "@maraschino/cherry",
-  "version": "0.0.1-beta0.0.301",
+  "version": "0.0.1-beta0.0.302",
   "main": "build/index.js",
   "module": "build/index.esm.js",
   "files": [
@@ -61,6 +61,7 @@
   },
   "dependencies": {
     "@jesstelford/react-portal-universal": "^1.0.6",
+    "@splidejs/react-splide": "^0.4.4",
     "@storybook/theming": "^6.1.9",
     "@streamlinehq/streamline-bold": "^0.6.1",
     "@streamlinehq/streamline-icons-react": "^0.6.1",
@@ -69,11 +70,16 @@
     "clsx": "^1.1.1",
     "copy-to-clipboard": "^3.3.1",
     "g": "^2.0.1",
+    "keen-slider": "^5.3.5",
     "lodash": "^4.17.20",
     "next": "^10.0.3",
     "pure-react-carousel": "^1.27.5",
+    "react-alice-carousel": "^2.2.1",
     "react-intersection-observer": "^8.30.2",
+    "react-slick": "^0.27.14",
     "rollup-plugin-scss": "^2.6.1",
-    "svg-inline-loader": "^0.8.2"
+    "slick-slider": "^1.8.2",
+    "svg-inline-loader": "^0.8.2",
+    "swiper": "^6.4.5"
   }
 }
