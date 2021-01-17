@@ -50,9 +50,9 @@
     left: 0;
     z-index: 3999;
     width: 221px;
-    height: calc(100vh - 300px);
+    height: calc(100vh - 226px);
     overflow: scroll;
-    padding: 226px 32px 0;
+    padding: 226px 32px 40px;
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     @include xl {
       left: -197px;
@@ -80,6 +80,9 @@
     .MenuItem {
       margin-bottom: 8px;
       border-bottom: 1px solid $color_white;
+      &:last-child {
+        margin-bottom: 32px;
+      }
     }
   }
 

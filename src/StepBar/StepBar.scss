@@ -33,17 +33,16 @@
     border-right: 1px solid $color_offWhite;
   }
   &-step {
-    margin-right: 8px;
     span {
       margin-right: 4px;
       font-weight: 600;
     }
     margin-right: 12px;
-    // &:last-child {
-    //   margin-right: 30px;
-    //   .Tag {
-    //     margin-right: 30px;
-    //   }
-    // }
+    &:last-child {
+      margin-right: 30px;
+      .Tag {
+        margin-right: 300px;
+      }
+    }
   }
 }
