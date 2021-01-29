@@ -1,4 +1,4 @@
-// @import "../styles/variables.scss";
+@import "../styles/variables.scss";
 // @import "../styles/typography.scss";
 
 .flip {
@@ -7,4 +7,43 @@
 
 #Graduation_Icon path {
   stroke: none;
+}
+
+.Icon {
+  .cls-1 {
+    stroke: $color_black;
+    stroke-width: 12px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: transparent;
+  }
+  .cls-2 {
+    fill: transparent;
+    stroke: transparent;
+  }
+  .other {
+    .cls-2 {
+      stroke: $color_black;
+      stroke-width: 12px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: transparent;
+    }
+    .cls-3 {
+      fill: transparent;
+    }
+  }
+  .pinterest {
+    .cls-1 {
+      fill: transparent;
+      stroke: transparent;
+    }
+    .cls-2 {
+      stroke: $color_black;
+      stroke-width: 12px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: transparent;
+    }
+  }
 }

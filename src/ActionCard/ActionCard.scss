@@ -26,11 +26,11 @@
       color: $color_white;
       margin-bottom: $space_s;
     }
-    .Icon span {
+    .Icon {
       justify-content: flex-start;
       & path {
         stroke: $color_white;
-        stroke-width: 2px;
+        stroke-width: 32px;
       }
     }
     & > .Icon {

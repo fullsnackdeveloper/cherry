@@ -16,7 +16,7 @@ import Image from "./Image/Image";
 import Link from "./Link/Link";
 import Menu from "./Menu/Menu";
 import Modal from "./Modal/Modal";
-import Navbar from "./Navbar/Navbar";
+import Navbar from "./NavBar/Navbar";
 import Note from "./Note/Note";
 import PageContainer from "./PageContainer/PageContainer";
 import Popup from "./Popup/Popup";

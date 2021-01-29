@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 
 import ConditionalWrapper from "../ConditionalWrapper";
 import { StepBarProps } from "./StepBar.types";
-import Swiper from 'swiper';
 import Tag from "../Tag/Tag";
 
 const StepBar: React.FC<StepBarProps> = ({ steps, wrapper, activeStep, onSelect }) => {
@@ -13,14 +12,6 @@ const StepBar: React.FC<StepBarProps> = ({ steps, wrapper, activeStep, onSelect 
     useEffect(() => {
         updateCurrentStep(activeStep)
     }, [activeStep]);
-
-    useEffect(() => {
-        new Swiper('.swiper-container', {
-            slidesPerView: 1,
-            centeredSlides: true,
-            spaceBetween: 30,
-        });
-    }, []);
 
     const handleTagClick = s => () => {
         onSelect(s)

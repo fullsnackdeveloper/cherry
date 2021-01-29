@@ -19,7 +19,7 @@
   &.withIcon .Icon {
     margin-right: $space_m;
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    & .Streamline_Icon svg {
+    &  svg {
       path {
         stroke: $color_blueBlack;
         transition: all 0.2s linear;
@@ -43,7 +43,7 @@
   }
   &:hover {
     color: $color_black;
-    .Icon .Streamline_Icon svg path {
+    .Icon  svg path {
       stroke: $color_black;
     }
   }
@@ -52,7 +52,7 @@
   &.active {
     box-shadow: none;
     outline: none;
-    &.withIcon .Icon .Streamline_Icon svg path {
+    &.withIcon .Icon  svg path {
       stroke: $color_primary;
     }
   }

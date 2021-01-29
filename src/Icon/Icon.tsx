@@ -1,80 +1,57 @@
+
 // import "./Icon.scss";
 
-import { Alerts, FormValidation, Home, Layouts, LinkUnlink, Menu, Select, TagsBookmarks, View } from "@streamlinehq/streamline-regular/lib/interface-essential";
-import { PhotosImages, ProfessionalNetworks, SocialMedias, Videos } from "@streamlinehq/streamline-regular/lib/logos";
-
-import { Apps } from "@streamlinehq/streamline-regular/lib/programing-apps-websites";
-import { Arrows } from "@streamlinehq/streamline-regular/lib/arrows-diagrams";
-import { Books } from "@streamlinehq/streamline-regular/lib/content";
-import { Envelopes } from "@streamlinehq/streamline-regular/lib/emails";
-import { GeomerticCloseUpSingleUserActionsNeutral } from "@streamlinehq/streamline-regular/lib/users";
-import { GeomerticCloseUpSingleUserNeutral } from "@streamlinehq/streamline-regular/lib/users";
-import { Glasses } from "@streamlinehq/streamline-regular/lib/clothes-footwear-accessories";
 import { IconProps } from "./Icon.types";
-import { LoveIt } from "@streamlinehq/streamline-regular/lib/social-medias-rewards-rating";
-import { MultimediaControls } from "@streamlinehq/streamline-bold/lib/interface-essential"
-import { PowerTools } from "@streamlinehq/streamline-regular/lib/tools-constructions";
 import React from "react";
-import { SendEmail } from "@streamlinehq/streamline-regular/lib/emails";
-import { Smileys } from "@streamlinehq/streamline-regular/lib/messages-chat-smileys";
-import StreamlineIcon from "@streamlinehq/streamline-icons-react";
-import { Tasks } from "@streamlinehq/streamline-regular/lib/work-office-companies";
-import { Wayfinder } from "@streamlinehq/streamline-mini-line/lib/maps-travel";
-
 const Icon: React.FC<IconProps> = ({ icon, size }) => {
     return <div className="Icon">
-        {(icon === "drill") && <StreamlineIcon icon={PowerTools.PowerToolsDrill} size={size} />}
-        {(icon === "discover") && <StreamlineIcon icon={Glasses.GlassesRetro1} size={size} />}
-        {(icon === "home") && <StreamlineIcon icon={Home.House} size={size} />}
-        {(icon === "close") && <StreamlineIcon icon={FormValidation.Close} size={size} />}
-        {(icon === "arrow-right") && <StreamlineIcon icon={Arrows.ArrowRight} size={size} />}
-        {(icon === "arrow-left") && <StreamlineIcon icon={Arrows.ArrowLeft} size={size} />}
-        {(icon === "chevron-up") && <StreamlineIcon icon={Arrows.ArrowUp1} size={size} />}
-        {(icon === "chevron-down") && <StreamlineIcon icon={Arrows.ArrowDown1} size={size} />}
-        {(icon === "chevron-left") && <StreamlineIcon icon={Arrows.ArrowLeft1} size={size} />}
-        {(icon === "chevron-right") && <StreamlineIcon icon={Arrows.ArrowRight1} size={size} />}
-        {(icon === "categories") && <StreamlineIcon icon={Layouts.LayoutModule1} size={size} />}
-        {(icon === "bookmark") && <StreamlineIcon icon={Books.BookCloseBookmark1} size={size} />}
-        {(icon === "card") && <StreamlineIcon icon={Apps.AppWindow} size={size} />}
-        {(icon === "like") && <StreamlineIcon icon={LoveIt.LoveIt} size={size} />}
-        {(icon === "check") && <StreamlineIcon icon={FormValidation.Check1} size={size} />}
-        {(icon === "click") && <StreamlineIcon icon={Select.TouchFinger1} size={size} />}
-        {(icon === "pointer") && <StreamlineIcon icon={Select.CursorHand1} size={size} />}
-        {(icon === "email") && <StreamlineIcon icon={Envelopes.Envelope} size={size} />}
-        {(icon === "facebook") && <StreamlineIcon icon={SocialMedias.SocialMediaFacebook} size={size} />}
-        {(icon === "twitter") && <StreamlineIcon icon={SocialMedias.SocialMediaTwitter} size={size} />}
-        {(icon === "snapchat") && <StreamlineIcon icon={SocialMedias.SocialMediaSnapchat} size={size} />}
-        {(icon === "pinterest") && <StreamlineIcon icon={PhotosImages.SocialPinterest} size={size} />}
-        {(icon === "youtube") && <StreamlineIcon icon={Videos.SocialVideoYoutube} size={size} />}
-        {(icon === "instagram") && <StreamlineIcon icon={PhotosImages.SocialInstagram} size={size} />}
-        {(icon === "linkedin") && <StreamlineIcon icon={ProfessionalNetworks.ProfessionalNetworkLinkedin} size={size} />}
-        {(icon === "happy") && <StreamlineIcon icon={Smileys.SmileyThrilled} size={size} />}
-        {(icon === "hide") && <StreamlineIcon icon={View.ViewOff} size={size} />}
-        {(icon === "more") && <StreamlineIcon icon={Menu.NavigationMenuHorizontal} size={size} />}
-        {(icon === "menu") && <StreamlineIcon icon={Menu.NavigationMenu} size={size} />}
-        {(icon === "spot") && <StreamlineIcon icon={MultimediaControls.ButtonRecordAlternate} size={size} />}
-        {(icon === "tags") && <div className="flip"><StreamlineIcon icon={TagsBookmarks.TagsDouble1} size={size} /></div>}
-        {(icon === "send") && <StreamlineIcon icon={SendEmail.SendEmail} size={size} />}
-        {(icon === "steps") && <StreamlineIcon icon={Wayfinder.TravelWayfinderStairs1} size={size} />}
-        {(icon === "link") && <StreamlineIcon icon={LinkUnlink.Hyperlink2} size={size} />}
-        {(icon === "learn") && <span className="Streamline_Icon"><svg id="Graduation_Icon" width={size + 4} height={size + 4} viewBox={`0 0 ${size} ${size}`}>
-            <path d="M8.7,10.9c-0.2,0-0.3,0-0.5-0.1L3.5,8.4v4.9c0,0.2,0.1,0.3,0.2,0.4c1.5,0.9,3.2,1.3,5,1.3c1.8,0,3.6-0.5,5.1-1.3
-	c0.1-0.1,0.2-0.2,0.2-0.4V8.4l-4.8,2.4C9.1,10.8,8.9,10.9,8.7,10.9z"/>
-            <path d="M16.6,12.1C16.6,12.1,16.6,12.1,16.6,12.1l0-6c-0.1-0.2-0.2-0.4-0.3-0.5L8.9,2C8.8,2,8.7,2,8.6,2L1.2,5.7
-	c-0.1,0-0.1,0.1-0.2,0.2C0.9,6,1,6.3,1.2,6.4l2.6,1.3L8.6,10c0.1,0,0.2,0,0.3,0l4.8-2.4l2.2-1.1V12c0,0,0,0,0,0.1
-	c-0.2,0.1-0.4,0.3-0.4,0.6l0,0c0,0.3,0.3,0.6,0.6,0.6c0.4,0.1,0.8-0.2,0.9-0.6C17,12.4,16.8,12.2,16.6,12.1z"/>
-        </svg>
-        </span>}
-        {(icon === "remember") && <StreamlineIcon icon={Tasks.TaskFingerBandage} size={size} />}
-        {(icon === "info") && <StreamlineIcon icon={Alerts.InformationCircle} size={size} />}
-        {(icon === "warning") && <StreamlineIcon icon={Alerts.AlertTriangle} size={size} />}
-        {(icon === "user") && <StreamlineIcon icon={GeomerticCloseUpSingleUserNeutral.SingleNeutralCircle} size={size} />}
-        {(icon === "userPencil") && <StreamlineIcon icon={GeomerticCloseUpSingleUserActionsNeutral.SingleNeutralActionsEdit1} size={size} />}
+        {(icon === 'home') &&
+        <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M149.92,155.625a5.7225,5.7225,0,0,0,5.705-5.705V76.875a6.8893,6.8893,0,0,0-2.1992-4.6667L90,24.375,26.5742,72.2083A6.8893,6.8893,0,0,0,24.375,76.875V149.92a5.7225,5.7225,0,0,0,5.705,5.705Z"/><rect className="cls-2" width="180" height="180"/></g></g></svg>
+        }
+        {(icon === 'discover') && 
+        <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M24.375,98.3125a26.25,26.25,0,1,0,26.25-26.25A26.25,26.25,0,0,0,24.375,98.3125Z"/><path className="cls-1" d="M24.375,63.3067a43.5571,43.5571,0,0,1,17.5-7.8692"/><path className="cls-1" d="M155.625,63.3067a43.5565,43.5565,0,0,0-17.5-7.8692"/><path className="cls-1" d="M103.125,98.3125a26.25,26.25,0,1,0,26.25-26.25A26.25,26.25,0,0,0,103.125,98.3125Z"/><path className="cls-1" d="M76.875,98.3125h26.25"/><rect className="cls-2" width="180" height="180"/></g></g></svg>}
+         {(icon === 'categories') && 
+         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M24.375,24.375h52.5v52.5h-52.5Z"/><path className="cls-1" d="M24.375,103.125h52.5v52.5h-52.5Z"/><path className="cls-1" d="M103.125,24.375h52.5v52.5h-52.5Z"/><path className="cls-1" d="M103.125,103.125h52.5v52.5h-52.5Z"/><rect className="cls-2" width="180" height="180"/></g></g></svg>}
+         {(icon === 'chevron-right') 
+         && <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M58.0924,24.375l62.5333,62.5333a4.3692,4.3692,0,0,1,.0044,6.179l-.0044.0044L58.0924,155.625"/><rect className="cls-2" width="180" height="180"/></g></g></svg>}
+         {(icon === 'chevron-left') && 
+         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M121.9076,155.625,59.3743,93.0917a4.3692,4.3692,0,0,1-.0044-6.179l.0044-.0044L121.9076,24.375"/><rect className="cls-2" width="180" height="180"/></g></g></svg>}
+         {(icon === 'email') && 
+         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M28.75,46.25h122.5v87.5H28.75Z"/><path className="cls-1" d="M149.2725,49.4583l-47.5067,36.54a19.2966,19.2966,0,0,1-23.5316,0l-47.5067-36.54"/><rect className="cls-2" width="180" height="180"/></g></g></svg>}
+         {(icon === 'facebook') && 
+         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M125.7583,65.2375h-24.85V54.0958a5.8327,5.8327,0,0,1,5.8334-6.4166h17.5V24.3458H98.9833c-22.925,0-27.2416,17.5-27.2416,28.35V65.2375h-17.5V88.5708h17.5v67.0834h29.1666V88.5708h22.4584Z"/><rect className="cls-2" width="180" height="180"/></g></g></svg>}
+         {(icon === 'google') && 
+         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M125.6518,105.8988H98.6435V81.5738h57.05V93.59a65.7418,65.7418,0,1,1-17.5-48.3583L118.36,63.49a38.8758,38.8758,0,1,0,7.2916,42.4084Z"/><path className="cls-1" d="M56.1185,70.9571,35.1768,54.2154"/><path className="cls-1" d="M56.1768,109.5154,36.11,127.5988"/><path className="cls-1" d="M112.9352,121.59l17.9083,20.125"/><rect className="cls-2" width="180" height="180"/></g></g></svg>}
+         {(icon === 'instagram') && 
+         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M24.375,24.375h131.25v131.25H24.375Z"/><path className="cls-1" d="M60.8333,90A29.1667,29.1667,0,1,0,90,60.8333,29.1667,29.1667,0,0,0,60.8333,90Z"/><path className="cls-1" d="M132.875,50.0417a2.9167,2.9167,0,0,1-5.8333,0"/><path className="cls-1" d="M127.0417,50.0417a2.9167,2.9167,0,1,1,5.8333,0"/><rect className="cls-2" width="180" height="180"/></g></g></svg>}
+         {(icon === 'lesson') && 
+         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180" className="grad"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><g id="Group_8801" data-name="Group 8801"><path id="Path_9821" data-name="Path 9821" d="M53.464,129.6238a3.3591,3.3591,0,0,1-1.6281-2.9V88.8458l37.1583,18.299a8.1009,8.1009,0,0,0,3.6291.8443,7.965,7.965,0,0,0,3.5979-.8443l37.2208-18.299v37.8171a3.3238,3.3238,0,0,1-1.7133,2.9306,87.6887,87.6887,0,0,1-39.8721,10.3137A79.0556,79.0556,0,0,1,53.464,129.6238Zm91.6009-7.4514a5.0719,5.0719,0,0,1,3.241-4.5738,3.1575,3.1575,0,0,1-.0464-.5263V74.5792L131.068,83.0528,93.8472,101.4162a2.9028,2.9028,0,0,1-2.4194,0L54.207,83.0528l-19.8125-9.761a3.2736,3.2736,0,0,1,0-5.7286l57.056-28.1243a2.7437,2.7437,0,0,1,2.4195,0l57.0484,28.1243a7.0739,7.0739,0,0,1,2.6362,3.6121V117.08a2.9141,2.9141,0,0,1-.0464.5111,5.1111,5.1111,0,0,1,3.2572,4.589,5.8778,5.8778,0,0,1-11.6314,0Z"/></g><rect className="cls-1" width="180" height="180"/></g></g></svg>}
+         {(icon === 'link') && 
+         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M74.6233,127.19l-5.4366,5.4367A26.25,26.25,0,0,1,32.0633,95.5037L59.9058,67.6554a26.25,26.25,0,0,1,39.8125,33.9792"/><path className="cls-1" d="M106.4383,51.7479l4.375-4.375a26.25,26.25,0,0,1,37.1234,37.1234h0l-27.8425,27.8424a26.25,26.25,0,0,1-39.8067-33.985"/><rect className="cls-2" width="180" height="180"/></g></g></svg>}
+         {(icon === 'menu') && 
+         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M33.125,125h113.75"/><path className="cls-1" d="M33.125,90h113.75"/><path className="cls-1" d="M33.125,55h113.75"/><rect className="cls-2" width="180" height="180"/></g></g></svg>}
+         {(icon === 'more') && 
+         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M24.375,90A15.3125,15.3125,0,1,0,39.6875,74.6875,15.3124,15.3124,0,0,0,24.375,90Z"/><path className="cls-1" d="M125,90a15.3125,15.3125,0,1,0,15.3125-15.3125A15.3124,15.3124,0,0,0,125,90Z"/><path className="cls-1" d="M74.6875,90A15.3125,15.3125,0,1,0,90,74.6875,15.3124,15.3124,0,0,0,74.6875,90Z"/><rect className="cls-2" width="180" height="180"/><rect className="cls-2" width="180" height="180"/></g></g></svg>}
+         {(icon === 'other') && 
+         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180" className="other"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M55,81.2325a8.75,8.75,0,1,0,8.75,8.75A8.75,8.75,0,0,0,55,81.2325Z"/><path className="cls-1" d="M125,81.2325a8.75,8.75,0,1,0,8.75,8.75A8.75,8.75,0,0,0,125,81.2325Z"/><path className="cls-1" d="M90,81.2325a8.75,8.75,0,1,0,8.75,8.75A8.75,8.75,0,0,0,90,81.2325Z"/><path className="cls-2" d="M24.375,90A65.625,65.625,0,1,0,90,24.375,65.625,65.625,0,0,0,24.375,90Z"/><rect className="cls-3" width="180" height="180"/></g></g></svg>}
+         {(icon === 'pinterest') && 
+         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180" className="pinterest"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><rect className="cls-1" width="180" height="180"/><path className="cls-2" d="M59.456,79.4154a23.96,23.96,0,0,1-.93-6.79A32.01,32.01,0,0,1,89.8964,40.0085q.8283-.01,1.6562.024c18.0253,0,27.91,11.16,27.91,26.0978,0,19.6029-8.5475,36.1945-21.2814,36.1945-7.0357,0-9.4778-5.4322-7.85-12.6356,2.4422-10.3329,15.7576-27.5149,0-31.0576s-18.2,16.7687-18.49,25.98l-9.6522,41.3314a86.9805,86.9805,0,0,0,0,28.9909.9845.9845,0,0,0,1.8025.4724,82.15,82.15,0,0,0,13.3154-24.4445c.93-3.4246,4.361-16.5326,4.361-16.5326a21.4141,21.4141,0,0,0,18.3741,9.5062c24.1306,0,41.4581-26.8063,41.4581-56.742C141.5,44.579,122.6026,23.5,93.9366,23.5,58.235,23.5,40.21,49.48,40.21,71.1491A31.8651,31.8651,0,0,0,51.8389,98.1326Z"/></g></g></svg>}
+         {(icon === 'share') && 
+         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M36.0935,111.1814a9.7067,9.7067,0,0,1-5.145-17.9375L138.766,25.8456a9.7007,9.7007,0,0,1,14.6766,10.0333l-21,111.8425a9.7066,9.7066,0,0,1-17.3016,4.0309L84.7493,111.1814Z"/><path className="cls-1" d="M84.7493,111.1814H70.166v30.1642a9.7008,9.7008,0,0,0,15.1666,8.015l18.5384-12.635Z"/><path className="cls-1" d="M84.7435,111.1814l64.6333-85.1083"/><rect className="cls-2" width="180" height="180"/></g></g></svg>}
+         {(icon === 'snapchat') && 
+         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M89.8542,154.9027a28,28,0,0,1-17.5-9.7417,16.9751,16.9751,0,0,0-14.8167-4.725l-3.7333.6417a7.6418,7.6418,0,0,1-8.8667-9.45,4.9,4.9,0,0,0-3.3833-5.8333l-11.6667-2.3917a4.9583,4.9583,0,0,1-.6416-9.275,71.1664,71.1664,0,0,0,14.9916-8.4,7.9333,7.9333,0,0,0-.525-13.0667l-7.175-4.55a8.8666,8.8666,0,0,1-2.6841-12.2487l.0008-.0013a9.3334,9.3334,0,0,1,12.6583-2.625l7.7,4.9V59.4693a35.8167,35.8167,0,0,1,71.575,0V78.0777l7.7-4.9a9.3334,9.3334,0,0,1,12.6584,2.625,8.8667,8.8667,0,0,1-2.6821,12.2492l-.0013.0008-7.175,4.55a7.9332,7.9332,0,0,0-.525,13.0666,71.1627,71.1627,0,0,0,14.9917,8.4,4.9583,4.9583,0,0,1-.6417,9.275l-11.6666,2.3917a4.9,4.9,0,0,0-3.3834,5.8333,7.6416,7.6416,0,0,1-8.6916,9.3917l-3.7334-.6417a16.975,16.975,0,0,0-14.8166,4.725A28,28,0,0,1,89.8542,154.9027Z"/><rect className="cls-2" width="180" height="180"/></g></g></svg>}
+         {(icon === 'twitter') && 
+         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M155.1875,59.1623l-12.25-5.25,6.4167-14-14.9334,4.9583a26.0012,26.0012,0,0,0-43.75,19.25V69.954c-20.65,4.2583-38.675-7-55.4166-26.25q-4.375,23.3333,8.75,35L24.8125,75.7873A26.5416,26.5416,0,0,0,49.6042,99.1206L33.5625,104.954c5.8333,11.6667,16.45,13.475,30.625,14.5833a67.2,67.2,0,0,1-39.375,11.6667c74.4333,33.075,118.125-15.5167,118.125-58.3333V68.029Z"/><rect className="cls-2" width="180" height="180"/></g></g></svg>}
+         {(icon === 'website') && 
+         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M37.5,50.625a65.6366,65.6366,0,0,1,105,0"/><path className="cls-1" d="M65.5,50.625c5.5883-15.9367,14.4783-26.25,24.5-26.25s18.9175,10.3133,24.5,26.25"/><path className="cls-1" d="M155.625,129.375H24.375"/><path className="cls-1" d="M24.375,50.625h131.25"/><path className="cls-1" d="M142.5,129.375a65.6366,65.6366,0,0,1-105,0"/><path className="cls-1" d="M114.5,129.375c-5.5825,15.9425-14.4783,26.25-24.5,26.25s-18.9117-10.3075-24.5-26.25"/><path className="cls-1" d="M33.125,68.125V84.8025a52.5833,52.5833,0,0,0,1.0208,10.2958L37.5,111.875l8.75-26.25L55,111.875l3.3542-16.7767A52.1393,52.1393,0,0,0,59.375,84.8025V68.125"/><path className="cls-1" d="M76.875,68.125V84.8025a52.5833,52.5833,0,0,0,1.0208,10.2958L81.25,111.875,90,85.625l8.75,26.25,3.3542-16.7767a52.1393,52.1393,0,0,0,1.0208-10.2958V68.125"/><path className="cls-1" d="M120.625,68.125V84.8025a52.5833,52.5833,0,0,0,1.0208,10.2958L125,111.875l8.75-26.25,8.75,26.25,3.3542-16.7767a52.1393,52.1393,0,0,0,1.0208-10.2958V68.125"/><rect className="cls-2" width="180" height="180"/></g></g></svg>}
+         {(icon === 'youtube') && 
+         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M25.8333,91.4583H154.1667V155.625H25.8333Z"/><path className="cls-1" d="M43.3333,24.375l17.5,23.3333v26.25"/><path className="cls-1" d="M78.3333,24.375l-17.5,23.3333v26.25"/><path className="cls-1" d="M95.8333,65.2083a8.75,8.75,0,0,1-17.5,0v-17.5a8.75,8.75,0,1,1,17.5,0Z"/><path className="cls-1" d="M130.8333,38.9583V62.2917a11.6667,11.6667,0,0,1-23.3333,0V38.9583"/><path className="cls-1" d="M130.8333,38.9583v35"/><path className="cls-1" d="M84.1667,119.1667V138.125"/><path className="cls-1" d="M43.2167,108.9583H66.7833"/><path className="cls-1" d="M55,108.9583v29.05"/><path className="cls-1" d="M98.75,103.125v34.8833"/><path className="cls-1" d="M110.4167,132.2917a5.8334,5.8334,0,0,1-11.6667,0V125a5.8334,5.8334,0,0,1,11.6667,0Z"/><path className="cls-1" d="M72.5,119.1667v13.125a5.8334,5.8334,0,0,0,11.6667,0v-13.125"/><path className="cls-1" d="M129.8417,117.7083a5.8334,5.8334,0,0,1,5.8333,5.8334H124.0083"/><path className="cls-1" d="M135.675,135.85a6.65,6.65,0,0,1-11.6667-4.3167v-7.9916a5.8334,5.8334,0,0,1,5.8334-5.8334"/><rect className="cls-2" width="180" height="180"/></g></g></svg>}
+
     </div>
 }
 
 Icon.defaultProps = {
-    size: 18
+    size: 24
 }
 
 export default Icon;

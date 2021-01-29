@@ -50,7 +50,7 @@
   &.withIcon .Icon {
     margin-right: $space_s;
     margin-left: -$space_xxs;
-    & .Streamline_Icon svg {
+    &  svg {
       path {
         stroke: $color_white;
         transition: all 0.2s linear;
@@ -79,7 +79,7 @@
     &:hover {
       box-shadow: none;
     }
-    .Icon .Streamline_Icon {
+    .Icon  {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -89,7 +89,7 @@
     &.large {
       width: 40px;
       height: 40px;
-      .Streamline_Icon svg {
+       svg {
         path {
           stroke-width: 1px;
         }
@@ -101,7 +101,7 @@
     font-size: 14px;
     letter-spacing: 1px;
     padding: $space_m $space_l - 4px;
-    &.withIcon .Icon .Streamline_Icon {
+    &.withIcon .Icon  {
       margin-right: $space_xs;
       margin-left: 0;
     }
@@ -122,7 +122,7 @@
     background: transparent;
     color: $color_black;
     border: 1px solid $color_lightGrey;
-    &.withIcon .Icon .Streamline_Icon path {
+    &.withIcon .Icon  path {
       stroke: $color_primary;
     }
     &.ripple .rippleContainer span {
@@ -130,7 +130,7 @@
     }
     &:hover {
       color: $color_blueBlack;
-      .Icon .Streamline_Icon path {
+      .Icon  path {
         stroke: tint($color_primary, 30%);
       }
     }
@@ -143,7 +143,7 @@
     position: relative;
     background: $color_white;
     color: $color_primary;
-    &.withIcon .Icon .Streamline_Icon path {
+    &.withIcon .Icon  path {
       stroke: $color_primary;
     }
     &.ripple .rippleContainer span {
@@ -155,17 +155,17 @@
     position: relative;
     background: transparent;
     border-radius: 0;
-    &.withIcon .Icon .Streamline_Icon path {
+    &.withIcon .Icon  path {
       stroke: tint($color_black, 50%);
     }
     &:hover {
-      .Icon .Streamline_Icon path {
+      .Icon  path {
         stroke: tint($color_black, 0%);
       }
     }
     &:focus {
       box-shadow: none;
-      .Icon .Streamline_Icon path {
+      .Icon  path {
         stroke: $color_primary;
       }
     }

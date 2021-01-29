@@ -54,11 +54,6 @@ export default {
           src: "src/styles/fonts",
           dest: "build",
           rename: "fonts"
-        },
-        {
-          src: "../node_modules/slick-slider/slick/fonts",
-          dest: "build",
-          rename: "fonts"
         }
       ]
     })
