@@ -49,21 +49,8 @@ export default {
           src: "src/styles/typography.scss",
           dest: "build",
           rename: "typography.scss"
-        },
-        {
-          src: "src/styles/fonts",
-          dest: "build",
-          rename: "fonts"
         }
       ]
     })
   ]
 };
-
-
-// {
-//   include: 'node_modules/**',
-//     namedExports: {
-//     'node_modules/keen-slider/react.js': ['useKeenSlider']
-//   }
-// }
