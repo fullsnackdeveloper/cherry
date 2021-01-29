@@ -3,8 +3,9 @@
 
 import { IconProps } from "./Icon.types";
 import React from "react";
+import clsx from "clsx";
 const Icon: React.FC<IconProps> = ({ icon, size }) => {
-    return <div className="Icon">
+    return <div className={clsx("Icon", icon)}>
         {(icon === 'home') &&
         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M149.92,155.625a5.7225,5.7225,0,0,0,5.705-5.705V76.875a6.8893,6.8893,0,0,0-2.1992-4.6667L90,24.375,26.5742,72.2083A6.8893,6.8893,0,0,0,24.375,76.875V149.92a5.7225,5.7225,0,0,0,5.705,5.705Z"/><rect className="cls-2" width="180" height="180"/></g></g></svg>
         }
@@ -24,7 +25,7 @@ const Icon: React.FC<IconProps> = ({ icon, size }) => {
          <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M125.6518,105.8988H98.6435V81.5738h57.05V93.59a65.7418,65.7418,0,1,1-17.5-48.3583L118.36,63.49a38.8758,38.8758,0,1,0,7.2916,42.4084Z"/><path className="cls-1" d="M56.1185,70.9571,35.1768,54.2154"/><path className="cls-1" d="M56.1768,109.5154,36.11,127.5988"/><path className="cls-1" d="M112.9352,121.59l17.9083,20.125"/><rect className="cls-2" width="180" height="180"/></g></g></svg>}
          {(icon === 'instagram') && 
          <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M24.375,24.375h131.25v131.25H24.375Z"/><path className="cls-1" d="M60.8333,90A29.1667,29.1667,0,1,0,90,60.8333,29.1667,29.1667,0,0,0,60.8333,90Z"/><path className="cls-1" d="M132.875,50.0417a2.9167,2.9167,0,0,1-5.8333,0"/><path className="cls-1" d="M127.0417,50.0417a2.9167,2.9167,0,1,1,5.8333,0"/><rect className="cls-2" width="180" height="180"/></g></g></svg>}
-         {(icon === 'lesson') && 
+         {(icon === 'learn') && 
          <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180" className="grad"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><g id="Group_8801" data-name="Group 8801"><path id="Path_9821" data-name="Path 9821" d="M53.464,129.6238a3.3591,3.3591,0,0,1-1.6281-2.9V88.8458l37.1583,18.299a8.1009,8.1009,0,0,0,3.6291.8443,7.965,7.965,0,0,0,3.5979-.8443l37.2208-18.299v37.8171a3.3238,3.3238,0,0,1-1.7133,2.9306,87.6887,87.6887,0,0,1-39.8721,10.3137A79.0556,79.0556,0,0,1,53.464,129.6238Zm91.6009-7.4514a5.0719,5.0719,0,0,1,3.241-4.5738,3.1575,3.1575,0,0,1-.0464-.5263V74.5792L131.068,83.0528,93.8472,101.4162a2.9028,2.9028,0,0,1-2.4194,0L54.207,83.0528l-19.8125-9.761a3.2736,3.2736,0,0,1,0-5.7286l57.056-28.1243a2.7437,2.7437,0,0,1,2.4195,0l57.0484,28.1243a7.0739,7.0739,0,0,1,2.6362,3.6121V117.08a2.9141,2.9141,0,0,1-.0464.5111,5.1111,5.1111,0,0,1,3.2572,4.589,5.8778,5.8778,0,0,1-11.6314,0Z"/></g><rect className="cls-1" width="180" height="180"/></g></g></svg>}
          {(icon === 'link') && 
          <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M74.6233,127.19l-5.4366,5.4367A26.25,26.25,0,0,1,32.0633,95.5037L59.9058,67.6554a26.25,26.25,0,0,1,39.8125,33.9792"/><path className="cls-1" d="M106.4383,51.7479l4.375-4.375a26.25,26.25,0,0,1,37.1234,37.1234h0l-27.8425,27.8424a26.25,26.25,0,0,1-39.8067-33.985"/><rect className="cls-2" width="180" height="180"/></g></g></svg>}
