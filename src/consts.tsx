@@ -19,5 +19,7 @@ export const icons = [
   'snapchat',
   'twitter',
   'website',
-  'youtube'
+  'youtube',
+  'user',
+  'userPencil'
 ]

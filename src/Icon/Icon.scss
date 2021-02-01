@@ -27,40 +27,7 @@
     fill: transparent;
     stroke: transparent;
   }
-  &.other {
-    .cls-2 {
-      stroke: $color_black;
-      stroke-width: 12px;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      fill: transparent;
-    }
-    .cls-3 {
-      fill: transparent;
-    }
-  }
-  &.learn, &.pinterest, &.hotspot {
-    .cls-1 {
-      fill: transparent;
-      stroke: transparent;
-    }
-    .cls-2 {
-      stroke: $color_black;
-      stroke-width: 12px;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      fill: transparent;
-    }
-  }
   &.learn svg {
     transform: translate(-1px, -1px);
-  }
-  &.spot {
-    .cls-1 {
-      stroke: transparent;
-    }
-    .cls-2 {
-      stroke-width: 12px;
-    }
   }
 }
