@@ -10,6 +10,12 @@
 }
 
 .Icon {
+  position: relative;
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
   .cls-1 {
     stroke: $color_black;
     stroke-width: 12px;
@@ -21,7 +27,7 @@
     fill: transparent;
     stroke: transparent;
   }
-  .other {
+  &.other {
     .cls-2 {
       stroke: $color_black;
       stroke-width: 12px;
@@ -33,7 +39,7 @@
       fill: transparent;
     }
   }
-  .pinterest {
+  &.learn, &.pinterest, &.hotspot {
     .cls-1 {
       fill: transparent;
       stroke: transparent;
@@ -44,6 +50,17 @@
       stroke-linecap: round;
       stroke-linejoin: round;
       fill: transparent;
+    }
+  }
+  &.learn svg {
+    transform: translate(-1px, -1px);
+  }
+  &.spot {
+    .cls-1 {
+      stroke: transparent;
+    }
+    .cls-2 {
+      stroke-width: 12px;
     }
   }
 }
