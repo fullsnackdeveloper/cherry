@@ -6,13 +6,19 @@
   &::after {
     content: "";
     position: absolute;
-    top: 0;
+    transform: translate(calc(-50% - 151px), 24px);
     left: 50%;
-    transform: translateX(-50%);
-    width: calc(100vw - 285px);
-    height: calc(100% + #{$grid-gap});
-    background-image: url("/footer-bg.svg");
-    background-size: cover;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    background: $color_primary;
+    z-index: -1;
+    @include xl {
+      transform: translate(calc(-50% - 54px), 24px);
+    }
+    @include md {
+      transform: translate(-50%, 24px);
+    }
   }
   & * {
     color: $color_white;
@@ -47,16 +53,16 @@
   }
 }
 
-@include xl {
-  .Footer::after {
-    width: calc(100vw - 90px);
-  }
-}
-@include lg {
-  .Footer::after {
-    width: 100vw;
-    right: -24px;
-    left: initial;
-    transform: none;
-  }
-}
+// @include xl {
+//   .Footer::after {
+//     width: calc(100vw - 90px);
+//   }
+// }
+// @include lg {
+//   .Footer::after {
+//     width: 100vw;
+//     right: -24px;
+//     left: initial;
+//     transform: none;
+//   }
+// }

@@ -55,7 +55,6 @@
       color: $color_white;
       opacity: 0.6;
       text-decoration: none;
-      transition: all 0.3s linear;
       &:hover {
         color: $color_white;
         opacity: 1;
@@ -104,7 +103,6 @@
   }
   &-content {
     padding: 30px 100px;
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     justify-content: center;
     max-width: 740px;
     z-index: 10;
@@ -155,5 +153,20 @@
     .Header-content {
       max-width: 380px;
     }
+  }
+}
+
+// STATS
+.Stats.Stats-inHeader {
+  display: inline-block;
+  @include md {
+    display: none;
+  }
+}
+
+.Stats.Stats-outHeader {
+  display: none;
+  @include md {
+    display: flex;
   }
 }

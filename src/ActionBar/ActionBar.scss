@@ -47,7 +47,7 @@
   }
 
   // Action Bar Tablet
-  &.tablet {
+  @include lg {
     margin-top: 0px;
     flex-direction: row;
     width: calc(100% - 104px);
@@ -82,7 +82,7 @@
   }
 
   // Action Bar Mobile
-  &.mobile {
+  @include md {
     margin-top: 0px;
     flex-direction: row;
     width: 100%;
@@ -141,11 +141,11 @@
 }
 
 .ActionBar-Popup.Popup-content {
-  &.mobile {
+  @include md {
     border-radius: 0 0 $border-radius $border-radius;
     width: calc(100vw - #{$grid-gap}) !important;
     left: 0 !important;
-    top: 32px !important;
+    top: 64px !important;
     transform: none;
     position: fixed;
     &.addedPadding {

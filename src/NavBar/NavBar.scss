@@ -34,6 +34,18 @@
     }
     &-container {
       cursor: pointer;
+      svg:first-child {
+        display: none;
+      }
+      @include md {
+        height: 36px;
+        svg:first-child {
+          display: initial;
+        }
+        svg:last-child {
+          display: none;
+        }
+      }
     }
   }
   &-navigation {
@@ -52,7 +64,7 @@
     height: calc(100vh - 226px);
     overflow: scroll;
     padding: 226px 32px 40px;
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     @include xl {
       left: -197px;
     }
@@ -84,9 +96,18 @@
       }
     }
   }
+  &-menuIcon {
+    display: none;
+  }
+  .Navbar-inlineSubMenu-wrapper {
+    display: none;
+    @include md {
+      display: block;
+    }
+  }
 
   // TABLET
-  &.tablet {
+  @include xl {
     padding: $space_l;
     width: 40px;
     .Navbar-logo {
@@ -103,10 +124,13 @@
   }
 
   // MOBILE
-  &.mobile {
+  @include md {
     background: transparent;
     box-shadow: none;
     left: -285px;
+    .Navbar-menuIcon {
+      display: block;
+    }
     .Navbar-head {
       position: fixed;
       top: 0;
@@ -126,8 +150,7 @@
       padding: $space_m;
       width: initial;
       img,
-      svg {
-        display: block;
+      svg:first-child {
         width: 100px;
         height: 35px;
       }
@@ -156,23 +179,6 @@
       padding: $space_m $space_l;
       cursor: pointer;
     }
-    // INLINE SUBMENU
-    .Navbar-inlineSubMenu {
-      background: $color_offWhite;
-      height: 0;
-      overflow: hidden;
-      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-      &-wrapper {
-        height: 100%;
-        overflow: scroll;
-      }
-      .MenuItem {
-        border-bottom: 1px solid $color_white;
-      }
-      &.open {
-        background: #00ff00;
-      }
-    }
   }
 
   &-overlay {
@@ -186,5 +192,29 @@
         opacity: 1;
       }
     }
+  }
+}
+
+.Navbar-subMenu {
+  @include md {
+    display: none;
+  }
+}
+
+.Navbar-inlineSubMenu {
+  background: $color_offWhite;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  &-wrapper {
+    height: calc(100vh - 355px);
+    min-height: 300px;
+    overflow: scroll;
+  }
+  .MenuItem {
+    border-bottom: 1px solid $color_white;
+  }
+  &.open {
+    background: #00ff00;
   }
 }

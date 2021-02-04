@@ -21,5 +21,6 @@ export const icons = [
   'website',
   'youtube',
   'user',
-  'userPencil'
+  'userPencil',
+  'close'
 ]

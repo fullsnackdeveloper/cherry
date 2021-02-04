@@ -70,15 +70,11 @@ const Header: FC<HeaderProps> = ({ nextImage, title, subTitle, description, imag
                     {description && description}
                     {subTitle && <p className={clsx({ subTitle })}>{subTitle}</p>}
                 </div>
-                {stats && (size > 1) &&
-                    < Stats stats={stats} />
-                }
+                <Stats stats={stats} className="Stats-inHeader" />
             </div>
             {(!hideSource) && image && renderSource()}
         </div>
-        {stats && (size <= 1) &&
-            <Stats stats={stats} />
-        }
+        <Stats stats={stats} className="Stats-outHeader" />
     </>
 };
 

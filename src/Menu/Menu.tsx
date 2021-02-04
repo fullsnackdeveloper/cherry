@@ -33,7 +33,7 @@ const Menu: React.FC<MenuProps> & { Item: typeof Item } = ({ children, collapsed
         updateNavState(responsiveState(sizeIndex, collapsedAt));
     }, [sizeIndex, collapsedAt])
 
-    return <div data-testid="Menu" className={clsx("Menu", navState)}>{childrenWithProps(children, { navState, mobileMenuOpen })}</div>
+    return <div data-testid="Menu" className={clsx("Menu")}>{childrenWithProps(children, { navState, mobileMenuOpen })}</div>
 };
 
 Menu.Item = Item;

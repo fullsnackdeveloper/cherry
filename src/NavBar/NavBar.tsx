@@ -97,26 +97,23 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
     }
 
     return <>
-        <div data-testid="Navbar" className={clsx("Navbar", navState)} ref={menuRef}>
+        <div data-testid="Navbar" className={clsx("Navbar")} ref={menuRef}>
             <div className={clsx("Navbar-overlay", { open: mobileMenuOpen })} onClick={handleOpenMobileMenu}></div>
             <div className={clsx("Navbar-head", { hide: mobileHideNav })} id="Navbar-head">
                 <div className="Navbar-logo">
                     <ConditionalWrapper conditional={logoLink} wrapper={children => <div className="Navbar-logo-container" onClick={handleClick(logoLink)}>{children}</div>}>
-                        {navState === 'mobile' ? mobileLogo : logo}
+                        {mobileLogo} {logo}
                     </ConditionalWrapper>
                 </div>
-                {navState === 'mobile' &&
-                    <div className="Navbar-menuIcon" onClick={handleOpenMobileMenu}>
-                        <Icon icon={mobileMenuOpen ? "close" : "menu"} size={mobileMenuOpen ? 18 : 24} />
-                    </div>
-                }
+                <div className="Navbar-menuIcon" onClick={handleOpenMobileMenu}>
+                    <Icon icon={mobileMenuOpen ? "close" : "menu"} size={mobileMenuOpen ? 18 : 24} />
+                </div>
             </div>
             <div className={clsx("Navbar-navigation", { open: mobileMenuOpen })}>
                 {menu.map((item, index) => {
                     return [<Menu.Item
                         key={index}
                         title={item.title}
-                        compact={(navState === 'tablet')}
                         icon={item.icon}
                         chevron={item.children}
                         onClick={item.children ? openSubMenu(index) : handleClick(item.link)}
@@ -128,14 +125,13 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
                         </ConditionalWrapper>
                     </Menu.Item>,
                     <div key={`${index}-subMenu`} className={clsx({ "Navbar-inlineSubMenu-wrapper": item.children })}>
-                        {item.children && navState === 'mobile' &&
+                        {item.children &&
                             <div className="Navbar-inlineSubMenu" style={{
-                                height: subMenuOpen === index ? (67 * (item.children.length + 8)) : 0
+                                height: subMenuOpen === index ? (67 * (item.children.length + 2)) : 0
                             }}>
                                 {item.children.map((subItem, subIndex) => {
                                     return <Menu.Item
                                         key={`${index}-${subIndex}`}
-                                        compact={navState === 'tablet'}
                                         chevron={subItem.children}
                                         onClick={handleClick(subItem.link)}
                                         open={subMenuOpen === index}
@@ -153,7 +149,7 @@ const Navbar: React.FC<NavbarProps> = ({ menu, logo, mobileLogo, logoLink, colla
                 })}
             </div>
         </div>
-        {(navState !== 'mobile') && menu.map((menuItem, index) => {
+        {menu.map((menuItem, index) => {
             if (menuItem.children)
                 return <div key={index} ref={subRef} className={clsx("Navbar-subMenu", { open: subMenuOpen === index })}>
                     <div className="Navbar-subMenu-close" onClick={handleCloseSubMenu}>

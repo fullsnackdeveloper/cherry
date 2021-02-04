@@ -23,7 +23,7 @@ const Col: FC<ColProps> = ({ span, children, style, ...props }: ColProps) => {
 };
 
 Col.defaultProps = {
-    span: 1
+    span: 12
 }
 
 export default Col;

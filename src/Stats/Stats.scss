@@ -8,7 +8,7 @@
   min-width: 100px;
   justify-content: space-around;
   align-items: center;
-  @include sm {
+  @include md {
     background: $color_black;
     display: flex;
     border-radius: 0;

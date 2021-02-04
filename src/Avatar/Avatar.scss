@@ -25,6 +25,10 @@
     background-position: center center;
     position: absolute;
     z-index: 3;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
     &.tiny {
       width: 20px;
       height: 20px;

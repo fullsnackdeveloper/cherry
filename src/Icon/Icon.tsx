@@ -55,6 +55,18 @@ const Icon: React.FC<IconProps> = ({ icon, size }) => {
         {(icon === 'userPencil') &&
             <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><rect className="cls-2" width="180" height="180" /><path className="cls-1" d="M163.9011,114.1108,119.3928,158.625,97.5178,163l4.375-21.875,44.5083-44.5142a12.3433,12.3433,0,0,1,17.4533,0l.0467.0525a12.1612,12.1612,0,0,1,.4338,17.2889A.4186.4186,0,0,1,163.9011,114.1108Z" /><path className="cls-1" d="M51.58,55.8125A24.0625,24.0625,0,1,0,75.6428,31.75,24.0625,24.0625,0,0,0,51.58,55.8125Z" /><path className="cls-1" d="M109.6978,108.5692A39.2525,39.2525,0,0,0,36.2678,128" /></g></g></svg>
         }
+        {(icon === 'close') &&
+            <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><rect className="cls-2" width="180" height="180" /><path className="cls-1" d="M24.6234,155.2513l131.25-131.25" /><path className="cls-1" d="M155.8734,155.2513l-131.25-131.25" /></g></g></svg>
+        }
+        {(icon === 'remember') &&
+            <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><rect className="cls-2" width="180" height="180" /><path className="cls-1" d="M68.0362,155.625,37.5687,125.1517a15.47,15.47,0,0,1,21.875-21.875l8.5925,8.5983v-70a17.5,17.5,0,0,1,35,0v43.75h8.75a35,35,0,0,1,35,35v35" /><path className="cls-1" d="M103.0362,76.875h-35" /><path className="cls-1" d="M103.0362,50.625h-35" /><path className="cls-1" d="M41.7862,50.625l26.25,13.125-26.25,13.125" /></g></g></svg>
+        }
+        {(icon === 'info') &&
+            <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><rect className="cls-2" width="180" height="180" /><path className="cls-1" d="M103.125,116.25H98.75A8.75,8.75,0,0,1,90,107.5V85.625a4.3751,4.3751,0,0,0-4.375-4.375H81.25" /><path className="cls-1" d="M87.8125,59.375A2.1875,2.1875,0,1,0,90,61.5625a2.1875,2.1875,0,0,0-2.1875-2.1875h0" /><path className="cls-1" d="M24.375,90A65.625,65.625,0,1,0,90,24.375,65.625,65.625,0,0,0,24.375,90Z" /></g></g></svg>
+        }
+        {(icon === 'warning') &&
+            <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 180 180"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><rect className="cls-2" width="180" height="180" /><path className="cls-1" d="M97.66,33.2708a8.75,8.75,0,0,0-15.3184,0l-56.875,105A8.75,8.75,0,0,0,33.1258,151.25h113.75a8.75,8.75,0,0,0,7.6592-12.9792Z" /><path className="cls-1" d="M90.0008,125a2.1875,2.1875,0,0,1,2.1875,2.1875" /><path className="cls-2" d="M87.8133,127.1875A2.1875,2.1875,0,0,1,90.0008,125" /><path className="cls-1" d="M90.0008,129.375a2.1875,2.1875,0,0,1-2.1875-2.1875" /><path className="cls-1" d="M92.1883,127.1875a2.1875,2.1875,0,0,1-2.1875,2.1875" /><path className="cls-1" d="M90.0008,107.5V68.125" /></g></g></svg>
+        }
     </div>
 }
 

@@ -16,7 +16,7 @@ const PageContainer: React.FC<PageContainerProps> = ({ collapsedAt, hasActionBar
         updateNavState(collapsed);
     }, [sizeIndex, collapsedAt]);
 
-    return <div data-testid="PageContainer" className={clsx("PageContainer", navState && navState, { hasActionBar, hasSteps, shadedBackground, overflowHidden })}>
+    return <div data-testid="PageContainer" className={clsx("PageContainer", { hasActionBar, hasSteps, shadedBackground, overflowHidden })}>
         <div style={{ margin: '0 auto', maxWidth: 1488 }}>
             {children}
         </div>

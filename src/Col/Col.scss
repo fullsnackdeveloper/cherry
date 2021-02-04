@@ -1,5 +1,9 @@
 // @import "../styles/stylesIndex.scss";
 
+.Col {
+  grid-column: span 12 / auto;
+}
+
 .noShow {
   position: absolute !important;
   right: 100vw;

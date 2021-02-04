@@ -13,7 +13,9 @@ const Avatar: React.FC<AvatarProps> = ({ size, image, initials, noHover }) => {
     }, [avatar])
 
     return <div data-testid="Avatar" ref={avatar} className={clsx("Avatar", size, { noProfile: !image, noHover })} tabIndex={-1} onClick={handleClick}>
-        <div className={clsx("Avatar-image", size)} style={{ backgroundImage: `url(${image})` }}></div>
+        <div className={clsx("Avatar-image", size)}>
+            <img src={image} loading="lazy" />
+        </div>
         <span>{initials}</span>
     </div>
 };

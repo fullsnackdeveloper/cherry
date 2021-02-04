@@ -3,15 +3,10 @@
 .MenuItem {
   display: flex;
   padding: $space_l $space_m;
-  transition: all 0.2s linear;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  span {
-    transition: all 0.2s linear;
-  }
   &-chevron {
-    transition: all 0.2s linear;
     svg path {
       stroke: $color_blueBlack;
       stroke-width: 48px;
@@ -30,6 +25,30 @@
       .MenuItem-chevron {
         transform: rotate(-90deg);
       }
+    }
+  }
+
+  @include xl {
+    .Link.withIcon .Icon {
+      margin-right: 0;
+    }
+    .MenuItem-chevron {
+      display: none;
+    }
+    .Link.withIcon > span {
+      display: none;
+    }
+  }
+
+  @include md {
+    .Link.withIcon .Icon {
+      margin-right: 24px;
+    }
+    .MenuItem-chevron {
+      display: block;
+    }
+    .Link.withIcon > span {
+      display: block;
     }
   }
 }

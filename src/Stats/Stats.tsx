@@ -1,9 +1,10 @@
 // import "./Stats.scss";
 
+import clsx from "clsx";
 import React from "react";
 import { StatsProps } from "./Stats.types";
 
-const Stats: React.FC<StatsProps> = ({ stats }) => {
+const Stats: React.FC<StatsProps> = ({ stats, className }) => {
 
     const renderStats = () => {
         return stats.map((s, index) => {
@@ -17,7 +18,7 @@ const Stats: React.FC<StatsProps> = ({ stats }) => {
         })
     }
 
-    return <div data-testid="Stats" className="Stats">
+    return <div data-testid="Stats" className={clsx("Stats", className)}>
         {renderStats()}
     </div>
 };
