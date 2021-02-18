@@ -37,6 +37,10 @@
       text-decoration: none;
       transition: all 0.3s linear;
     }
+    &-author,
+    &-site {
+      cursor: pointer;
+    }
   }
   .Hotspot {
     position: absolute;
@@ -49,7 +53,7 @@
       transform: translate(-50%, -50%);
       z-index: 1;
       padding: 10px;
-      .Icon  {
+      .Icon {
         border-radius: 50px;
         @include intenseShadow;
         path {

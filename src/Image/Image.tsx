@@ -38,6 +38,10 @@ const Image: React.FC<ImageProps> = ({ children, image, hotspots }) => {
         openHotspot(null);
     }
 
+    const handleSourceClick = (link) => () => {
+        window.open(link, '_blank');
+    }
+
     const renderHotspots = () => {
         return hotspots.map((h, i) => {
             return <div key={i} className={clsx("Hotspot", { open: i === hotspotOpen })} style={{ top: `${h.y}%`, left: `${h.x}%` }} onFocus={handleHotspotHover(i)} onBlur={handleHotspotLeave} onMouseEnter={handleHotspotHover(i)} onMouseLeave={handleHotspotLeave}>
@@ -66,7 +70,7 @@ const Image: React.FC<ImageProps> = ({ children, image, hotspots }) => {
             <div className="Image-source">
                 {image.source?.author?.name && image.source?.author?.link &&
                     <div className="Image-source-author">
-                        <a href={image.source?.author.link} target="_blank">{image.source?.author.name}</a>
+                        <span onClick={handleSourceClick(image.source?.site.link)}>{image.source?.author.name}</span>
                     </div>
                 }
                 {!(image.source.site.name === image.source.author.name) &&
@@ -76,7 +80,7 @@ const Image: React.FC<ImageProps> = ({ children, image, hotspots }) => {
                         }
                         {image.source?.site?.name && image.source?.site?.link &&
                             <div className="Image-source-site">
-                                <a href={image.source?.site.link} target="_blank">{image.source?.site.name}</a>
+                                <span onClick={handleSourceClick(image.source?.site.link)}>{image.source?.site.name}</span>
                             </div>
                         }
                     </>
