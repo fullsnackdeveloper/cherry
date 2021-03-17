@@ -49,7 +49,8 @@ export default {
           src: "src/styles/typography.scss",
           dest: "build",
           rename: "typography.scss"
-        }
+        },
+        { src: 'src/**/*.scss', dest: 'build/scss' }
       ]
     })
   ]
