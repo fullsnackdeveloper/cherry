@@ -1,0 +1,94 @@
+@import "../styles/stylesIndex.scss";
+
+.Carousel {
+    margin: 0 !important;
+    .carousel__slider {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    &-button {
+        display: none;
+    }
+    &-slide-container {
+        margin: 0;
+    }
+}
+
+.Story {
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    max-height: 700px;
+    border-radius: $border-radius;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    margin: 0 auto;
+    &-head {
+        &-timeline {
+            display: flex;
+            padding: 24px 24px 0;
+            hr {
+                width: 100%;
+                margin-right: 12px;
+                height: 3px;
+                border: none;
+                border-radius: 10px;
+                background: $color_white;
+                opacity: 0.5;
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+        &-author {
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            h3 {
+                @include cardTitle;
+                color: $color_white;
+                margin-left: 12px;
+            }
+        }
+    }
+    &-main {
+        padding: 124px 24px 64px;
+        border-radius: 0 0 $border-radius $border-radius;
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+        h2 {
+            @include pageTitle;
+            color: $color_white;
+            margin-bottom: 12px;
+        }
+        p {
+            color: $color_white;
+        }
+        &.middle {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 32px 24px;
+            border-radius: 0;
+            background: linear-gradient(-90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+        }
+    }
+    &-link {
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        .Button {
+            border-radius: 8px 8px 0 0;
+        }
+        &.button {
+            bottom: 12px;
+            .Button {
+                border-radius: 8px;
+            }
+        }
+    }
+}
