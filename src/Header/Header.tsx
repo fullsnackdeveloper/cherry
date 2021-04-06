@@ -65,7 +65,7 @@ const Header: FC<HeaderProps> = ({ nextImage, title, subTitle, description, imag
                     </div>
                 }
                 <h1>{title}</h1>
-                {squiggle && <img className="Header-squiggle" src="/squiggle.svg" alt="squiggle" />}
+                {squiggle && <img className="Header-squiggle" src="/squiggle.svg" width="130" height="20" alt="squiggle" />}
                 <div className="Header-meta">
                     {description && description}
                     {subTitle && <p className={clsx({ subTitle })}>{subTitle}</p>}

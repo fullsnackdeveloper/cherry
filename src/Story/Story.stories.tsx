@@ -15,20 +15,31 @@ Default.args = {
     title: "The top 10 best examples",
     description: "This is an optional area for text",
     image: "https://images.unsplash.com/photo-1612831457732-0f6b2156b92d?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80",
+    secondImage: "https://images.unsplash.com/photo-1612831457732-0f6b2156b92d?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80",
     author: {
         name: "Kevin Malone",
         image: "https://images.unsplash.com/photo-1520223297779-95bbd1ea79b7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fHByb2ZpbGV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
     },
     link: "https://makey.com",
-    linkText: "Read more",
+    linkText: "Read this",
+    onClick: () => console.log('clicked'),
     template: {
         main: {
-            position: 'middle'
+            align: 'center',
+            position: 'bottom',
+            background: {
+                fullwidth: true,
+                visible: true
+            }
         },
-        link: {
-            type: 'button'
+        author: {
+            showName: true
         }
-    }
+    },
+    share: {
+        facebook: 'somelink'
+    },
+    frameNum: 5
 }
 
 export const CarouselStories = () => <Carousel columns={[1]}>
@@ -40,8 +51,8 @@ export const CarouselStories = () => <Carousel columns={[1]}>
             name: "Kevin Malone",
             image: "https://images.unsplash.com/photo-1520223297779-95bbd1ea79b7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fHByb2ZpbGV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
         }}
-        link="https://makey.com"
         linkText="Read more"
+        frameNum={4}
     />
     <Story
         title="The Top 10 best examples"
@@ -51,8 +62,8 @@ export const CarouselStories = () => <Carousel columns={[1]}>
             name: "Kevin Malone",
             image: "https://images.unsplash.com/photo-1520223297779-95bbd1ea79b7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fHByb2ZpbGV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
         }}
-        link="https://makey.com"
         linkText="Read more"
+        frameNum={4}
     />
     <Story
         title="The Top 10 best examples"
@@ -62,8 +73,8 @@ export const CarouselStories = () => <Carousel columns={[1]}>
             name: "Kevin Malone",
             image: "https://images.unsplash.com/photo-1520223297779-95bbd1ea79b7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fHByb2ZpbGV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
         }}
-        link="https://makey.com"
         linkText="Read more"
+        frameNum={4}
     />
 </Carousel>;
 

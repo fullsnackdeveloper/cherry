@@ -3,19 +3,28 @@ export interface StoryProps {
     title: string;
     description?: string;
     image: string;
+    secondImage?: string;
     author: any;
-    link: string;
+    onClick?: () => void;
     linkText: string;
+    frameNum?: number;
+    share?: {
+        facebook?: string;
+        twitter?: string;
+        pinterest?: string;
+        copy?: string;
+    }
     template?: {
         main?: {
             position?: 'middle' | 'top' | 'bottom'
             align?: 'left' | 'right' | 'center'
+            background: {
+                visible: boolean
+                fullwidth: boolean
+            }
         },
         author?: {
-            position?: 'top' | 'bottom'
-        },
-        link?: {
-            type?: 'tab' | 'button'
+            showName: boolean
         }
     }
 }
