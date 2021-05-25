@@ -20,6 +20,10 @@ const Header: FC<HeaderProps> = ({ nextImage, title, subTitle, description, imag
         onCategoryClick && onCategoryClick(link);
     }
 
+    const handleSourceClick = link => () => {
+        window.open(link, '_blank');
+    }
+
     const renderCategories = () => {
         return categories.map((c, index) => {
             return [
@@ -33,7 +37,7 @@ const Header: FC<HeaderProps> = ({ nextImage, title, subTitle, description, imag
         return <div className={clsx("Header-source", { outside })}>
             {image.source?.author?.name && image.source?.author?.link &&
                 <div className="Header-source-author">
-                    <a href={image.source?.author.link} target="_blank">{image.source?.author.name}</a>
+                    <span onClick={handleSourceClick(image.source?.author.link)}>{image.source?.author.name}</span>
                 </div>
             }
             {image.source?.site && image.source?.author &&
@@ -41,7 +45,7 @@ const Header: FC<HeaderProps> = ({ nextImage, title, subTitle, description, imag
             }
             {image.source?.site?.name && image.source?.site?.link &&
                 <div className="Header-source-site">
-                    <a href={image.source?.site.link} target="_blank">{image.source?.site.name}</a>
+                    <span onClick={handleSourceClick(image.source?.site.link)}>{image.source?.site.name}</span>
                 </div>
             }
         </div>

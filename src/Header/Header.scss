@@ -50,14 +50,17 @@
       opacity: 0.3;
       padding: 0 4px;
     }
-    a {
-      @include source;
-      color: $color_white;
-      opacity: 0.6;
-      text-decoration: none;
-      &:hover {
+    &-author,
+    &-site {
+      span {
+        @include source;
         color: $color_white;
-        opacity: 1;
+        opacity: 0.6;
+        cursor: pointer;
+        &:hover {
+          color: $color_white;
+          opacity: 1;
+        }
       }
     }
   }
@@ -92,7 +95,7 @@
     }
     .Icon {
       padding: 0 10px;
-       path {
+      path {
         stroke: $color_white;
       }
     }
