@@ -7,4 +7,5 @@ export interface PageContainerProps {
     hasSteps?: boolean;
     shadedBackground?: boolean;
     overflowHidden?: boolean;
+    fullwidth?: boolean;
 }
